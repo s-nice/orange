@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.imora_selected{border:1px solid black !important}
+</style>
+</head>
+<body>
+	<!-- <iframe src='source.html'></iframe> -->
+	<textarea id='js_content3' name='content'></textarea>
+	<hr>
+	<label>值1</label><input type='text' autocomplete='off' key='aa'><span></span><br>
+	<label>值2</label><input type='text' autocomplete='off' key='bb'><span></span><br>
+</body>
+<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/jsExtend/browser.js"></script>
+<script type="text/javascript" src="/js/jsExtend/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/js/jsExtend/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+//保存的数据
+var data={};
+
+var ue = UE.getEditor('js_content3',{
+    toolbars: [
+        ['simpleupload','fontsize','fontfamily','link','bold','italic', 'underline', 'strikethrough', 'superscript', 'subscript','removeformat','justifyleft', 'justifycenter','justifyright','audio']
+    ] ,
+    wordCount:false ,
+    autoFloatEnabled: false,
+    elementPathEnabled: false,
+    autoHeightEnabled: false ,
+    autoClearEmptyNode: true,
+    zIndex: 9,
+    contextMenu:[],
+    initialFrameWidth :680,//设置编辑器宽度
+    initialFrameHeight:400//设置编辑器高度
+});
+ue.addListener('ready', function( editor ) {
+	bind(ue.document);
+});
+ue.addListener('keydown', function( editor ) {
+	bind(ue.document);
+});
+
+//事实绑定事件(ueditor里的元素)
+function bind(_document){
+	$(_document).find('*').each(function(){
+		var tag=$(this)[0].localName;
+		if (tag=='html' || tag=='body'){
+			return;
+		}
+		if ($(this).data('click')){
+			return;
+		}
+		
+		//点击元素(ueditor里的元素)
+		$(this).on('click', function(evt){
+			if (!$(this).hasClass('imora_selected')){
+				return;
+			}
+			var key=$(this).attr('identifer');
+			var path=$(this).removeClass('imora_selected').data('imora_path');
+			for(var i=0;i<data[key].length;i++){
+				if (data[key][i]==path){
+					data[key].splice(i,1);
+					break;
+				}
+			}
+			
+			$('input[key="'+key+'"]').next().html(data[key].join(',,,'));
+		}).data('click', true);
+	});
+}
+
+//搜索值监听
+$('input').on('focus', function(){
+	startMonitor($(this));
+}).on('blur', function(){
+	stopMonitor($(this));
+});
+
+function startMonitor($obj){
+	$obj.data('oldVal', $obj.val());
+	var it=setInterval(function(){
+		var oldVal=$obj.data('oldVal');
+		if ($obj.val()!='' && oldVal!=$obj.val()){
+			//触发
+			search($obj);
+			$obj.data('oldVal', $obj.val());
+		}
+	}, 100);
+	$obj.data('it', it);
+}
+
+function stopMonitor($obj){
+	clearInterval($obj.data('it'));
+}
+
+//搜索对应标签，并获取xpath路径
+function search($obj){
+	var val=$obj.val();
+	var flag=true;
+	var key=$obj.attr('key');
+	var paths=[];
+	$(ue.document).find('*').each(function(){
+		if ($(this)[0].localName=='input' || $(this).text()!=val){
+			return;
+		}
+		
+		$('.imora_selected').each(function(){
+			if ($(this).attr('identifer')==key){
+				return;
+			}
+			$(this).removeClass('imora_selected');
+		});
+		$(this).addClass('imora_selected').attr('identifer', key);
+		
+		var arr=[];
+		
+		locate($(this), arr);
+		arr.reverse();
+		
+		var path=getPath(arr);
+		!!val && paths.push(path);
+		flag=false;
+		$(this).data('imora_path', path);
+	});
+	
+	if (flag){
+		$('*').removeClass('imora_selected');
+		$obj.next().html('');
+	} else {
+		data[key]=paths;
+		$obj.next().html(paths.join(',,,'));
+	}
+}
+
+//获取xpath路径
+function getPath(arr){
+	var path='/';
+	for(var i=0;i<arr.length;i++){
+		if (i%2==0){
+			path+=arr[i];
+		} else {
+			path+='['+arr[i]+']/';
+		}
+	}
+	
+	path=path.substring(0, path.length-1);
+	return path;
+}
+
+//定位匹配的dom元素
+function locate($obj,arr){
+	if ($obj.parent().length==0){
+		return;
+	}
+	//IE9从0开始，其他从1开始
+	var offset=browser.type=='IE'?0:1;
+	
+	var tag=$obj[0].localName;
+	var $siblings=$obj.siblings(tag);
+	if ($siblings.length>0){
+		//找到$obj是第几个
+		$obj.parent().find(tag).each(function(num){
+			if ($obj[0][$.expando]!=$(this)[0][$.expando]){
+				return;
+			}
+			$obj.data('num', num);
+			return false;
+		});
+		$obj.data('num')!=undefined && arr.push(parseInt($obj.data('num'))+offset);
+	} else {
+		arr.push(offset);
+	}
+	arr.push(tag);
+	locate($obj.parent(), arr);
+}
+</script>
+</html>

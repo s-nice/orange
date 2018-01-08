@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- title -->
+<string name="str_title_company_system">橙鑫科技企业平台</string>
+<string name="str_title_logout_system">注销</string>
+<string name="str_title_logout_system">注销</string>
+<string name="str_menu_card_manage">名片管理</string>
+<string name="str_menu_marking_mail">营销邮件</string>
+<string name="str_menu_talk_record">商谈记录</string>
+<string name="str_menu_task">任务</string>
+<string name="str_menu_card_list">名片列表</string>
+<string name="str_menu_card_search_result">搜索结果</string>
+<string name="str_menu_cards_recover">名片回收站</string>
+<string name="str_menu_manage_seting">管理设置</string>
+<string name="str_menu_auth_setting">权限设置</string>
+<string name="str_menu_depart_manage">部门管理</string>
+<string name="str_menu_staff_manage">员工管理</string>
+<string name="str_menu_label_manage">标签管理</string>
+<!---->
+ 
+</resources>

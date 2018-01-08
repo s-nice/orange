@@ -1,0 +1,1184 @@
+
+/**
+ * 首页index js
+ */
+$.extend({
+    //首页js
+    index:{
+        init:function() {
+        	var $INFODIALOG  =$('.info-dialog');
+        	var $EDITDIALOG  =$('.edit-card-dialog');
+        	var $CARDDIALOG  =$('.look-card-dialog');
+        	var $LABELDIALOG =$('.i-label-dailog');
+        	var $SEARCHDIALOG=$('.if-more');
+        	
+        	var CANVAS  =document.getElementById("cardEditor");
+        	var CANVASBG=new Image();
+        	CANVASBG.src=$CARDDIALOG.find('img').attr('bgsrc');
+        	
+        	$('body').on('click', function(){
+        		setTimeout(function(){
+        			$('.if-table ul').hide();
+        		},100);
+        	});
+        	
+        	//标签搜索-下拉
+        	$('.if-table span,.if-table em').on('click', function(evt){
+        		evt.stopPropagation();
+        		$(this).siblings('ul').toggle();
+        	});
+        	
+        	//标签搜索-搜索，列表里的标签点击
+        	$('.if-table li,.t_tags span').on('click', function(evt){
+        		evt.stopPropagation();
+        		SEARCHTYPE=2;
+        		_reload($(this));
+        	});
+        	
+        	//高级搜索-显示
+        	$('.if-search').on('click', function(){
+        		$SEARCHDIALOG.toggle();
+        	});
+        	
+        	//高级搜索-关闭
+        	$SEARCHDIALOG.find('.close-more').on('click', function(){
+        		$SEARCHDIALOG.hide();
+        	});
+        	
+        	//高级搜索-创建人下拉
+        	$SEARCHDIALOG.find('.creator').on('focus', function(){
+        		$SEARCHDIALOG.find('.more-menu-m').show();
+        	}).on('blur', function(){
+        		setTimeout(function(){
+        			$SEARCHDIALOG.find('.more-menu-m').hide();
+        		},100);
+        	});
+        	
+        	//高级搜索-创建人下拉点击
+        	$SEARCHDIALOG.find('.more-menu-m li').on('mousedown', function(){
+        		$SEARCHDIALOG.find('.creator').attr('eid', $(this).attr('eid')).val($(this).html());
+        	});
+        	
+        	//高级搜索-创建人（员工）列表
+        	$.post(URL_EMPLOYEES,{},function(data){
+        		data=$.parseJSON(data);
+        		for(var i=0;i<data.list.length;i++){
+        			var tmp=data.list[i];
+        			var $tpl=$SEARCHDIALOG.find('.more-menu-m li:first').clone(true);
+        			$tpl.attr('eid', tmp.id).html(tmp.name);
+        			$SEARCHDIALOG.find('.more-menu-m').append($tpl);
+        		}
+        		//$SEARCHDIALOG.find('.more-menu-m li:first').remove();
+        	});
+        	
+        	//高级搜索-时间范围选择
+        	$.dataTimeLoad.init({minDate:{start:false,end:false},maxDate:{start:false,end:false}});
+        	
+        	//高级搜索-搜索按钮
+        	$SEARCHDIALOG.find('.more-if-btn button').on('click', function(){
+        		SEARCHTYPE=1;
+        		_reload();
+        	});
+        	
+        	//创建者搜索（列表）
+        	$('.td4 .creator').on('click', function(){
+        		SEARCHTYPE=1;
+        		$SEARCHDIALOG.find('.creator').attr('eid', $(this).attr('eid')).val($(this).html());
+        		_reload();
+        	});
+        	
+        	//标记为按钮
+        	$('.biao_i button').on('click', function(){
+        		/*
+        		var ids=__selectCards();
+        		if (!ids) return;*/
+        		var $all=$('.t-body input:checked');
+        		if ($all.length==0){
+        			$.dialog.alert({content:"请选择名片"});
+        			return false;
+        		}
+
+        		var ids=[];
+        		var flag=false;
+        		$all.each(function(){
+        			ids.push($(this).attr('vcardid'));
+        			if (ROLE!=1 && $(this).attr('section')==2){
+        				flag=true;
+        				return true;
+        			}
+        		});
+        		
+        		if (flag){
+        			$.dialog.alert({content:"没有标记权限"});
+        			return false;
+        		}
+        		_showAddTagPanel(ids);
+        	});
+        	
+        	//显示添加标签窗口
+        	function _showAddTagPanel(ids){
+        		if (ids.length==1){
+        			var $tags=$('.t-body input[vcardid="'+ids[0]+'"]').parents('tr').find('.t_tags span');
+        			$tags.each(function(){
+        				var tid=$(this).attr('tid');
+        				$LABELDIALOG.find('input[tid="'+tid+'"]').prop('checked', true);
+        			});
+        		}
+        		sortLabelList();
+        		_showWindow($LABELDIALOG);
+        	}
+        	
+        	//标签列表排序
+        	function sortLabelList(){
+        		$LABELDIALOG.find('.la-list li').each(function(){
+        			if ($(this).find('input:checked').prop('checked')){
+        				$LABELDIALOG.find('.la-list').append($(this));
+        			}
+        		});
+        	}
+        	
+        	//编辑名片-添加标签按钮
+        	$INFODIALOG.find('.x-label button').on('click', function(){
+        		var data=$INFODIALOG.data('card');
+        		if (ROLE!=1 && data.section==2){
+        			$.dialog.alert({content:"没有标记权限"});
+        			return false;
+        		}
+        		_showAddTagPanel([data.vcardid]);
+        	});
+        	
+        	//添加标签-搜索
+        	$LABELDIALOG.find('.q-search-icon img').on('click', function(){
+        		var keyword=$LABELDIALOG.find('input:first').val();
+        		$LABELDIALOG.find('.la-list li').show().each(function(){
+        			if ($(this).find('input').prop('checked')){
+        				return;
+        			}
+        			if ($(this).find('span').html().indexOf(keyword)>=0){
+        				return;
+        			}
+        			$(this).hide();
+        		});
+        		$LABELDIALOG.find('.lab-in input').prop('checked', false);
+        		sortLabelList();
+        	});
+        	
+        	//添加标签-只看已选
+        	$LABELDIALOG.find('.lab-in input').on('click', function(){
+        		var $list=$LABELDIALOG.find('.la-list li');
+        		if (!$(this).prop('checked')){
+        			$list.show();
+        		} else {
+        			$list.each(function(){
+            			if (!$(this).find('input').prop('checked')){
+            				$(this).hide();
+            			}
+            		});
+        		}
+        	});
+        	
+        	//添加标签-取消
+        	$LABELDIALOG.find('.i-btn-right button:first').on('click', function(){
+        		$LABELDIALOG.hide().find('input:checked').prop('checked', false);
+        		_hideMask();
+        	});
+        	
+        	//添加标签-确定
+        	$LABELDIALOG.find('.i-btn-right .i-l-di').on('click', function(){
+        		var tags=[];
+        		$LABELDIALOG.find('input:checked').each(function(){
+        			tags.push($(this).attr('tid'));
+        		});
+        		
+        		if (tags.length>MAXTAGNUM){
+        			$.dialog.alert({content:'标签最多添加6个'});
+        			return;
+        		}
+        		var ids;
+        		if ($INFODIALOG.is(':visible')){
+        			ids=[$INFODIALOG.data('card')['vcardid']];
+        		} else {
+        			ids=__selectCards();
+        		}
+        		
+        		$.ajax({
+                    'type':'post',
+                    'async':true,
+                    'url':URL_ADD_TAG,
+                    'data':{cards:ids.join(','),tags:tags.join(',')},
+                    'success':function(rst){
+            			rst=$.parseJSON(rst);
+            			$.dialog.alert({content:rst.msg});
+            			if (rst.status==0){
+                			setTimeout(function(){
+                    			location.reload();
+                    		}, 1500);
+                		}
+            		}
+                });
+        	});
+        	
+        	//添加标签-确定
+        	$LABELDIALOG.find('.i-btn-left button').on('click', function(){
+        		location.href=$(this).attr('href');
+        	});
+        	
+        	//全选名片
+        	$('.t-head input:checkbox').on('click', function(){
+        		var $all=$('.t-body input:checkbox');
+        		if ($(this).prop('checked')){
+        			$all.prop('checked', true).parents('tr').addClass('bg-active');
+        		} else {
+        			$all.prop('checked', false).parents('tr').removeClass('bg-active');
+        		}
+        	});
+
+        	//单选名片
+        	$('.t-body input:checkbox').on('change', function(){
+        		var $tr=$(this).parents('tr');
+        		if ($(this).prop('checked')){
+        			$tr.addClass('bg-active');
+        		} else {
+        			$tr.removeClass('bg-active');
+        		}
+        	});
+
+        	//删除名片
+        	$('.remove_i button').on('click', function(){
+        		var $all=$('.t-body input:checked');
+        		if ($all.length==0){
+        			$.dialog.alert({content:"请选择名片"});
+        			return false;
+        		}
+        		$.dialog.confirm({content:"你确定要删除吗",callback:function(){
+        			__delcallback();
+        		}});
+        	});
+        	
+        	//名片回收站
+        	$('.card-remove').on('click', function(){
+        		location.href=URL_CARD_TRASH;
+        	});
+
+        	//添加共享
+        	$('.enjoy_ch button').on('click', function(){
+        		if (ISOPEN==1){
+        			$.dialog.alert({content:"已开启全部共享（ 所有员工都可以访问公司的所有名片）"});
+        			return;
+        		}
+        		var $all=$('.t-body input:checked');
+        		if ($all.length==0){
+        			$.dialog.alert({content:"请选择名片"});
+        			return false;
+        		}
+
+        		var ids=[];
+        		var flag=false;
+        		$all.each(function(){
+        			ids.push($(this).attr('vcardid'));
+        			if (ROLE!=1 && $(this).attr('section')==2){
+        				flag=true;
+        				return true;
+        			}
+        		});
+        		
+        		if (flag){
+        			$.dialog.alert({content:"共享给我的名片不能再次共享"});
+        			return false;
+        		}
+        		__showEmpDeptWindow(ids);
+        	});
+        	
+        	//关键字搜索
+        	$('.search-text button').on('click', function(){
+        		$SEARCHDIALOG.hide();
+        		SEARCHTYPE='';
+        		_reload();
+        	});
+
+        	//名片列表TAG切换
+        	$(".card_nav a:lt(3)").on('click', function(){
+        		$('.card_nav .active').removeClass('active');
+        		$(this).parent().addClass('active');
+        		_reload();
+        	});
+
+        	//名片信息展示
+        	$('.td1 img').on('click', function(){
+        		var cardid=$(this).attr('vcardid');
+        		$.ajax({
+                    'type':'post',
+                    'async':true,
+                    'url':URL_CARD_INFO,
+                    'data':{cardid:cardid},
+                    'success':function(rst){
+            			rst=$.parseJSON(rst);
+            			if (rst.status!=0){
+            				$.dialog.alert({content:rst.msg1});
+            				return;
+                		}
+            			$INFODIALOG.data('card', rst.data);
+                		_showCardInfo(rst.data);
+                		_showCardShareInfo(rst.emps,rst.depts);
+            		}
+                });
+        	});
+        	
+        	//名片信息窗口-名片分享鼠标滑过
+        	$INFODIALOG.find('.look-list li').on('mouseover', function(){
+        		if ($(this).find('b').length>0){
+        			return;
+        		}
+        		$(this).addClass('active');
+        	}).on('mouseout', function(){
+        		$(this).removeClass('active');
+        	});
+        	
+        	//名片信息窗口-删除分享
+        	$INFODIALOG.find('.look-list').each(function(){
+        		$(this).find('li:first em').on('click', function(){
+        			var $parent=$(this).parent();
+        			$.dialog.confirm({content:"你确定要删除吗",callback:function(){
+            			var module=$parent.attr('_id');
+            			var type=$parent.attr('type');
+            			var card=$INFODIALOG.data('card')['vcardid'];
+            			$.ajax({
+                            'type':'post',
+                            'async':true,
+                            'url':URL_CARD_DEL_AUTH,
+                            'data':{card:card,type:type,module:module},
+                            'success':function(rst){
+                    			rst=$.parseJSON(rst);
+                    			$.dialog.alert({content:rst.msg1});
+                    			if (rst.status==0){
+                    				$parent.remove();
+                        		}
+                    		}
+                        });
+            		}});
+        		});
+        	});
+        	
+        	//名片信息窗口-显示名片分享信息
+        	function _showCardShareInfo(emps,depts){
+        		$INFODIALOG.find('.look-list:first li:gt(1)').remove();
+        		$INFODIALOG.find('.look-list:last li:gt(0)').remove();
+        		!emps  && (emps=[]);
+        		!depts && (depts=[]);
+        		for(var i=0;i<emps.length;i++){
+        			if (i==0){
+        				var $tmp=$INFODIALOG.find('.look-list:first li:eq(1)');
+        				$tmp.attr('eid',emps[i].id).find('aa').html(emps[i].name);
+        				continue;
+        			}
+        			var $tpl=$INFODIALOG.find('.look-list:first li:eq(0)').clone(true).show();
+        			$tpl.attr('_id',emps[i].id).find('aa').html(emps[i].name);
+        			$INFODIALOG.find('.look-list:first').append($tpl);
+        		}
+        		for(var i=0;i<depts.length;i++){
+        			var $tpl=$INFODIALOG.find('.look-list:last li:eq(0)').clone(true).show();
+        			$tpl.attr('_id',depts[i].id).find('span').html(depts[i].name);
+        			$INFODIALOG.find('.look-list:last').append($tpl);
+        		}
+        	}
+        	
+        	//名片信息窗口-顶部页签切换
+        	$INFODIALOG.find('.tab-qie span').on('click', function(){
+        		if ($(this).attr('type')=='i'){
+        			$(this).addClass('active').siblings().removeClass('active');
+        			$INFODIALOG.find('.x-content:first').show().siblings('.x-content').hide();
+        		} else {
+        			if (ISOPEN==1){
+        				$.dialog.alert({content:"已开启全部共享（ 所有员工都可以访问公司的所有名片）"});
+        				return;
+        			}
+            		if (ROLE!=1 && $INFODIALOG.data('card')['section']==2){
+            			$.dialog.alert({content:"没有权限（此名片为共享名片）"});
+            			return false;
+            		}
+            		
+        			$(this).addClass('active').siblings().removeClass('active');
+        			$INFODIALOG.find('.x-content:first').hide().siblings('.x-content').show();
+        		}
+        	});
+        	
+        	
+        	//名片信息窗口-标签划过
+        	$INFODIALOG.find('.label-em:eq(0)').on('mouseover',function(){
+        		var accountid=$INFODIALOG.data('card')['accountid'];
+        		if (ROLE!=1 && accountid!=ACCOUNT){
+        			return;
+    			}
+        		$(this).find('i').show();
+        	}).on('mouseout', function(){
+        		$(this).find('i').hide();
+        	});
+        	
+        	//名片信息窗口-添加分享同事
+        	$INFODIALOG.find('.tit-ch:first button').on('click', function(){
+        		var id=$INFODIALOG.data('card')['vcardid'];
+        		__showEmpDeptWindow([id]);
+        	});
+        	
+        	//名片信息窗口-添加分享部门
+        	$INFODIALOG.find('.tit-ch:last button').on('click', function(){
+        		var id=$INFODIALOG.data('card')['vcardid'];
+        		__showEmpDeptWindow([id],true);
+        	});
+
+        	//名片信息窗口-取消标签
+        	$INFODIALOG.find('.label-em i').on('click', function(){
+        		var $this=$(this);
+        		$.dialog.confirm({content:"你确定要删除吗",callback:function(){
+        			var tags=[];
+        			$this.parent().siblings('.label-em').each(function(){
+            			tags.push($(this).find('i').attr('tid'));
+            		});
+        			
+            		var cardid=$INFODIALOG.data('card')['vcardid'];
+            		$.ajax({
+                        'type':'post',
+                        'async':true,
+                        'url':URL_ADD_TAG,
+                        'data':{cards:cardid,tags:tags.join(',')},
+                        'success':function(rst){
+                			rst=$.parseJSON(rst);
+                			$.dialog.alert({content:rst.msg});
+                			if (rst.status==0){
+                				$this.parent().remove();
+                				$('.t-body input[vcardid="'+cardid+'"]').parents('tr').find('span[tid="'+$this.attr('tid')+'"]').remove();
+                    		}
+                		}
+                    });
+        		}});
+        	});
+        	
+        	//名片信息窗口关闭
+        	$INFODIALOG.find('.close-dia').on('click', function(){
+        		$INFODIALOG.hide().data('card', null).find('.btn-img').css('opacity', 0.1).hide();
+        		$INFODIALOG.find('.label-em:gt(0)').remove();
+        		$INFODIALOG.find('.look-list:first li:gt(1)').remove();
+        		$INFODIALOG.find('.look-list:last li:gt(0)').remove();
+        		$INFODIALOG.find('.x-i-l').each(function(){
+        			$(this).find('dl:gt(0)').remove();
+        			var title=$(this).find('dt').html();
+        			if (title){
+        				$(this).find('dt').html(title.replace(/\d/,''));
+        			}
+        			$(this).find('dd').html('');
+        		});
+        		$INFODIALOG.find('.tab-qie span:first').click();
+        		_hideMask();
+        	});
+        	
+        	//名片删除
+        	$INFODIALOG.find('.remove-i-x em').on('click', function(){
+        		var vcardid=$INFODIALOG.data('card')['vcardid'];
+        		$.dialog.confirm({content:"你确定要删除吗",callback:function(){
+        			__delcallback(vcardid);
+        		}});
+        	});
+        	
+        	//名片正反面翻转
+        	$INFODIALOG.find('.btn-img').on('click', function(){
+        		$(this).css('opacity', 0.1).siblings('span').css('opacity', 1);
+        		var card=$INFODIALOG.data('card');
+        		if ($(this).hasClass('right-btn-i')){
+        			$INFODIALOG.find('.l-img img:last').show().siblings().hide();
+        			_showCardInfoDetail(card.back);
+        		} else {
+        			$INFODIALOG.find('.l-img img:first').show().siblings().hide();
+        			_showCardInfoDetail(card.front);
+        		}
+        	});
+        	
+        	//显示名片信息
+        	function _showCardInfo(card){
+        		//正反面图片
+        		if (card.picpatha){
+        			$INFODIALOG.find('.l-img img:eq(0)').attr('src', card.picpatha);
+        		}
+        		if (card.picpathb){
+        			$INFODIALOG.find('.l-img img:eq(1)').attr('src', card.picpathb);
+        			$INFODIALOG.find('.right-btn-i').css('opacity', 1);
+        			$INFODIALOG.find('.btn-img').show();
+        		}
+        		
+        		//创建者，创建时间
+        		$INFODIALOG.find('.x-name').html(card.accountname);
+        		$INFODIALOG.find('.x-time').html(card.createdtime);
+        		
+        		//是否显示添加标签按钮
+        		var $tagbtn=$INFODIALOG.find('.tag_dia button');
+        		$tagbtn.show();
+        		if (ROLE!=1 && card.section==2){
+        			$tagbtn.hide();
+        		}
+        		
+        		//标签
+        		for(var i=0;i<card.remark.length;i++){
+        			var $tpl=$INFODIALOG.find('.label-em:eq(0)').clone(true).show();
+        			$tpl.find('aa').html(card.remark[i].tags);
+        			$tpl.attr('title', card.remark[i].tags);
+        			$tpl.find('i').attr('tid',card.remark[i].id);
+        			$INFODIALOG.find('.x-label button').before($tpl);
+        		}
+        		
+        		//具体信息
+        		_showCardInfoDetail(card.front);
+        		$INFODIALOG.data('card', card);
+        		_showWindow($INFODIALOG);
+        	}
+        	
+        	//显示名片具体信息
+        	function _showCardInfoDetail(data){
+        		if (!data) return;
+        		
+        		//姓名
+        		if (data.FN && data.FN[0]){
+        			$INFODIALOG.find('h3:first').html(data.FN[0]);
+        			$INFODIALOG.find('h4:first').html(data.FN[0]);
+        		} else {
+        			$INFODIALOG.find('h3:first').html('(空)');
+        			$INFODIALOG.find('h4:first').html('(空)');
+        		}
+        		
+        		//部门
+        		var $dept=$INFODIALOG.find('.r-conent p:eq(0)');
+        		$dept.html('');
+        		if (data.DEPAR && data.DEPAR[0]){
+        			$dept.html(data.DEPAR[0]);
+        		}
+        		
+        		//职位
+        		if (data.TITLE && data.TITLE[0]){
+        			var html=$dept.html();
+        			$dept.html(html+' '+data.TITLE[0]);
+        		}
+        		
+        		//公司
+        		if (data.ORG && data.ORG[0]){
+        			$INFODIALOG.find('.r-conent p:eq(1)').html(data.ORG[0]);
+        		}
+        		
+        		$INFODIALOG.find('.x-i-dl').remove();
+        		
+        		//手机，工作电话，邮箱，地址，网址
+        		_makeCardItems(data.CELL,  '手机',     $INFODIALOG.find('.x-i-l:eq(0)'));
+        		_makeCardItems(data.TEL,   '工作电话', $INFODIALOG.find('.x-i-l:eq(1)'));
+        		_makeCardItems(data.EMAIL, '邮箱',     $INFODIALOG.find('.x-i-l:eq(2)'));
+        		_makeCardItems(data.ADR,   '地址',     $INFODIALOG.find('.x-i-l:eq(3)'));
+        		_makeCardItems(data.URL,   '网址',     $INFODIALOG.find('.x-i-l:eq(4)'));
+        	}
+        	
+        	//展示名片列表信息
+        	function _makeCardItems(list,labelName,$wrap){
+        		var html='';
+        		if (!list){
+        			return;
+        		}
+        		for(var i=0;i<list.length;i++){
+        			if (list.length > 1){
+        				html+='<dl class="x-i-dl"><dt>'+labelName+(i+1)+'</dt><dd>'+list[i]+'</dd></dl>';
+        			} else {
+        				html+='<dl class="x-i-dl"><dt>'+labelName+'</dt><dd>'+list[i]+'</dd></dl>';
+        			}
+        		}
+        		
+        		if (!html){
+        			html+='<dl class="x-i-dl"><dt>'+labelName+'</dt><dd></dd></dl>';
+        		}
+        		$wrap.html(html);
+        	}
+        	
+        	//编辑名片-列表
+        	$('.bian_i button').on('click', function(){
+        		var ids=__selectCards();
+        		if (!ids) return;
+        		if (ids.length>1){
+        			$.dialog.alert({content:'请选择单张名片'});
+        			return;
+        		}
+        		var accountid=$('.t-body input[vcardid="'+ids[0]+'"]').attr('accountid');
+        		_showEditPanel(ids[0],accountid);
+        	});
+        	
+        	//编辑名片-详情窗口
+        	$INFODIALOG.find('.edit-i-x em').on('click', function(){
+        		var data=$INFODIALOG.data('card');
+        		_showEditPanel(data.vcardid,data.accountid);
+        	});
+        	
+        	//编辑名片-显示窗口
+        	function _showEditPanel(cardid,accountid){
+        		if (ROLE!=1 && accountid!=ACCOUNT){
+    				$.dialog.alert({content:'没有修改权限'});
+        			return;
+    			}
+        		$.ajax({
+                    'type':'post',
+                    'async':true,
+                    'url':URL_CARD_INFO,
+                    'data':{cardid:cardid},
+                    'success':function(rst){
+            			rst=$.parseJSON(rst);
+            			if (rst.status!=0){
+            				$.dialog.alert({content:rst.msg1});
+            				return;
+                		}
+            			$EDITDIALOG.data('card', rst.data);
+            			_doShowEditPanel(rst.data);
+            		}
+                });
+        		
+        	}
+        	
+        	//编辑名片-显示窗口
+        	function _doShowEditPanel(card){
+        		//正反面图片
+        		if (card.picpatha){
+        			$EDITDIALOG.find('.card-img-ed img').attr('src', card.picpatha);
+        		}
+        		if (card.picpathb){
+        			$EDITDIALOG.find('.right-btn-i').css('opacity', 1);
+        			$EDITDIALOG.find('.btn-img').show();
+        		}
+        		
+        		//创建者，创建时间，名字
+        		$EDITDIALOG.find('.x-name').html(card.accountname);
+        		$EDITDIALOG.find('.x-time').html(card.createdtime);
+        		
+        		if (card.front && card.front.FN && card.front.FN[0]){
+        			$EDITDIALOG.find('h3:first').html(card.front.FN[0]);
+        		} else {
+        			$EDITDIALOG.find('h3:first').html('(空)');
+        		}
+        		
+        		//信息
+        		_renderEditPanel(card.front, $EDITDIALOG.find('.front'));
+        		_renderEditPanel(card.back,  $EDITDIALOG.find('.back'));
+        		
+        		drawCard();
+        		_showWindow($EDITDIALOG);
+        	}
+        	
+        	//编辑名片-渲染
+        	function _renderEditPanel(data, $wrap){
+        		for(var key in data){
+        			if (!data[key]){
+        				continue
+        			}
+        			_renderItems(data,key,$wrap);
+        		}
+        	}
+        	
+        	//编辑名片-渲染
+        	function _renderItems(data, key, $wrap){
+        		for(var i=0;i<data[key].length-1;i++){
+        			$wrap.find('input[name="'+key+'"]:first').next().click();
+        		}
+        		for(var i=0;i<data[key].length;i++){
+        			$wrap.find('input[name="'+key+'"]:eq("'+i+'")').val(data[key][i]);
+        		}
+        	}
+        	
+        	//编辑名片-制作名片图片
+        	$EDITDIALOG.find('.edit-form-item[tpl] input').on('keyup', function(){
+        		drawCard();
+        	}).on('blur', function(){
+        		var v=$.trim($(this).val());
+    			$(this).val(v);
+        		drawCard();
+        		validate($(this));
+        	});
+        	
+        	//编辑名片-名片表单验证
+        	function validate($obj){
+        		$obj = $obj || $EDITDIALOG.find('.edit-form-item input'); 
+        		var flag=false;
+        		var isCheckMax=true;
+        		var card=$EDITDIALOG.data('card');
+        		var showWrongSide;
+        		if (card && card.cardtype=='scan'){
+        			isCheckMax=false;
+        		}
+        		$obj.each(function(){
+        			if (validateDetail($(this),isCheckMax)){
+        				flag=true;
+        				if (!showWrongSide){
+        					if ($(this).parents('.edit-form').hasClass('front')){
+        						showWrongSide='front';
+        						setTimeout(function(){
+        							$EDITDIALOG.find('.left-btn-i').click();
+        						},100);
+            					
+            				} else {
+            					showWrongSide='back';
+            					setTimeout(function(){
+            						$EDITDIALOG.find('.right-btn-i').click();
+            					});
+            				}
+        					
+        				} 
+        			}
+        		});
+        		return flag;
+        	}
+        	
+        	//编辑名片-名片表单详细验证
+        	function validateDetail($obj,isCheckMax){
+        		validateClear($obj);
+        		var v=$.trim($obj.val());
+        		var required=$obj.attr('required_');
+        		var max=$obj.attr('max');
+        		var type=$obj.attr('type');
+        		
+        		if (required==='' && v==''){
+        			return validateFail($obj, '不能为空');
+        		}
+        		
+    			if (isCheckMax && max && v.length>parseInt(max)){
+    				return validateFail($obj, '长度不能大于'+max+'个字符');
+    			}
+    			
+    			switch(type){
+	    			case 'phone_':
+	    				if (v!='' && !v.isPhone()){
+	    					return validateFail($obj, '请输入座机格式');
+	    				}
+	    				break;
+	    			case 'mobile_':
+	    				if (v!='' && !v.isMobile()){
+	    					return validateFail($obj, '请输入手机格式');
+	    				}
+	    				break;
+	    			case 'email_':
+	    				if (v!='' && !v.isEmail()){
+	    					return validateFail($obj, '请输入邮箱格式');
+	    				}
+	    				break;
+    			}
+        		return false;
+        	}
+        	
+        	//编辑名片-名片表单验证结果清空
+        	function validateClear($obj){
+        		$obj.removeAttr('fail').removeClass('dis-bg').siblings('p').hide();
+        	}
+        	
+        	//编辑名片-名片表单验证失败
+        	function validateFail($obj, msg){
+        		$obj.attr('fail',1).addClass('dis-bg').siblings('p').show().html(msg);
+        		return true;
+        	}
+        	
+        	//编辑名片-画名片
+        	function drawCard(){
+        		var data=$EDITDIALOG.data('card');
+        		if (data && data.cardtype!='custom'){
+        			return;
+        		}
+        		var context=CANVAS.getContext("2d");
+        		context.clearRect(0,0,CANVAS.width,CANVAS.height);
+        		context.drawImage(CANVASBG,0,0,1200,720);
+        		context.textBaseline = 'middle';
+        		context.fillStyle = '#333';
+        		$EDITDIALOG.find('.edit-form-item[tpl] input').each(function(){
+        			var txt=$(this).val();
+            		var name=$(this).attr('name');
+        			var x,y;
+        			context.textAlign = 'left';
+            		switch(name){
+            		case 'FN':
+            			context.textAlign = 'center';
+            			context.font = getFont(16);
+            			x=212;
+            			y=278;
+            			canvasTextAutoLine(txt, CANVAS, x, y, 76, 400);
+            			break;
+            		case 'DEPAR':
+            			context.textAlign = 'center';
+            			context.font = getFont(8);
+            			x=212;
+            			y=380;
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48, 400);
+            			break;
+            		case 'TITLE':
+            			context.textAlign = 'center';
+            			context.font = getFont(8);
+            			x=212;
+            			y=420;
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48, 400);
+            			break;
+            		case 'ORG':
+            			context.font = getFont(10);
+            			x=562;
+            			y=168;
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48);
+            			break;
+            		case 'CELL':
+            			context.font = getFont(8);
+            			txt='手机：'+txt;
+            			x=562;
+            			y=268;
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48);
+            			break;
+            		case 'TEL':
+            			context.font = getFont(8);
+            			txt='座机：'+txt;
+            			x=562;
+            			y=(268+54*1);
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48);
+            			break;
+            		case 'EMAIL':
+            			context.font = getFont(8);
+            			txt='邮箱：'+txt;
+            			x=562;
+            			y=(268+54*2);
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48);
+            			break;
+            		case 'URL':
+            			context.font = getFont(8);
+            			txt='网址：'+txt;
+            			x=562;
+            			y=(268+54*3);
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48);
+            			break;
+            		case 'ADR':
+            			context.font = getFont(8);
+            			txt='工作地址：'+txt;
+            			x=562;
+            			y=(268+54*4);
+            			canvasTextAutoLine(txt, CANVAS, x, y, 48);
+            			break;
+            		}
+        		});
+        		
+        		var src=CANVAS.toDataURL("image/png");
+        		$EDITDIALOG.find('.card-img-ed img:first').attr('src', src);
+        	}
+        	
+        	/*
+        	str:要绘制的字符串
+        	canvas:canvas对象
+        	initX:绘制字符串起始x坐标
+        	initY:绘制字符串起始y坐标
+        	lineHeight:字行高
+        	maxWidth:最大宽度
+        	*/
+        	function canvasTextAutoLine(str,canvas,initX,initY,lineHeight,maxWidth){
+        	    var ctx=canvas.getContext("2d"); 
+        	    var lineWidth=0;
+        	    var canvasWidth=canvas.width; 
+        	    var lastSubStrIndex=0; 
+        	    var arr=[];
+        	    for(var i=0;i<str.length;i++){
+        	    	var _width=ctx.measureText(str[i]).width;
+        	        lineWidth+=_width;
+        	        arr.push(lineWidth);
+        	        if((maxWidth && lineWidth > maxWidth) || lineWidth>canvasWidth-initX){//减去initX,防止边界出现的问题
+        	            ctx.fillText(str.substring(lastSubStrIndex,i),initX,initY);
+        	            initY+=lineHeight;
+        	            lineWidth=_width;
+        	            lastSubStrIndex=i;
+        	        } 
+        	        if(i==str.length-1){
+        	            ctx.fillText(str.substring(lastSubStrIndex,i+1),initX,initY);
+        	        }
+        	    }
+        	    //maxWidth && console.log(arr.join(','));
+        	  }
+        	
+        	function getFont(size, face, weight, style){
+        		var fontSize='32px';
+        		size && (fontSize=(size*4)+'px');
+        		
+        		var fontFace='Microsoft-Yahei';
+        		face && (fontFace=face);
+        		
+        		var fontWeight='normal';
+        		weight && (fontWeight=weight);
+        		
+        		var fontStyle='normal';
+        		style && (fontStyle=style);
+        		return fontWeight + " " + fontStyle + " " + fontSize + ' ' + fontFace;
+        	}
+        	
+        	//编辑名片-复制item
+        	$EDITDIALOG.find('.add-i-ed').on('click', function(){
+        		var $obj=$(this).parent().clone(true).removeAttr('tpl');
+        		$obj.find('p').hide();
+        		$obj.find('input').removeClass('dis-bg').val('');
+        		$obj.find('.icon-edit').show();
+        		$(this).parent().after($obj);
+        	});
+        	
+        	//编辑名片-删除item
+        	$EDITDIALOG.find('.remove-i-ed').on('click', function(){
+        		var $parent=$(this).parent();
+        		if ($parent.attr('tpl')){
+        			return;
+        		}
+        		$parent.remove();
+        	});
+        	
+        	//编辑名片-保存
+        	$EDITDIALOG.find('.edit-btn-s:first').on('click', function(){
+        		var data={
+        			front:_buildFormData($EDITDIALOG.find('.front')),
+        			back:_buildFormData($EDITDIALOG.find('.back')),
+        			cardtype:'',
+        			cardid:'',
+        			image:''
+        		};
+        		if (validate()) return;
+        		var card=$EDITDIALOG.data('card');
+        		
+        		if (card){//编辑
+        			data.cardid=card['vcardid'];
+        		}
+        		if (!card || card.cardtype=='custom'){//添加或自定义名片编辑
+        			data.image=CANVAS.toDataURL("image/png");
+        			data.cardtype='custom';
+        		}
+        		
+        		$.ajax({
+                    'type':'post',
+                    'async':true,
+                    'url':URL_CARD_SAVE,
+                    'data':data,
+                    'success':function(rst){
+            			rst=$.parseJSON(rst);
+            			$.dialog.alert({content:rst.msg1});
+            			if (rst.status==0){
+            				if (card && $INFODIALOG.is(':visible')){
+            					//编辑时候不刷新
+            					$EDITDIALOG.find('.close-dia').click();
+            					$INFODIALOG.find('.label-em:gt(0)').remove();
+            					$('.t-body img[vcardid="'+data.cardid+'"]').click();
+            				} else {
+            					$EDITDIALOG.scrollTop(0);
+            					location.reload();
+            				}
+            			}
+            		}
+                });
+        	});
+        	
+        	//编辑名片-整理表单数据
+        	function _buildFormData($wrap){
+        		var data={};
+        		$wrap.find('input').each(function(){
+        			var key=$(this).attr('name');
+        			if (data[key]==undefined){
+        				data[key]=[];
+        			}
+        			var v=$.trim($(this).val());
+        			v && data[key].push(v);
+        		});
+        		return data;
+        	}
+        	
+        	//编辑名片-关闭窗口
+        	$EDITDIALOG.find('.close-dia,.ed-btn-diff').on('click', function(){
+        		$EDITDIALOG.scrollTop(0);
+        		$EDITDIALOG.hide().data('card', null).find('.btn-img').css('opacity', 0.1).hide();
+        		//旧数据删除
+        		$EDITDIALOG.find('.edit-form-item').each(function(){
+        			if ($(this).attr('tpl')!=1){
+        				$(this).remove();
+        			} else {
+        				$(this).find('input').removeClass('dis-bg').val('');
+        				$(this).find('p').hide();
+        			}
+        		});
+        		_hideMask();
+        	});
+        	
+        	//编辑名片-正反面切换
+        	$EDITDIALOG.find('.btn-img').on('click', function(){
+        		$(this).css('opacity', 0.1).siblings('span').css('opacity', 1);
+        		var $img=$(this).siblings('img');
+        		var card=$EDITDIALOG.data('card');
+        		if ($(this).hasClass('right-btn-i')){
+        			$img.attr('src', card.picpathb);
+        			$EDITDIALOG.find('.back').show().prev().hide();
+        		} else {
+        			$img.attr('src', card.picpatha);
+        			$EDITDIALOG.find('.back').hide().prev().show();
+        		}
+        	});
+        	
+        	//添加名片-显示窗口
+        	$('.add_i button').on('click', function(){
+        		//创建者，创建时间
+        		var accountname=$('.js_user_tips h5').attr('title');
+        		$EDITDIALOG.find('.x-name').html(accountname);
+        		$EDITDIALOG.find('.x-time').html(new Date().format('Y/m/d'));
+        		
+        		//默认图片
+        		$EDITDIALOG.find('img:first').attr('src', CANVASBG.src);
+        		$EDITDIALOG.find('h3:first').html('添加名片');
+        		_showWindow($EDITDIALOG);
+        		drawCard();
+        	});
+        	
+        	//名片图片预览
+        	$('.edit-card-dialog img:first,.info-dialog .l-img img').on('click', function(){
+        		$CARDDIALOG.show().find('img').attr('src',$(this).attr('src'));
+        	});
+        	
+        	//名片图片预览关闭
+        	$CARDDIALOG.find('.img-colose').on('click', function(){
+        		$CARDDIALOG.hide();
+        	});
+        	
+        	//添加权限
+        	$('.qu-dialog .qu-btn-foot button:last').on('click', function(){
+        		var emps=[];
+        		var empns=[];
+        		$('.emp li').each(function(){
+        			if ($(this).hasClass('on-active')){
+        				emps.push($(this).attr('_id'));
+        				empns.push($(this).text());
+        			}
+        		});
+        		var depts=[];
+        		var deptns=[];
+        	    $('.dept li').each(function(){
+        	    	if ($(this).hasClass('on-active')){
+        	    		depts.push($(this).attr('_id'));
+        	    		deptns.push($(this).text());
+        			}
+        		});
+        		
+        		var cards=__selectCards(true);
+        		if (!cards || cards.length==0){
+        			var ids=$(this).attr('ids');
+        			cards=ids.split(',');
+        		}
+        		
+        		$.ajax({
+                    'type':'post',
+                    'async':true,
+                    'url':URL_CARD_AUTH,
+                    'data':{cards:cards.join(','),emps:emps.join(','),depts:depts.join(',')},
+                    'success':function(rst){
+            			rst=$.parseJSON(rst);
+            			$('.qu-dialog .btn-cannel').click();
+            			$.dialog.alert({content:rst.msg});
+            			
+            			//刷新
+            			if (status==0 && $INFODIALOG.is(':visible')){
+            				var _emps=[];
+            				var _depts=[];
+            				$INFODIALOG.find('.look-list:first li:gt(0)').each(function(){
+            					var id=$(this).attr('_id');
+            					if (!id){
+            						$(this).attr('eid');
+            					}
+            					var name=$(this).find('aa').html();
+            					_emps.push({id:id,name:name});
+            				});
+            				$INFODIALOG.find('.look-list:last li:gt(0)').each(function(){
+            					var id=$(this).attr('_id');
+            					var name=$(this).find('span').html();
+            					_depts.push({id:id,name:name});
+            				});
+            				
+            				for(var i=0;i<emps.length;i++){
+            					_emps.push({id:emps[i],name:empns[i]});
+            				}
+            				for(var i=0;i<depts.length;i++){
+            					_depts.push({id:depts[i],name:deptns[i]});
+            				}
+            				_emps=filter(_emps);
+            				_depts=filter(_depts);
+            				
+            				_showCardShareInfo(_emps,_depts);
+            				
+            				//去重
+            	        	function filter(list){
+            	        		for(var i=0;i<list.length;i++){
+            	        			var count=0;
+            						for(var j=0;j<list.length;j++){
+            							if (list[i].id==list[j].id){
+            								count++;
+            								if (count<2){
+            									continue;
+            								}
+            								list.splice(i,1);
+            								i--;
+            								break;
+            							}
+            						}
+            					}
+            	        		return list;
+            	        	}
+            			}
+            		}
+                });
+        	});
+        	
+        	//重新加载页面
+        	function _reload($tag){
+        		var ismv=$SEARCHDIALOG.is(':visible');
+        		var params={};
+        		if (SEARCHTYPE=='1'){
+        			params.eid   =$.trim($SEARCHDIALOG.find('.more-i-d:eq(0)').attr('eid'));
+        			params.ename =$.trim($SEARCHDIALOG.find('.more-i-d:eq(0)').val());
+        			params.org   =$.trim($SEARCHDIALOG.find('.more-i-d:eq(1)').val());
+        			params.depar =$.trim($SEARCHDIALOG.find('.more-i-d:eq(2)').val());
+        			params.title =$.trim($SEARCHDIALOG.find('.more-i-d:eq(3)').val());
+        			params.adr   =$.trim($SEARCHDIALOG.find('.more-i-d:eq(4)').val());
+        			params.fn    =$.trim($SEARCHDIALOG.find('.more-i-d:eq(5)').val());
+        			params.email =$.trim($SEARCHDIALOG.find('.more-i-d:eq(6)').val());
+        			params.stime =$.trim($('#js_begintime').val());
+        			params.etime =$.trim($('#js_endtime').val());
+        			
+        			for (var key in params){
+        				if (key=='ename') continue;
+        				if (params[key]){
+        					params.issearch=1;
+        					break;
+        				}
+        			}
+        		} else if(SEARCHTYPE=='2'){
+        			params.tags=$tag.attr('tid');
+        			params.tagname=$tag.html();
+        			if (params.tags){
+        				params.issearch=1;
+        			}
+        		} else {
+            		params.keyword=encodeURIComponent($('.search-text input').val());
+            		if (params.keyword){
+        				params.issearch=1;
+        			}
+        		}
+        		
+        		var type=$('.card_nav .active a').attr('type');
+        		params.type=type;
+        		params.searchType=SEARCHTYPE;
+        		params.ismv=ismv?1:'';
+        		
+        		var str = $.param(params);
+        		location.href=URL+'?'+str;
+        	}
+        	
+        	//隐藏遮罩
+        	function _hideMask(){
+        		if (!$INFODIALOG.is(':visible') && !$EDITDIALOG.is(':visible')){
+        			$('.bg-op-dialog').hide();
+        			$('body').removeAttr('style');
+        		}
+        	}
+        	
+        	//窗口显示
+        	function _showWindow($window){
+        		$window.show();
+        		$('.bg-op-dialog').show();
+        		$('body').css('overflow', 'hidden');
+        	}
+        }
+    }
+});

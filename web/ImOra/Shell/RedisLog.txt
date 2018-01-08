@@ -1,0 +1,16 @@
+说明
+
+任务说明:   Redis队列记录日志保存到数据库
+访问url地址：    域名/demo/Log/getList
+访问频次：   每隔0.5分钟
+
+
+
+启用redis脚本(cd /usr/local目录下)
+nohup bash mission.sh &
+
+停用redis脚本(cd /usr/local目录下)
+ps -ef |grep mission.sh | grep -v grep |cut -c10-15 |xargs kill -9
+
+查看redis启用情况(cd /usr/local目录下)
+ps -ef |grep mission.sh

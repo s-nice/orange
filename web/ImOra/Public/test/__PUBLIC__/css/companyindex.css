@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+/* CSS Document */
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,tr,td,img,div{margin:0;padding:0;border:0; float:none;}
+body{font-size:12px;font-family:'SourceHanSansCN-Normal','微软雅黑','Tahoma','黑体','宋体';}
+body,html{background:#fff; overflow-x:hidden;}
+/*html,body{width:100%;}*/
+ul,ol{list-style-type:none;}em,i,cite{font-style:normal;}
+select,input{vertical-align:middle;}
+input{outline:none;}
+img,embed{vertical-align:top;border:none;}
+a{text-decoration:none;color:#000; outline: medium none; font-family:'Microsoft yahei';}
+a:hover{color:#000;text-decoration: none;}
+.font{}
+.left{ float:left}
+.right{ float:right;}
+.clear{ clear:both;}
+textarea{overflow:auto;resize:none;}
+.clear:after{clear:both;content:'';display:block}
+.clear{zoon:1;}
+.hand{cursor:pointer;}
+.yuanxing{-webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; -ms-border-radius:50%; border-radius:50%;}
+
+.company_warp{ width:100%; height:100%; overflow:hidden;}
+.company_header{ min-width:1200px; width:100%; height:64px; border-bottom:1px solid #000; overflow:hidden; margin:0 auto;}
+.company_logo{ width:11%; height:64px; float:left; background:#7a7a7a; color:#000; font: 24px/64px "Microsoft yahei","微软雅黑"; text-align:center;}
+.company_logo img{width:44px; height:44px; margin:10px 0 0 30px;}
+.company_dianji{ width:24px; height:64px; float:left; padding-left:.5%; padding-right:.5%;}
+.company_dianji img{ width:24px; height:21px; margin-top:21px;}
+.company_dianji:hover{background:#7a7a7a;}
+.company_juese_r{ float:right; margin-right:30px;}
+.company_juese{ width:86%; height:64px; float:right; text-align:right;}
+.company_juese span{display:block;width:23px; height:23px; margin:20px 10px 0 0; float:left;}
+.company_juese span img{width:23px; height:23px;}
+.company_juese i{ margin-right:10px; display:block; float:left; color:#000; font: 12px/64px "Microsoft yahei","微软雅黑";}
+.company_juese em{display:block; float:left; margin-top:20px;}
+.company_c{ width:100%; min-height:480px; overflow:hidden;}
+.company_left{ margin-right:.2%; width:11%; height:600px; border-right:1px solid #7a7a7a; float: left;}
+
+.shortcut_nav_item{border-bottom: 1px solid #7a7a7a; padding-bottom: 20px; margin-top:20px; cursor: pointer; font-size: 0; height:auto; position: relative;}
+.mynav_box_bgcolor {background: #00a6cf;display: none;height: 50px; left: 0; opacity: 1;position: absolute; top: 0; width: 142px; z-index: -1;}
+.mynav_box_color{background: #00a6cf;height: 50px; left: 0; opacity: 1;position: absolute; top: 0; width: 142px; z-index: -1;}
+.nav_icon {border:none; display:block; float:left; height: 30px; margin-left: 15px; vertical-align: middle;width: 30px;}
+.nav_title{color: #000; display:block; font-size: 14px; height: auto;line-height: 30px; margin: 0 0 0 10px; overflow: hidden; width: 93px;}
+.nav_title i{display:block;}
+.shortCutcontent{ height: auto; overflow: hidden; position: absolute; left:148px; top: 0; width: 100%; background:#fff; border:1px solid #7a7a7a;}
+.shortCutcontent ul{ margin:0px; padding:0px;}
+.shortCutcontent ul li{ padding-left:10px; border-bottom:1px solid #7a7a7a; width:100%; height:30px; color:#000; font: 12px/30px "Microsoft yahei","微软雅黑";}
+.company_right{ width:88.5%; height:auto; overflow:hidden; float:left; border:1px solid #7a7a7a;}
+.right_title_c{ color:#000; font: 24px/64px "Microsoft yahei","微软雅黑";}
+
+/**
+*
+*企业认证样式
+*
+**/
+.company_mune{ width:100%; height:30px; background:#7a7a7a;}
+.company_mune i,.company_mune b,.company_mune em{display:block; float:left; color:#fff; font: 14px/30px "Microsoft yahei","微软雅黑"; margin-right:10px;}
+.company_mune i{ margin-left:20px;}
+.company_mune i a{color:#fff; font: 14px/30px "Microsoft yahei","微软雅黑";}
+.company_attest{width:100%; height:auto; overflow:hidden; margin-top: 10px;}
+.company_attest_left{ margin-left:.5%; float:left; width:30%; height:auto; overflow:hidden; border-left:5px solid #7a7a7a; border-right:2px dashed #7a7a7a;}
+.company_attest_list{ width:95%; height:115px; margin-top: 10px;}
+.time{ margin-left:10px; color:#000; font: 14px/14px "Microsoft yahei","微软雅黑"; font-weight:bold;}
+.summary{background:#f2f2f2; height:80px; margin-top:10px;}
+.summary p{margin-left:10px; padding-top:5px; font: 14px/20px "Microsoft yahei","微软雅黑";}
+.company_attest_right{ width:68%; height:auto; overflow:hidden; float:right;}
+.company_zz{ border-bottom:1px solid #7a7a7a; width:98%; height:300px;}
+
+/**
+*
+*购买授权样式
+*
+**/
+.company_Authorize{ width:100%; height:auto; overflow:hidden; margin-top:20px;}
+.Authorize_title{ width:100%; height:30px;}
+.Authorize_title span,.Authorize_title em{ color:#000; font: 14px/30px "Microsoft yahei","微软雅黑";}
+.Authorize_list{ width:100%; height:100px; background:#f2f2f2; margin-top:10px;}
+.list_title{ width:99%; height:40px; border-bottom:1px solid #7a7a7a; margin:0 auto;}
+.list_title span,.list_title em{ color:#000; font: 14px/40px "Microsoft yahei","微软雅黑";}
+.list_c{ width:99%; height:60px;margin:0 auto;}
+
+/**
+*
+*扫描仪使用样式
+*
+**/
+.company_scanner{margin-left:.5%; float:left; width:100%; height:auto; overflow:hidden; border-left:5px solid #7a7a7a;}
+.company_scanner_list{ width:95%; height:115px; margin-top: 10px;}
+.scannertime{ margin-left:10px; color:#000; font: 14px/14px "Microsoft yahei","微软雅黑"; font-weight:bold;}
+.scannersummary{background:#f2f2f2; height:80px; margin-top:10px;}
+.scannersummary p{margin-left:10px; padding-top:12px; font: 14px/14px "Microsoft yahei","微软雅黑";}
+
+
+
+
+
+.company_footer{height: 65px; margin: 0 auto;}
+.footer_inner{color: #848585; height: 63px; margin: 0 auto; overflow: visible;width: 1000px; color:#000; text-align:center; font: 12px/63px "Microsoft yahei","微软雅黑";}

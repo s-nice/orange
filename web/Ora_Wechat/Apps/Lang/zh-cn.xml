@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="str_g_message_title">提示信息</string>
+    <string name="str_g_message_submit2">取消</string>
+    <string name="str_g_message_submit1">确定</string>
+    <string name="str_g_system">后台管理系统</string>
+    <string name="str_g_operator">操作</string>
+    <string name="str_g_datetime">日期</string>
+    <!-- 无权限与404页面 -->
+    <string name="str_service_opera_fail">非常抱歉，服务器操作失败~</string>
+    <string name="str_please_check_service_excption">请检查服务器是否正常</string>
+    <string name="str_page_is_error">哎呀呀，页面错误啦</string>
+    <string name="str_please_check_your_input">请检查输入的网址是否正确</string>
+    <string name="btn_return">返回</string>
+    <string name="str_no_permission_enter_the_opera">非常抱歉，您无权进入此操作</string>
+    <string name="title_service_opera_fail">服务器操作失败</string>
+    <string name="title_no_permission_enter_orgdt">无权进入</string>
+    <string name="title_page_not_found">页面找不到了</string>
+    <string name="btn_refresh">刷新</string>
+    <string name="str_operate_failed">操作失败</string>
+    <!-- 登录 -->
+    <string name="login_username">用户名</string>
+    <string name="login_password">密码</string>
+    <string name="login_ok_btn">登录</string>
+    <string name="login_password_error_num_max">密码连续输错%d次,将被锁定%d分钟</string>
+    <string name="login_put_right_uname_pws">请输入正确的用户名或密码</string>
+    <string name="login_user_page">用户登录页面</string>
+    <string name="logout_user_page">用户退出登录</string>
+    <string name="str_login_modelName">登录模块</string>
+    <string name="str_session_expired">会话过期，%d秒后将会跳转到登录页面</string>
+    <string name="str_session_expired_login">会话过期，请重新登录</string>
+    <string name="str_login_verify_error">验证码错误</string>
+    <string name="str_login_other_place">管理员账号已在其他地址登录，当前登录自动注销</string>
+    <string name="str_verify_img_succ">图片匹配成功</string>
+	<string name="str_verify_img_fail">图片匹配失败</string>
+	<string name="str_rwp_account_verify">账号验证</string>
+	<string name="login_remember_pwd">记住密码</string>
+	<string name="str_username_not_empty">请输入用户名</string>
+	<string name="str_username_format_error">用户名格式错误</string>
+	<string name="str_password_not_empty">请输入密码</string>
+    <!--我的面板start-->
+    <string name="modify_admin_personal_succ">提交成功</string>
+    <string name="modify_admin_personal_fail">修改个人信息失败</string>
+    <string name="modify_admin_passwd_succ">密码已修改</string>
+    <string name="modify_admin_passwd_succ_redirect">密码修改成功，页面将重新登录</string>
+    <string name="modify_admin_passwd_fail">密码修改失败</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+    <string name="home_page">首页</string>
+    <string name="my_panel">我的面板</string>
+    <string name="personal_info">个人信息</string>
+    <string name="modify_personal_info">修改个人信息</string>
+    <string name="modify_passwd">修改密码</string>
+    <string name="username">用户名</string>
+    <string name="end_login_time">最后登录时间</string>
+    <string name="end_login_IP">最后登录IP</string>
+    <string name="realname">真实姓名</string>
+    <string name="email">电子邮箱</string>
+    <string name="modify_info_submit">提交</string>
+    <string name="my_personal_info">我的个人信息</string>
+    <string name="hello">你好</string>
+    <string name="role">角色</string>
+    <string name="log_info">日志信息</string>
+    <string name="last_login_time">上次登录时间</string>
+    <string name="last_login_IP">上次登录IP</string>
+    <string name="Email">Email</string>
+    <string name="old_passwd">旧密码</string>
+    <string name="new_passwd">新密码</string>
+    <string name="affirm_new_passwd">确认新密码</string>
+    <string name="email_format_error">邮箱格式不正确!</string>
+    <string name="modify_fail">修改失败</string>
+    <string name="old_passwd_not_empty">旧密码不可为空</string>
+    <string name="old_passwd_not_correct">旧密码不正确</string>
+    <string name="new_passwd_not_empty">新密码不可为空</string>
+    <string name="confirm_new_passwd_not_empty">确认新密码不可为空</string>
+    <string name="passwd_not_agreed">密码不一致</string>
+    <string name="mobile">电  话</string>
+    <string name="str_pwd_len">新密码长度为6至16位</string>
+    <string name="str_old_pwd_len">旧密码长度为6至16位</string>
+    <string name="str_old_new_pwd_not_same">新密码与老密码不能相同</string>
+    <!--我的面板end-->
+
+    <!--扩展 -->
+    <string name="str_extend">扩展</string>
+    <string name="expand_menu_remindmanage">到期提醒管理</string>
+    <string name="str_extend_delete">删除</string>
+    <string name="str_extend_selectall">全选</string>
+    <string name="str_extend_submit">提交</string>
+    <string name="str_extend_cancel">取消</string>
+	
+	<!--到期提醒管理start-->
+	<string name="str_expire_td">回复TD退订</string>
+	<string name="str_expire_save_success">保存成功</string>
+	<string name="str_expire_save_fail">保存失败</string>
+	<string name="str_expire_del_success">删除成功</string>
+	<string name="str_expire_del_fail">删除失败</string>
+	
+	<string name="str_expire_remind_type">提醒类型</string>
+	<string name="str_expire_inside_news">内部消息</string>
+	<string name="str_expire_msg">短信</string>
+	<string name="str_expire_is_notice">是否通知</string>
+	<string name="str_expire_yes">是</string>
+	<string name="str_expire_date">日期</string>
+	<string name="str_expire_before_1day">到期前7日</string>
+	<string name="str_expire_before_1month">到期前1个月</string>
+	<string name="str_expire_before_3month">到期前3个月</string>
+	<string name="str_expire_the_day">到期当日</string>
+	<string name="str_expire_content">正文</string>
+	<string name="str_expire_confirm">确认</string>
+	
+	<string name="str_expire_push_type">推送类型</string>
+	<string name="str_expire_all">全部</string>
+	<string name="str_expire_add">新增</string>
+	<string name="str_expire_del">删除</string>
+	<string name="str_expire_type">类型</string>
+	<string name="str_expire_pushtime">推送时间</string>
+	<string name="str_expire_addtime">添加时间</string>
+	<string name="str_expire_operation">操作</string>
+	<string name="str_expire_edit">编辑</string>
+	<string name="str_expire_title">标题</string>
+	<string name="str_expire_del_confirm">确定删除？</string>
+	
+	<string name="str_expire_content_empty">内容不能为空!</string>
+	<string name="str_expire_del_one">请至少选择一项内容进行删除</string>
+	<!--到期提醒管理end-->
+
+    <!--意见反馈-->
+    <string name="str_feedback_list">意见反馈</string>
+    <string name="str_delFeedback">删除意见反馈</string>
+    <string name="str_feedback_module">模块</string>
+    <string name="str_feedback_allmodule">所有模块</string>
+    <string name="str_feedback_id">ID</string>
+    <string name="str_feedback_title">标题</string>
+    <string name="str_feedback_sender">发布人</string>
+    <string name="str_feedback_username">姓名</string>
+    <string name="str_feedback_time">时间</string>
+    <string name="str_feedback_intro">问题描述</string>
+    <string name="str_feedback_subtime">提交时间</string>
+    <string name="str_feedback_terminal">终端类型</string>
+
+    <string name="str_feedback_warning_delfield">删除失败</string>
+    <!--意见反馈-->
+    
+    <!--常见问题,新手帮助,功能介绍-->
+    <string name="str_manual_add">添加新手帮助</string>
+    <string name="str_faq_add">添加常见问题</string>
+    <string name="str_manual_add">添加新手帮助</string>
+    <string name="str_faq_question">问题</string>
+    <string name="str_faq_answer">回答</string>
+    <string name="str_faq_sort">排序</string>
+    <string name="str_faq_language">语言</string>
+    <string name="str_faq_do">操作</string>
+    <string name="str_faq_edit">修改</string>
+    <string name="str_faq_delete">删除</string>
+    <string name="str_faq_confirm">确定删除？</string>
+    <string name="str_faq_success">操作成功</string>
+    <string name="str_faq_failed">操作失败</string>
+    <string name="str_faq_question">问题</string>
+    <string name="str_faq_answer">回答</string>
+    <string name="str_faq_sort">排序</string>
+    <string name="str_faq_verify_question">问题不能为空</string>
+    <string name="str_faq_verify_question_length">问题长度必须在30字符之内</string>
+    <string name="str_faq_verify_answer">回答不能为空</string>
+    <string name="str_faq_verify_answer_length">回答长度必须在300字符之内</string>
+    <string name="str_faq_verify_sort">排序必须在0~1000之间</string>
+    <string name="str_intro_save">保存</string>
+    <string name="str_intro_leave">当前内容未保存，是否离开？</string>
+    <string name="str_intro_readfile_failed">文件读取失败</string>
+    <!--常见问题,新手帮助,功能介绍-->
+    
+    <!--敏感词-->
+    <string name="str_sensitive_list">敏感词管理</string>
+    <string name="str_addSensitive">添加敏感词</string>
+    <string name="str_impSensitive">敏感词导入</string>
+    <string name="str_delSensitive">删除敏感词</string>
+    <string name="str_updSensitive">修改敏感词</string>
+    <string name="str_extend_update">修改</string>
+    <string name="str_extend_manage">管理操作</string>
+    <string name="str_extend_time">发表时间</string>
+    <string name="str_extend_replace">替换词</string>
+    <string name="str_extend_sensitive">敏感词</string>
+    <string name="str_extend_warning">多个敏感词使用分号（；）隔开</string>
+
+    <string name="str_extend_confirm">确认删除敏感词吗？</string>
+    <string name="str_extend_confirm_cancel">取消</string>
+    <string name="str_extend_warning_ok">确认</string>
+    <string name="str_extend_warning_addsomething">请填写敏感词</string>
+    <string name="str_extend_warning_addfield">敏感词添加失败(单词最大50字)</string>
+    <string name="str_extend_warning_updfield">敏感词修改失败</string>
+    <string name="str_extend_warning_exist">敏感词已存在</string>
+    <string name="str_extend_warning_delfield">敏感词删除失败</string>
+    <string name="str_extend_warning_select">请选择删除项</string>
+    <string name="str_extend_warning_sensitive_exist"> 敏感词已存在</string>
+    <!--敏感词-->
+
+    <!--用户分析 - 行为统计 - 名片交换-->
+    <string name="str_statistics_list">名片交换统计列表</string>
+    <string name="str_statistics_exchange_downloaddata">名片交换统计导出</string>
+    <string name="app_type_ios">IOS</string>
+    <string name="app_type_android">Android</string>
+    <string name="app_type_leaf">Leaf</string>
+    <string name="str_prd_version">产品版本</string>
+    <string name="str_time">时间</string>
+    <string name="tip_select_time">请选择时间</string>
+    <string name="str_active_user_cnt">活跃用户量</string>
+    <string name="str_person_avg_online_time">人均在线时长</string>
+    <string name="str_single_login_online_time">单次登录平均在线时长</string>
+    <string name="str_person_login_cnt">人均登录次数</string>
+    <string name="str_title_date">日期</string>
+    <string name="str_title_app_type">系统平台</string>
+    <string name="str_total_cnt">总量</string>
+    <string name="str_btn_date_compare">对比时段</string>
+    <string name="str_btn_submit">提交</string>
+    <string name="str_date_day">日</string>
+    <string name="str_date_week">周</string>
+    <string name="str_date_month">月</string>
+    <string name="str_label_all">全部</string>
+    <string name="str_new_user">新用户</string>
+    <string name="str_new_old">老用户</string>
+    <string name="str_btn_export">导出</string>
+    <string name="str_label_day_remain_cnt">日留存用户量</string>
+    <string name="str_label_day_remain_lv">日留存率</string>
+    <string name="str_label_total_lose_cnt">累计流失用户量</string>
+    <string name="str_label_total_active_cnt">累计活跃用户量</string>
+    <string name="str_label_day_lose_cnt">日流失用户量</string>
+    <string name="str_lebal_day_back_cnt">日回流用户量</string>
+    <string name="str_lebal_day_active_cnt">当日活跃用户量</string>
+    <string name="str_label_lose_define">此处指对流失的定义进行明确，有三种情况：一是超过7天未活跃的用户，二是超过14天未活跃的用户，三是超过30天未活跃的用户</string>
+    <string name="str_label_day_lose_define">到统计日为止，用户小于7天||7~14天||14~30天||大于30天没有登录app，将被视为当日的一个流失。</string>
+    <string name="str_label_day_back_define">流失用户（指用户小于7天||7~14天||14~30天||大于30天没登录app）在某日再次登录app，将视为当日的一个回流。</string>
+    <string name="str_day_unit">天</string>
+    <string name="str_title_date">日期</string>
+    <string name="str_title_app_type">系统平台</string>
+    <string name="str_channel">渠道</string>
+    <string name="str_sysplatform_version">系统平台版本</string>
+    <string name="str_reg_user_cnt">注册用户数</string>
+    <string name="str_retain_one">次日留存</string>
+    <string name="str_retain_two">二日留存</string>
+    <string name="str_retain_three">三日留存</string>
+    <string name="str_retain_four">四日留存</string>
+    <string name="str_retain_five">五日留存</string>
+    <string name="str_retain_six">六日留存</string>
+    <string name="str_retain_serven">七日留存</string>
+    <string name="str_retain_ten">十日留存</string>
+    <string name="str_retain_fourteen">十四日留存</string>
+    <string name="str_retain_thirty">三十日留存</string>
+    <string name="str_retain_rate">占比</string>
+    <string name="str_day_active_rate">日活跃占比</string>
+    <string name="str_day_active_rate_week">日活跃占比(周)</string>
+    <string name="str_day_active_rate_month">日活跃占比(月)</string>
+    <string name="str_week_active_rate">周活跃占比</string>
+    <string name="str_total_register_user">总注册用户</string>
+    <string name="str_total_lose_user_serven">7日累计流失用户量</string>
+    <string name="str_total_lose_user_fourteen">14日累计流失用户量</string>
+    <string name="str_total_lose_user_thirty">30日累计流失用户量</string>
+    <string name="str_day_lose_user_less_serven">小于7日流失用户量</string>
+    <string name="str_day_lose_user_less_fourteen">7~14日流失用户量</string>
+    <string name="str_day_lose_user_less_thirty">15~30日流失用户量</string>
+    <string name="str_day_lose_user_more_thirty">大于30日流失用户量</string>
+    <string name="str_day_back_user_less_serven">小于7日回流用户量</string>
+    <string name="str_day_back_user_less_fourteen">7~14日回流用户量</string>
+    <string name="str_day_back_user_less_thirty">15~30日回流用户量</string>
+    <string name="str_day_back_user_more_thirty">大于30日回流用户量</string>
+    <!--用户分析 - 行为统计 - 名片交换-->
+    <string name="str_activate__account">激活用户量</string>
+    <!-- 橙子统计-用户统计 -->
+    <string name="str_sorry_no_data">抱歉，没有查询到相关的数据</string>
+    <string name="str_stat_one_day">1日</string>
+    <string name="str_stat_three_day">3日</string>
+    <string name="str_stat_week">周</string>
+    <string name="str_stat_month">月</string>
+    <string name="str_stat_new_device">新增设备量</string>
+    <string name="str_stat_total_device">累计设备量</string>
+    <string name="str_stat_active_user">活跃用户量</string>
+    <string name="str_stat_usetime">使用时长</string>
+    <string name="str_stat_usetime_per">人均使用时长</string>
+    <string name="str_stat_usetime_once">单次使用时长</string>
+    <string name="str_stat_bright">亮屏次数</string>
+    <string name="str_stat_bright_total">总亮屏次数</string>
+    <string name="str_stat_bright_per">人均亮屏次数</string>
+    <string name="str_stat_churn_user">流失用户量</string>
+    <string name="str_stat_recurring_user">回流用户</string>
+    <string name="str_stat_connect_per">人均手机连接状态时长</string>
+    <string name="str_stat_area">地域分布</string>
+    <string name="str_stat_inside">国内分布</string>
+    <string name="str_stat_outside">国际分布</string>
+    <string name="str_stat_onlinetime">用户在线时长</string>
+    <!-- 橙子统计-用户统计 -->
+    <!--扩展-->
+    <!--注册用户管理-->
+    <string name="str_user_person">个人用户</string>
+    <string name="str_user_ent">企业用户</string>
+    <string name="str_user">用户管理</string>
+    <string name="str_user_not_certified">待认证用户身份</string>
+    <string name="str_user_certified">已认证用户身份</string>
+    <string name="str_ent_manage">企业管理</string>
+    <string name="str_ent_not_certified">待认证企业</string>
+    <string name="str_ent_certified">已认证企业</string>
+    <string name="str_ent_auth_account">授权账号</string>
+    <string name="str_ent_detail">企业详情</string>
+    <string name="str_addBetaUser">添加BETA用户</string>
+    <string name="str_addCustomerUser">添加客服用户</string>
+    <string name="str_UserID">用户ID</string>
+    <string name="str_content">内容</string>
+    <string name="str_regist_time">注册时间</string>
+    <string name="str_last_login_time">最后登录时间</string>
+    <string name="str_violations_num">违规次数</string>
+    <string name="str_BetaUser">BETA</string>
+    <string name="str_CustomerUser">客服用户</string>
+    <string name="str_dolock">锁定</string>
+    <string name="str_dounlock">解锁</string>
+    <string name="str_yes">是</string>
+    <string name="str_not">否</string>
+    <string name="str_operat_error">操作失败</string>
+    <string name="str_operat_success">操作成功</string>
+    <string name="str_verify_username_null">用户名不能为空</string>
+    <string name="str_verify_mobile_null">用户ID（手机号码）输入错误</string>
+    <string name="str_verify_password_null">密码不能为空</string>
+    <string name="str_verify_password_same">两次密码不一致</string>
+    <string name="str_verify_mobile_exist">用户ID（手机号码）已存在</string>
+    <string name="str_person_account_type">账号类型</string>
+    <string name="str_company_type_ent">企业</string>
+    <string name='str_company_type'>类型</string>
+    <string name="str_company_select_type">请选择企业类型</string>
+
+    <!--交易评价，消费记录-->
+    <string name="str_perTradeEvaluation">交易评价</string>
+    <string name="str_perExpensesRecord">消费记录</string>
+
+    <!--注册用户-->
+
+    <!-- 操作日志翻译 -->
+    <string name="user_list">查看注册用户列表</string>
+    <string name="user_lock">锁定注册用户</string>
+    <string name="user_unlock">解锁注册用户</string>
+    <string name="add_beta_user">添加测试用户</string>
+    <string name="show_admin_logs">查看管理员操作日志</string>
+    <string name="del_admin_logs">删除管理员操作日志</string>
+    <string name="index">首页</string>
+    <string name="no_permission">没权限页面</string>
+    <string name="error404">404页面</string>
+    <string name="show_modify_page">修改个人信息页面</string>
+    <string name="modify_info">修改个人信息</string>
+    <string name="get_old_passwd">检查旧密码</string>
+    <string name="modify_passwd">修改密码</string>
+    <!-- 操作日志翻译 -->
+    <!-- 左侧菜单翻译 -->
+    <string name="expand_title">扩展</string>
+    <string name="expand_admin_logs">管理员操作日志</string>
+    <string name="expand_software_version_manage">软件版本管理</string>
+    <string name="expand_app_theme_manage">App主题管理</string>
+    <string name="expand_sensitive_words_manage">敏感词管理</string>
+    <string name="expand_feedback_manage">意见反馈</string>
+    
+    <!-- 左侧菜单翻译 -->
+    <string name="no_auth">操作无权限</string>
+    <!-- 顶级菜单 -->
+    <string name="str_mypanel">我的面板</string>
+    <string name="str_contentmanage">内容管理</string>
+    <string name="str_infomationcollection">资讯内容采集</string>
+    <string name="str_regusermanage">用户管理</string>
+    <string name="str_generalize">用户推广</string>
+    <string name="str_extend">扩展</string>
+    <string name="str_set">设置</string>
+    <string name="str_statistics">用户分析</string>
+    <string name="str_beanalysis">行为分析</string>
+    <string name="str_job">招聘</string>
+    <string name="str_custom_top_menu">客服</string>
+    <string name="str_operation_manage">运营管理</string>
+    <string name="str_finance_top_menu">财务管理</string>
+    <string name="str_hardmanage_top_menu">硬件管理</string>
+    <string name="str_finance_find_people">找人业务</string>
+    <string name="str_finance_apply_invoice">开票</string>
+    <string name="str_order_top_menu">订单管理</string>
+    <string name="str_orange_manage">硬件管理</string>
+    <string name="str_finance_other_business">会员服务</string>
+
+    <!--内容管理  左侧菜单翻译-->
+    <string name="str_title_outlimit">标题超出长度限制</string>
+    <string name="str_keyword_outlimit">关键词超出长度限制</string>
+    <string name="has_publish_news">已发布的资讯</string>
+    <string name="str_news">资讯</string>
+    <string name="str_answer">问答</string>
+    <string name="str_operation_success">操作成功</string>
+    <string name="str_operation_fail">操作失败</string>
+    <string name="str_add_success">添加成功</string>
+    <string name="has_nopublish_news">未发布的资讯</string>
+    <string name="has_noaudit_news">未审核的资讯</string>
+    <string name="has_audit_ask">已审核问答</string>
+    <string name="has_noaudit_ask">未审核问答</string>
+    <string name="add_infomation_page">添加资讯页面</string>
+    <string name="str_add_new_infomation">添加内容</string>
+    <string name="str_confirm_del_infomation">确认删除该资讯？</string>
+    <string name="str_confirm_del_ask">确认删除该问答？</string>
+    <string name="str_cancel_del_new">取消</string>
+    <string name="str_yes_del_new">确认</string>
+    <string name="str_news_success">操作成功</string>
+    <string name="str_news_failed">操作失败</string>
+    <string name="str_select_del_new">请至少选择一项内容进行删除</string>
+    <string name="str_select_publish_new">请至少选择一项内容进行发布</string>
+    <string name="str_select_audit_new">请至少选择一项内容进行审核</string>
+    <string name="str_select_audit_top">请选择一项内容进行置顶</string>
+    <string name="str_select_audit_edit">请选择一项内容进行编辑</string>
+    <string name="str_select_audit_undo">请至少选择一项内容进行撤销</string>
+    <string name="str_select_audit_comment">请至少选择一项评论进行审核</string>
+    <string name="str_select_comment">请至少选择一项数据</string>
+    <string name="str_all_option_notnull">请填写完整信息</string>
+    <string name="str_hasno_nextone">没有下一篇了</string>
+    <string name="str_hasno_nextpic">没有下一张了</string>
+    <string name="str_hasno_prevone">没有上一篇了</string>
+    <string name="str_hasno_prevpic">没有上一张了</string>
+    <string name="update_news">更改资讯和问答状态</string>
+    <string name="str_category_info">行业信息</string>
+    <string name="str_iscategory_info">所属行业</string>
+    <string name="str_ischannel_info">所属频道</string>
+    <string name="str_audit_success">审核通过</string>
+    <string name="str_audit_faild">审核不通过</string>
+    <string name="str_audit_through">通过</string>
+    <string name="str_audit_notthrough">不通过</string>
+    <string name="str_audit_wait">待审核</string>
+    <string name="str_no_audit">未审核</string>
+    <string name="str_publish_wait">待发布</string>
+    <string name="str_publish_rejected">审核不通过</string>
+    <string name="str_new_del">删除</string>
+    <string name="str_new_picture">图片</string>
+    <string name="str_new_sort">排序</string>
+    <string name="str_newpicture_upload">上传</string>
+    <string name="str_news_eidt_review">编辑预览</string>
+    <string name="str_news_top">置顶</string>
+    <string name="str_news_undo">撤销</string>
+    <string name="str_news_edit">编辑</string>
+    <string name="str_news_click_uploadpic">点击选择文件</string>
+    <string name="str_news_review">预览</string>
+    <string name="str_news_storage">暂存</string>
+    <string name="str_news_review_prev">上一篇</string>
+    <string name="str_news_review_next">下一篇</string>
+    <string name="str_news_title">标题</string>
+    <string name="str_news_title_pic">标题图片</string>
+    <string name="str_news_keyword">关键词</string>
+    <string name="str_news_webfrom">来源</string>
+    <string name="str_news_releasetime">发布时间</string>
+    <string name="str_news_content">正文</string>
+    <string name="str_comment_content">评论内容</string>
+    <string name="str_news_time">时间</string>
+    <string name="str_news_uploadtime">上传时间</string>
+    <string name="str_news_pushtime">推送时间</string>
+    <string name="str_news_publish_audit">发布到审核</string>
+    <string name="str_news_publish_user">发布人</string>
+    <string name="str_news_click_num">点击量</string>
+    <string name="str_news_comment_num">评论数</string>
+    <string name="str_news_answer_num">回答数</string>
+    <string name="str_news_save_num">被收藏</string>
+    <string name="str_news_share_num">分享</string>
+    <string name="str_news_null">无</string>
+    <string name="str_news_selectall">全选</string>
+    <string name="str_news_question">问题</string>
+    <string name="str_news_answer">回答</string>
+    <string name="str_news_question_user">提问人</string>
+    <string name="str_news_comment_user">评论人</string>
+    <string name="str_news_comment_time">评论时间</string>
+    <string name="str_news_comment_content">评论内容</string>
+    <string name="str_news_status">状态</string>
+    <string name="str_news_modular">模块</string>
+    <string name="str_news_manage">管理操作</string>
+    <string name="str_news_del_success">删除成功</string>
+    <string name="str_news_del_failed">删除失败</string>
+    <string name="str_news_push_success">推送成功</string>
+    <string name="str_news_no_comment">暂无评论</string>
+    <string name="str_news_comment">评论</string>
+    <string name="str_news_push_set">推送设置</string>
+
+    <string name="str_comment_page">评论页面</string>
+    <string name="str_comment_pass">评论审核通过</string>
+    <string name="str_comment_process">评论数据处理</string>
+    <string name="str_get_onenew">获取一条内容</string>
+    <string name="str_getleft_count">获取左侧数量</string>
+    <string name="str_getleft_menu">获取左侧菜单</string>
+    <string name="str_get_params">获取参数</string>
+    <string name="str_get_allcategory">获取行业信息</string>
+    <string name="str_get_onecategory">获取单条行业信息</string>
+    <string name="str_update_success">更新成功</string>
+    <string name="str_update_fail">更新失败</string>
+    <string name="str_has_illegalword">内容中有敏感词【%s】，请替换</string>
+    <string name="str_has_illegalword_title">标题中有敏感词【%s】，请替换</string>
+    <string name="str_operator">操作</string>
+    <string name="str_news_add_news">新增资讯</string>
+    <string name="str_news_submit_check">提交审核</string>
+    
+    <string name="str_news_left_published_news">已推送资讯</string>
+    <string name="str_news_left_will_published_news">待推送资讯</string>
+    <string name="str_news_left_waiting_publishe_news">未提交资讯</string>
+    <string name="str_news_left_waiting_audit_news">待审核资讯</string>
+    <string name="str_news_left_rejected_news">未通过审核资讯</string>
+    <string name="str_news_left_waiting_audit_ask">待审核的问答</string>
+    <string name="str_news_left_rejected_ask">未审核通过的问答</string>
+    <string name="str_news_left_publish_news">新增资讯</string>
+    <string name="str_news_left_audited_comment">已审核评论</string>
+    <string name="str_news_left_waiting_audit_comment">待审核评论</string>
+    <string name="str_news_left_rejected_comment">未审核通过评论</string>
+    <string name="str_news_faq">常见问题</string>
+    <string name="str_news_manual">新手帮助</string>
+    <string name="str_news_intro">橙脉介绍</string>
+    <string name="str_news_new_intro">新功能介绍</string>
+    <string name="str_news_agreement">协议管理</string>
+    
+    <string name="tip_has_illegalword1">中有敏感词[</string>
+    <string name="tip_has_illegalword2">],确认提交吗？</string>
+    <string name="str_news_will_push">待推送资讯</string>
+    <string name="str_news_add_comment">添加评论</string>
+    <string name="str_news_edit">编辑资讯</string>
+    <string name="str_news_undo">撤销资讯</string>
+    <string name="str_news_author">作者</string>
+    <string name="str_news_select_label">选择标签</string>
+    <string name="str_news_confirm">确认</string>
+    <string name="str_news_search">选择标签</string>
+    <string name="str_news_select_push">请选择一项内容进行推送</string>
+    <string name="str_comment_select_user">请选择评论人</string>
+    <string name="str_comment_add_content">请输入评论内容</string>
+    <string name="str_comment_add_success">添加评论成功</string>
+    <string name="str_comment_add_fail">添加评论失败</string>
+    <string name="str_label_select">请选择标签</string>
+    <string name="str_label_select_max">标签最多同时选择100个</string>
+    <string name="label_name_limit">请输入32个字符以内的标签</string>
+    <string name="label_name_empty">标签名称不能为空</string>
+    <string name="str_add_label">添加标签</string>
+
+
+
+    <!-- 内容管理end -->
+
+    <!--ueditor提示start-->
+    <string name="str_ue_audio_format_error">音频格式不正确</string>
+    <string name="str_ue_add_audio_fail">添加音频失败:请检查文件大小和格式</string>
+
+    <!--ueditor提示end-->
+    
+    <!-- 标签管理start -->
+    <string name="str_label_add">新增</string>
+    <string name="str_label_name">标签</string>
+    <string name="str_label_add_time">添加时间</string>
+    <string name="str_label_add_person">添加人</string>
+    <string name="str_label_add_keyword">新增关键词</string>
+    <string name="str_label_add_succcess">添加标签成功</string>
+    <string name="str_label_add_fail">添加标签失败</string>
+    <string name="str_label_add_repeat">添加的标签名称已存在</string>
+    <!-- 标签管理end -->
+
+	<!-- 协议管理 -->
+	<string name="menu_protocol_text">协议管理</string>
+    <string name="menu_protocol_add">添加协议</string>
+    <string name="menu_protocol_edit">修改协议</string>
+    <string name="tip_protocol_select">请选择协议类型</string>
+    <string name="tip_protocol_content">请输入内容</string>
+    <string name="tip_protocol_exist">该协议已经存在</string>
+    <string name="str_protocol_type">协议类型</string>
+    <string name="str_protocol_type_all">所有协议</string>
+    <string name="str_protocol_type_none">请选择协议</string>
+    <string name="str_protocol_type_user">用户协议</string>
+    <string name="str_protocol_type_privacy">隐私政策</string>
+    <string name="str_protocol_type_intellectual">知识产权声明</string>
+    <string name="str_protocol_type_register">用户注册协议</string>
+    <string name="btn_protocol_add">新增</string>
+    <string name="str_protocol_user">发布人</string>
+    <string name="str_protocol_date">日期</string>
+    <string name="str_protocol_do">操作</string>
+    <string name="str_protocol_edit">编辑</string>
+    <string name="str_protocol_time">时间</string>
+    
+    <!-- 管理员操作日志页面翻译 -->
+    <string name="str_module">模块</string>
+    <string name="str_action">方法</string>
+    <string name="str_all_module">所有模块</string>
+    <string name="str_time_step">时间</string>
+    <string name="str_user_name">用户名</string>
+    <string name="str_file_action_type">文件操作类型</string>
+    <string name="str_action_permission">操作权限</string>
+    <string name="str_ip_value">IP地址</string>
+    <string name="tip_del_logs_succ">删除成功</string>
+    <string name="tip_del_logs_fail">删除失败</string>
+    <string name="tip_logsid_empty">请选择操作元素</string>
+    <string name="tip_logsid_ifdel">确定删除所选日志吗？</string>
+    <string name="tip_logsid_cancel">取消</string>
+    <string name="tip_logsid_submit">确定</string>
+    <string name="unlock">屏幕解锁</string>
+    <string name="lock">屏幕锁定</string>
+    <string name="nopermission">无权限页面</string>
+    <string name="str_selectall">全选</string>
+    <string name="str_delete">删除</string>
+    
+    <!-- 管理员操作日志页面翻译 end -->
+    <!--拓展—软件版本管理-->
+    <string name="extend_softwareupdate_index">软件版本管理</string>
+    <string name="extend_softwareupdate_list">获取软件版本列表</string>
+    <string name="extend_softwareupdate_zipList">获取更新包列表</string>
+    <string name="extend_softwareupdate_add">添加软件包</string>
+    <string name="extend_softwareupdate_del">删除版本更新包</string>
+    <string name="extend_softwareupdate_upload">版本上传</string>
+    <string name="extend_softwareupdate_no">版本号</string>
+    <string name="extend_softwareupdate_record">更新记录</string>
+    <string name="extend_softwareupdate_package">软件包</string>
+    <string name="extend_softwareupdate_store">Store详情</string>
+    <string name="extend_softwareupdate_newfn">新功能介绍</string>
+    <string name="extend_softwareupdate_list_no">序号</string>
+    <string name="extend_softwareupdate_install">安装包</string>
+    <string name="extend_softwareupdate_size">大小</string>
+    <string name="extend_softwareupdate_upload_time">上传时间</string>
+    <string name="extend_softwareupdate_submit_null">填写信息不完整</string>
+    <string name="extend_softwareupdate_add_fail">添加失败</string>
+    <string name="extend_softwareupdate_miss_md5file">缺少对应的MD5文件</string>
+    <string name="extend_softwareupdate_checkmd5_fail">MD5校验失败</string>
+    <string name="extend_softwareupdate_version_fail">请正确填写版本号</string>
+    <string name="extend_softwareupdate_file_existing">添加的软件版本已存在</string>
+    <string name="extend_softwareupdate_submit_del">确定删除更新包?</string>
+    <string name="extend_softwareupdate_zipList_null">更新包列表为空</string>
+    <!--拓展—软件版本管理 end -->
+    <!--拓展—APP主题管理-->
+    <string name="imora_theme_index">App主题管理</string>
+    <string name="imora_theme_list">获取主题列表</string>
+    <string name="imora_theme_upload">主题上传</string>
+    <string name="imora_theme_add">添加主题</string>
+    <string name="imora_theme_delete">删除主题</string>
+    <string name="imora_theme_add_version">版本号</string>
+    <string name="imora_theme_add_name">标题</string>
+    <string name="imora_theme_add_author">作者</string>
+    <string name="imora_theme_add_content">更新记录</string>
+    <string name="imora_theme_add_software">软件包</string>
+    <string name="imora_theme_add_select_file">点击选择文件</string>
+    <string name="imora_theme_add_upload_file">上传</string>
+    <string name="imora_theme_add_software_package">添加主题</string>
+    <string name="imora_theme_no">序号</string>
+    <string name="imora_theme_install">安装包</string>
+    <string name="imora_theme_size">大小</string>
+    <string name="imora_theme_upload_record">更新记录</string>
+    <string name="imora_theme_upload_time">上传时间</string>
+    <string name="imora_theme_submit_fail">提交失败</string>
+    <string name="imora_theme_upload_fail">上传失败</string>
+    <string name="imora_theme_submit_null">填写主题信息不完整</string>
+    <string name="imora_theme_submit_del">确定删除主题?</string>
+    <string name="imora_theme_cancel">取消</string>
+    <string name="imora_theme_confirm">确定</string>
+    <string name="imora_theme_fail">操作失败</string>
+    <!--拓展—APP主题管理 end-->
+    <!--设置翻译-->
+    <string name="str_menu_scanner_usage">名片扫描服务</string>
+    <string name="str_menu_titlemanagement">职能管理</string>
+    <string name="str_admin_manage">管理员管理</string>
+    <string name="str_role_manage">角色管理</string>
+    <string name="str_add_admin">添加管理员</string>
+    <string name="str_edit_admin">修改管理员</string>
+    <string name="str_no">序号</string>
+    <string name="str_role">所属角色</string>
+    <string name="str_last_ip">最后登录IP</string>
+    <string name="str_last_time">最后登录时间</string>
+    <string name="str_realname">真实姓名</string>
+    <string name="str_manage_op">管理操作</string>
+    <string name="str_edit">修改</string>
+    <string name="str_del">删除</string>
+    <string name="str_del_admin">删除管理员</string>
+    <string name="str_del_role">删除角色</string>
+    <string name="str_add_role">添加角色</string>
+    <string name="str_edit_role">修改角色</string>
+    <string name="str_role_name">角色名称</string>
+    <string name="str_role_dis">角色描述</string>
+    <string name="str_status">状态</string>
+    <string name="str_permission_setting">权限设置</string>
+    <string name="str_member_manage">成员管理</string>
+    <string name="tip_has_blank">请填写完整</string>
+    <string name="tip_rolename_length">角色名称不得超过48个字</string>
+    <string name="tip_dispname_length">角色描述不得超过48个字</string>
+    <string name="tip_passwds_not_match">两次密码填写不一致</string>
+    <string name="tip_passwd_comprise">密码须由6位及以上的数字、字母、符号组成</string>
+    <string name="tip_email_format_error">Email格式错误</string>
+    <string name="tip_email_exist">此Email已被占用</string>
+    <string name="tip_save_success">保存成功</string>
+    <string name="tip_save_fail">保存失败</string>
+    <string name="tip_same_rolename">此角色名已经存在</string>
+    <string name="tip_confirm_admin">确定要删除此管理员吗</string>
+    <string name="tip_confirm_role">确定要删除此角色吗</string>
+    <string name="tip_has_members">删除失败，此角色下有成员</string>
+    <string name="tip_no_roleid">请选择一种角色</string>
+    <string name="tip_cannot_del_self">不能删除自己</string>
+    <string name="tip_program_error">程序异常</string>
+    <!-- 统计|人脉管理-->
+    <string name="str_network">人脉管理首页</string>
+    <string name="str_sel_data">查询数据</string>
+    <string name="str_export">导出</string>
+    <!-- 弹出层翻译 -->
+    <string name="unlock_fail">请输入正确密码</string>
+    <string name="unlock_succ">解锁成功</string>
+    <string name="pop_unlook_tip_text">锁屏状态，请输入密码！</string>
+    <string name="pop_logout_tip_text">是否退出后台管理系统？</string>
+    <string name="pop_adminadd_label">添加管理员</string>
+    <string name="pop_adminadd_password">密码</string>
+    <string name="pop_adminadd_confirm_password">确认密码</string>
+    <string name="pop_adminadd_real_name">真实姓名</string>
+    <string name="pop_adminadd_role">所属角色</string>
+    <string name="pop_roleadd_lable">添加角色</string>
+    <string name="pop_roleadd_rolename">角色名称</string>
+    <string name="pop_roleadd_role_desc">角色描述</string>
+
+    <!-- h5 交换名片 翻译 -->
+    <string name="h5_index_title">名片信息</string>
+    <string name="h5_exchange_vcard_title">保存名片</string>
+    <string name="h5_exchange_vcard_button">保存名片</string>
+    
+    <string name="h5_input_phone_code">请输入手机号码</string>
+    <string name="h5_input_verification_code">请输入验证码</string>
+    <string name="h5_send_verification_code">获取验证码</string>
+    <string name="h5_verification_code_error_or_overtime">验证码有误或已失效</string>
+    <string name="h5_resend_verification_code">重新发送(60)</string>
+    <string name="h5_str_next">下一步</string>
+    <string name="h5_verification_login_title">登录</string>
+    <string name="h5_verification_login">登录</string>
+    <string name="h5_title_phone_code">手机号码</string>
+    <string name="h5_title_login_passwd">登录密码</string>
+    <string name="h5_title_forget_passwd_title">忘记密码</string>
+    <string name="h5_title_forget_passwd">忘记密码?</string>
+    <string name="h5_title_no_account">没有账号</string>
+    <string name="h5_title_register">注册</string>
+    <string name="h5_function_introduction_info">橙脉App是一个提供真实可靠人脉链接服务的 %s移动互联网平台</string>
+    <string name="h5_login_prompt_information">注册橙脉才能获得对方名片</string>
+    <string name="h5_cookie_error_info">cookie已禁用或已失效,无法进行后续操作</string>
+    <string name="h5_login_user_or_passwd_error">登录信息有误</string>
+    <string name="h5_change_passwd_fail">密码修改失败</string>
+    
+    <string name="h5_title_register_title">注册</string>
+    <string name="h5_title_input_passwd">输入密码</string>
+    <string name="h5_title_confirm_passwd">确认密码</string>
+    <string name="h5_register_and_login">注册并登录</string>
+    <string name="h5_addacount_passwd_requirement">*为保证密码安全，密码须同时含有数字和大写字母</string>
+    <string name="h5_reset_passwd_title">重置密码</string>
+    <string name="h5_reset_passwd">重置密码</string>
+    <string name="h5_confirm_reset_passwd">确定重置密码</string>
+    <string name="h5_reset_and_login">重置并登录</string>
+    
+    
+    <string name="ha_save_card_end_title">名片保存完成</string>
+    <string name="ha_save_card_end_info">账号已创建，名片保存成功%s使用手机号%s登录，更多功能等你开启！</string>
+    <string name="ha_save_card_end_download_app">下载Im Ora App</string>
+    <string name="h5_save_vcard_infomation">名片已成功添加到名片夹,下载<br />橙脉 APP,查看名片及更多功能</string>
+    <string name="h5_save_vcard_infomation_savecard">名片已添加到名片夹,下载<br />橙脉 APP,查看名片及更多功能</string>
+    <string name="h5_save_vcard_infomation_nocard">没有首页名片保存失败,下载<br />橙脉 APP,查看名片及更多功能</string>
+    <string name="h5_save_vcard_infomation_fail">网络错误保存失败,下载<br />橙脉 APP,查看名片及更多功能</string>
+    <string name="save_vcard_fail_fornetwork">网络异常，交换失败，请稍后再试 </string>
+    <string name="login_fail_fornetwork">网络异常，登录失败，请稍后再试</string>
+    <string name="sendCode_fail_fornetwork">网络异常，验证码发送失败，请稍后再试</string>
+    <string name="h5_pop_cancel">完成</string>
+    <string name="h5_pop_download_app">下载</string>
+    
+    <string name="h5_undefined">未定义</string>
+    <string name="h5_global_pop_title">标题</string>
+    <string name="h5_global_pop_submit">确定</string>
+    <string name="h5_global_pop_cancel">取消</string>
+
+	<string name="h5_mobile_phone_verification_title">验证手机</string>
+    <string name="h5_pop_send_fail">发送失败</string>
+    <string name="h5_pop_send_succ">已成功发送</string>
+    <string name="h5_pop_phone_type_error">手机格式有误</string>
+    <string name="h5_pop_verification_code_error">验证码不能为空或有误</string>
+    <string name="h5_pop_name_no_empty">请填写姓名</string>
+    <string name="h5_pop_email1_error">请添写正确的邮箱格式</string>
+        
+    <string name="h5_login_fail">未知错误,请联系管理员</string>
+    <string name="h5_login_fail_999002">无效的参数格式</string>
+    <string name="h5_login_fail_999021">参数messageid错误</string>
+    <string name="h5_login_fail_999010">验证码已过期</string>
+    <string name="h5_login_fail_999011">验证码错误</string>
+    <string name="h5_login_fail_100011">账户异常</string>
+    <string name="h5_add_selfcard_warn">不能同自己的名片交换名片</string>
+    <!-- 登陆失败错误码 -->
+    <string name="h5_accountLogin_fail_999003">无效的参数格式</string>
+    <string name="h5_accountLogin_fail_100009">账户不存在或账户状态有误</string>
+    <string name="h5_accountLogin_fail_100012">账户已锁定</string>
+    <string name="h5_accountLogin_fail_100013">账户已锁定请十分钟后重试</string>
+    <string name="h5_accountLogin_fail_100010">账号或密码错误</string>
+    <string name="h5_accountLogin_fail_200014">该账户已停用</string>
+    <string name="h5_accountLogin_fail_200015">该账户已删除</string>
+    <string name="h5_accountLogin_fail_200013">该账户未激活</string>
+    
+    <!-- 注册失败错误码 -->
+	<string name="h5_accountRegister_fail_300001">生成userid长度不足</string>
+	<string name="h5_accountRegister_fail_999003">参数不足</string>
+	<string name="h5_accountRegister_fail_999017">手机格式错误</string>
+	<string name="h5_accountRegister_fail_999022">该账号已存在</string>
+	<string name="h5_accountRegister_fail_300002">手机号已存在</string>
+	<string name="h5_accountRegister_fail_999016">邮箱格式错误</string>
+	<string name="h5_accountRegister_fail_999024">邮箱已存在</string>
+	<string name="h5_accountRegister_fail_999026">参数regtype格式错误</string>
+	<string name="h5_register_fail">未知错误,请联系管理员</string>
+	
+    
+    <string name="h5_create_index_card_title">创建首页名片</string>
+    <string name="h5_create_index_card_error">首页名片添加失败</string>
+    <string name="h5_create_index_card_thumb_error">首页名片缩略图生成失败</string>
+    <string name="h5_update_basicinfo_fail">更新基本信息失败</string>
+    <string name="h5_add_new_card_action_fail">保存名片失败</string>
+    <string name="h5_more_create_index_card_fail">不能多次添加首页名片</string>
+    <string name="h5_global_create_index_submit">保存</string>
+    <string name="h5_global_pop_Name">姓名</string>
+    <string name="h5_global_pop_Mobile">手机</string>
+    <string name="h5_global_pop_Firm">公司</string>
+    <string name="h5_global_pop_company_name">公司名</string>
+    <string name="h5_global_pop_Position">部门</string>
+    <string name="h5_global_pop_title">职位</string>
+    <string name="h5_global_pop_Address">地址</string>
+    <string name="h5_global_pop_Phone">电话</string>
+    <string name="h5_global_pop_fax">传真</string>
+    <string name="h5_global_pop_Mail">邮箱</string>
+    <string name="h5_global_pop_Www">网址</string>
+
+    <string name="h5_card_xxxcard">的名片</string>
+    <string name="h5_download_apk">正在下载Apk...</string>
+    <string name="h5_imora_chengzi_help">帮助</string>
+
+    <!-- h5 交换名片 翻译 end -->
+
+    <!-- 资讯内容采集start -->
+    <string name="info_content_collection">资讯内容采集</string>
+    <string name="edit_channel">编辑频道</string>
+    <string name="channel_name">频道</string>
+    <string name="create_time">创建时间</string>
+    <string name="manage_opera">管理操作</string>
+    <string name="str_btn_edit">编辑</string>
+    <string name="add_channel">添加频道</string>
+    <string name="channel_name">频道名称</string>
+    <string name="channel_name_limit">请输入%d个字以内的标题</string>
+    <string name="channel_add_succ">添加频道成功</string>
+    <string name="collection_btn_preview">预览</string>
+    <string name="collection_btn_publish">发布到审核</string>
+    <string name="collection_status">状态</string>
+    <string name="collection_id">ID</string>
+    <string name="collection_title">标题</string>
+    <string name="collection_category">所属行业</string>
+    <string name="collection_category_pindao">所属频道</string>
+    <string name="collection_content">正文</string>
+    <string name="collection_time">时间</string>
+    <string name="collection_source">来源</string>
+    <string name="collection_opera">管理操作</string>
+    <string name="coll_str_published">已发布</string>
+    <string name="coll_str_no_published">未发布</string>
+    <string name="tips_must_choose_coll">请至少选择一项采集内容进行删除</string>
+    <string name="coll_btn_publish">发布</string>
+    <string name="title_edit_channel">编辑</string>
+    <string name="str_del_succ">删除成功</string>
+    <string name="str_edit_succ">编辑成功</string>
+    <string name="str_revoke_succ">撤回成功</string>
+    <string name="str_revoke_fail">撤回失败</string>
+    <string name="str_publish_succ">发布成功</string>
+    <string name="str_publish_fail">发布失败</string>
+    <string name="str_channel_name_exist">此频道名称已经存在</string>
+    <string name="str_list_no_has_data">列表暂无数据</string>
+    <string name="str_menu_coll_list">采集列表</string>
+    <string name="str_menu_edit_channel">编辑频道</string>
+    <string name="str_menu_coll_parent">资讯内容采集</string>
+    <string name="str_please_select_data">请选中一项数据项再进行操作</string>
+    <string name="str_channel_name_cannot_empty">频道名称不能为空</string>
+    <string name="str_confirm_del_select_data">确定删除所选数据吗？</string>
+    <string name="str_btn_ok">确定</string>
+    <string name="str_btn_cancel">取消</string>
+    <string name="str_no_has_next">没有下一篇了</string>
+    <string name="str_no_has_prev">没有上一篇了</string>
+    <string name="str_title_cannot_empty">标题不能为空</string>
+    <string name="str_industry_cannot_empty">行业不能为空</string>
+    <string name="str_title_image_cannot_empty">标题图片不能为空</string>
+    <string name="str_coll_source_not_empty">来源不能为空</string>
+    <string name="str_coll_content_not_empty">内容不能为空</string>
+    <string name="str_pop_preview">预览</string>
+    <string name="str_pop_prev_unit">上一篇</string>
+    <string name="str_pop_next_unit">下一篇</string>
+    <string name="str_pop_next_pic">下一张</string>
+    <string name="str_pop_prev_pic">上一张</string>
+    <string name="str_pop_edit_preview">编辑预览</string>
+    <string name="str_pop_title_pic">标题图片</string>
+    <string name="str_pop_keyword">关键词</string>
+    <string name="str_publish_time">发布时间</string>
+    <string name="str_log_del_channel_opera">删除频道操作</string>
+    <string name="str_log_show_channel">频道列表展示</string>
+    <string name="str_log_edit_channel_opera">编辑频道操作</string>
+    <string name="str_log_add_channel_opera">添加频道操作</string>
+    <string name="str_log_get_single_coll_content">获取单条采集内容</string>
+    <string name="str_log_publish_coll_content">发布采集内容</string>
+    <string name="str_log_coll_content_upload_pic">采集内容上传文件</string>
+    <string name="str_log_get_coll_content_list">采集内容首页</string>
+    <string name="str_log_del_coll_opera">删除采集内容</string>
+    <string name="str_tip_leave">有未保存的内容，是否确认离开？</string>
+    <string name="str_all_industry">全部行业</string>
+    <string name="str_all_channel">全部频道</string>
+    <!-- 资讯内容采集end -->
+
+    <!-- 推广start -->
+    <string name="push_user_push">用户推广</string>
+    <string name="push_push">推送</string>
+    <string name="js_push_fail">操作失败</string>
+    <string name="str_empty_msg">请检查行业下名片是否为空！</string>
+    <string name="push_pushed">已推送</string>
+    <string name="push_unpush">未推送</string>
+    <string name="push_card">名片</string>
+    <string name="js_push_unselect">未选中,请选择</string>
+    <string name="push_delete">删除</string>
+    <string name="push_refresh">刷新</string>
+    <string name="push_id">序号</string>
+    <string name="push_name">姓名</string>
+    <string name="str_operat">操作</string>
+    <string name="push_phone">联系方式(手机号)</string>
+    <string name="str_mobile">手机号</string>
+    <string name="push_send_time">发送时间</string>
+    <string name="js_push_success">推送成功</string>
+    <string name="js_delete_success">删除成功</string>
+    <string name="js_to">向</string>
+    <string name="js_push_content">拓展人脉商务神器,很时尚,一定要分享给您</string>
+    <string name="js_comfirm_delete">确认删除</string>
+    
+    <!-- 推广end -->
+
+    <!-- H5 页面  start-->
+    <!-- 橙秀H5 start-->
+    <string name="str_orangeh5_category_no">无</string>
+    <string name="str_orangeh5_reply">回复</string>
+    <string name="str_orangeh5_more">查看更多</string>
+    <string name="str_orangeh5_detail">资讯详情</string>
+    
+    <!-- 橙秀H5 end-->
+    <string name="H5_jumping_to_app_store">正在跳转到APP store...</string>
+    <string name="str_news_download_app_intro">都翻到这儿了，想看有价值的资讯就下载个橙脉</string>
+    <string name="link_news_download_app_more">详情</string>
+    <!-- Imora start -->
+    <string name="h5_imora_title_download_app">APP下载</string>
+    <string name="h5_imora_title_about_app">APP功能介绍</string>
+    <string name="h5_imora_title_faq">常见问题</string>
+    <string name="h5_imora_title_manual">新手帮助</string>
+    <string name="h5_imora_title_intro">功能介绍</string>
+      <string name="h5_imora_title_new_intro">新功能介绍</string>
+    <string name="h5_imora_title_agreement">协议</string>
+    <string name="h5_imora_title_secretary">橙脉小秘书</string>
+    <string name="h5_imora_title_ent_dynamic">企业动态</string>
+    <string name="h5_imora_title_activity_show">活动详情</string>
+    <string name="h5_imora_title_invioce_rule">开具发票规则</string>
+    <string name="h5_imora_title_activity_rule">活动规则</string>
+    <string name="h5_imora_title_exchange_rule">兑换码规则</string>
+    <!-- Imora end -->
+    <!-- H5 页面end -->
+
+    <!-- 招聘管理 start-->
+    <string name="str_job_unpublish">取消发布</string>
+    <string name="str_job_title">标题</string>
+    <string name="str_job_start_end_time">开始结束时间</string>
+    <string name="str_job_sort">序号</string>
+    <string name="str_job_user">用户</string>
+    <string name="str_job_lang">语言</string>
+    <string name="str_job_do">操作</string>
+    <string name="str_job_edit">修改</string>
+    <string name="str_job_delete">删除</string>
+    <string name="str_job_new">新建</string>
+    <string name="str_job_publish">发布</string>
+    <string name="str_job_verify_date">日期不能为空</string>
+    <string name="str_job_verify_sort">序号必须是0~1000之间</string>
+    <string name="str_job_verify_content">内容不能为空</string>
+    <string name="str_job_verify_title">标题不能为空</string>
+    <string name="str_job_verify_date_compare">开始日期不能大于结束日期</string>
+    <string name="str_job_confirm">确定删除？</string>
+    <string name="str_job_choose_data">请选择数据</string>
+    <string name="str_job_lang_zh">中文</string>
+    <string name="str_job_lang_en">英语</string>
+    <string name="str_job_all">全部</string>
+    <string name="str_job_success">操作成功</string>
+    <string name="str_job_failed">操作失败</string>
+    <string name="str_job_failed_title_too_long">标题过长</string>
+    <string name="str_job_failed_content_too_long">内容过长</string>
+    <string name="str_job_nopublished">未发布</string>
+    <string name="str_job_published">已发布</string>
+    <string name="str_job_publish_unpublish">发布 OR 取消发布</string>
+    <string name="str_job_add_edit_job">添加 OR 修改招聘信息</string>
+    <string name="str_job_new_job">新建信息</string>
+    <string name="str_job_lang">语言</string>
+    <string name="str_job_time">时间</string>
+    <string name="str_job_content">描述</string>
+    <!-- 招聘管理end-->
+    
+    <!-- 统计分析 start-->
+    <string name="stat_menu_user">用户统计</string>
+    <string name="stat_menu_behavior">行为统计</string>
+    <string name="stat_menu_performance">性能统计</string>
+    <string name="stat_menu_activity">活跃分析</string>
+    <string name="stat_menu_remain">留存分析</string>
+    <string name="stat_menu_app_distribution">App分布统计</string>
+    <string name="stat_menu_cards">名片夹</string>
+    <string name="stat_menu_relation">人脉管理</string>
+    <string name="stat_menu_show">橙秀</string>
+    <string name="stat_menu_mine">我</string>
+    <string name="stat_menu_exchange">名片交换</string>
+    <string name="stat_menu_search">搜索</string>
+    <string name="stat_menu_file">文件共享</string>
+    <string name='stat_all'>全部</string>
+    <string name='str_no_know'>其它</string>
+    <string name="str_user_active_retained">活跃分析</string>
+    <string name="str_menu_new_incre_opera_static">操作统计</string>
+    <!-- 名片夹 -->
+    <string name="stat_sys_platform_table_All">全部</string>
+    <string name="stat_add_card_num">新添加名片数</string>
+    <string name="stat_add_card_usernum">新添加名片用户数</string>
+    <string name="stat_add_friend_num">新建好友关系数</string>
+    <string name="stat_recommend_friend">推荐好友</string>
+    <string name="stat_count_cardnum">累计名片数</string>
+    <string name="stat_addcard_action_usernum">使用名片添加功能用户数比例</string>
+    <string name="stat_count_addcard_usernum">累计添加过名片的用户数</string>
+    <string name="stat_recommend_friend_succnum">第三方推荐建立好友关系成功率</string>
+    
+    <string name="stat_table_title">数据表</string>
+    <string name="stat_total_infomation">累计名片数:%s张,累计添加名片用户数:%s人</string>
+    
+    <string name="stat_proportion">占比</string>
+    <string name="stat_new_add_cardnum">新添加名片总数</string>
+    <string name="stat_scan_add_card_num">扫描名片数</string>
+    <string name="stat_selfadd_card_num">手动创建名片数</string>
+    <string name="stat_contacts_card_num">通讯录导入名片数</string>
+    <string name="stat_exchange_card_num">多人交换添加名片数</string>
+    <string name="stat_qrscan_card_num">扫码交换名片数</string>
+
+    <string name="stat_new_addcard_usernum">新添加名片用户总数</string>
+    <string name="stat_scanaddcard_usernum">扫描名片用户数</string>
+    <string name="stat_selfaddcard_usernum">手动创建名片用户数</string>
+    <string name="stat_contactscard_usernum">通讯录导入名片用户数</string>
+    <string name="stat_exchangecard_usernum">多人交换添加名片用户数</string>
+    <string name="stat_qrscancard_usernum">扫码交换名片用户数</string>
+
+    <string name="stat_exchange_add_friend">多人交换添加好友</string>
+    <string name="stat_qrscancard_add_friend">扫码交换添加好友</string>
+    <string name="stat_recommend_add_friend">第三方推荐添加好友</string>
+    <string name="stat_contacts_add_friend">人脉推荐添加好友</string>
+    <string name="stat_other_add_friend">其他方法添加好友</string>
+
+    
+    <string name="stat_send_recommend_sendnum">发起第三方推荐请求次数</string>
+    <string name="stat_send_recommend_usernum">发起第三方推荐请求用户数</string>
+    
+    <string name="stat_count_cardnum_title">名片数量</string>
+    
+    <string name="stat_active_usernum">活跃用户数</string>
+    <string name="stat_active_addcard_usernum">使用名片添加功能用户数</string>
+    <string name="stat_active_addcard_userprop">使用名片添加功能用户数比例</string>
+    
+    <string name="stat_active_count_usernum">累计活跃用户数</string>
+    <string name="stat_addcard_count_usernum">累计添加过名片用户数</string>
+    <string name="stat_addcard_count_userprop">累计添加过名片用户数占比</string>
+    
+    <string name="stat_send_recommend_friendnum">发起第三方推荐好友数</string>
+    <string name="stat_send_recommend_friend_succnum">建立好友关系成功数</string>
+    <string name="stat_send_recommend_friend_succprop">建立好友关系成功率</string>
+    
+    <string name="stat_cards_table_download_title">名片夹-%s统计%s</string>
+    <string name="stat_recommend_friend">推荐好友</string>
+    
+    <string name="stat_week_string">%s年第%s周</string>
+    <!-- 统计分析 end -->
+    <string name="str_log_industry">推广行业</string>
+    <string name="str_log_detail">推广详细</string>
+    <!-- 行为统计 -->
+    <string name="str_statistics_user">用户分析</string>
+    <string name="str_statistics_app">APP统计分析</string>
+    <string name="stat_channel">渠道</string>
+    <string name="stat_prod_version">产品版本</string>
+    <string name="stat_all_modules">所有模块</string>
+    <string name="stat_date">日期</string>
+    <string name="stat_sys_platform">系统平台</string>
+    <string name="stat_module_name">模块</string>
+    <string name="stat_l1_module_name">一级模块</string>
+    <string name="stat_l2_module_name">二级模块</string>
+    <string name="stat_total_visit_users">访问用户数</string>
+    <string name="stat_filename_total_visit_users">访问用户数统计</string>
+    <string name="stat_avg_visit_times">人均访问次数</string>
+    <string name="stat_filename_visit_times">人均访问次数统计</string>
+    <string name="stat_avg_visit_duration">人均访问时间</string>
+    <string name="stat_user_visit_rate">用户访问率</string>
+    <string name="stat_filename_visit_duration">人均访问时间统计</string>
+    <string name="stat_sheet_total_visit_users">访问用户数统计表</string>
+    <string name="stat_sheet_avg_visit_times">人均访问次数统计表</string>
+    <string name="stat_sheet_avg_visit_duration">人均访问时间统计表</string>
+    <string name="stat_sheet_user_visit_rate">用户访问率表</string>
+    <string name="stat_filename_user_visit_rate">用户访问率统计</string>
+    <string name="stat_export">导出</string>
+    <string name="str_active_static">活跃分析统计</string>
+    <string name="str_active_static_index">活跃用户数</string>
+    <string name="str_remain_static_index">留存分析统计</string>
+    <string name='str_time'>时间</string>
+    <string name='str_contrast_time'>对比时间段</string>
+    <string name='str_submit'>提交</string>
+    <string name='str_day'>日</string>
+    <string name='str_week'>周</string>
+    <string name='str_month'>月</string>
+    <string name='str_new_add_device'>新增设备量</string>
+    <string name='str_new_add__reg_device'>新增注册设备量</string>
+    <string name='str_new_add__reg_device_rate'>新增设备注册转化率</string>
+    <string name='str_new_add__account'>新增账号量</string>
+    <string name='str_data_tab'>数据表</string>
+    <string name='str_export'>导出</string>
+    <string name='str_soft_version_update'>软件版本升级数</string>
+    <string name='str_user_version'>累计用户版本分布</string>
+    <string name='str_user_brand'>累计用户设备品牌</string>
+    <string name='str_user_model'>累计用户设备机型</string>
+    <string name='str_user_country'>累计用户国家分布</string>
+    <string name='str_user_province'>累计用户省份分布</string>
+    <string name='stat_menu_app_distribution'>APP分布统计</string>
+    <string name='str_old_version'>升级前版本</string>
+    <string name='str_new_version'>当前最新版本</string>
+    <string name='str_update_num'>升级数</string>
+    <string name='str_use_nu'>使用人数</string>
+    <string name='str_num'>数量</string>
+    <string name='str_brand'>品牌</string>
+    <string name='str_model'>机型</string>
+    <string name='str_country'>全部国家</string>
+    <string name='str_province'>全部省份</string>
+    <string name='str_no'>序号</string>
+    <!--行为统计-人脉管理-->
+    <string name='str_all_platform'>全部平台</string>
+    <string name='str_all_platform_table'>全部</string>
+    <string name='str_new_task'>新增任务数</string>
+    <string name='str_task_user'>创建任务用户数</string>
+    <string name='str_task_user_per'>创建任务用户数占比</string>
+    <string name='str_new_record'>发布记录用户数</string>
+    <string name='str_record_user_per'>发布记录用户数占比</string>
+    <string name='str_im_user'>使用聊天功能用户数</string>
+    <string name='str_im_user_per'>使用聊天功能用户数比例</string>
+    <string name='str_record_sum'>补充记录条数</string>
+    <string name='str_record_avg'>人均补充记录条数</string>
+    <string name='str_im_sum'>好友聊天条数</string>
+    <string name='str_im_avg'>人均好友聊天消息数</string>
+    <!--行为统计 文件共享  我  橙秀   搜索-->
+    <string name='str_use_usernum'>使用用户数</string>
+    <string name='str_use_num'>使用次数</string>
+    <string name='str_all_terminal'>所有平台</string>
+    <string name='str_terminal'>端</string>
+    <string name='str_search_all'>全部</string>
+    <string name='str_search_voice'>语音</string>
+    <string name='str_search_text'>文本</string>
+    <string name='str_show_news'>资讯</string>
+    <string name='str_show_comment'>评论</string>
+    <string name='str_label_manage'>标签管理</string>
+    <string name='str_show_imora'>橙脉内容设置</string>
+    <string name='str_show_asks'>问答</string>
+    <string name='str_search_per'>占比</string>
+    <string name='str_start_contrast'>开始对比</string>
+    <string name='str_add_card_number'>添加卡片数</string>
+    <string name='str_add_card_usernumber'>添加卡片用户数</string>
+    <string name='str_card_template_usenumber'>名片模板使用数</string>
+    <string name='str_orange_rownum'>序号</string>
+    <string name='str_card_template_name'>模板名称</string>
+    <string name='str_card_theme_usenumber'>主题类型使用数</string>
+    <string name='str_card_theme_name'>主题类型名称</string>
+    <string name='str_publish_question_number'>发布问题用户数</string>
+    <string name='str_save_user_number'>收藏用户数</string>
+    <string name='str_comment_user_number'>评论用户数</string>
+    <string name='str_share_user_number'>分享用户数</string>
+    <string name='str_share_number'>分享次数比例</string>
+    <string name='str_share_number_inside_count'>内部分享次数</string>
+    <string name='str_share_number_inside_percent'>内部分享次数比例</string>
+    <string name='str_share_number_outside_count'>外部分享次数</string>
+    <string name='str_share_number_outside_percent'>外部分享次数比例</string>
+    <string name='str_orange_visit_count'>橙秀访问人数</string>
+    <string name='str_orange_rate'>覆盖率</string>
+    
+    <string name='str_my_module'>我模块-</string>
+    <string name='str_orashow_module'>橙秀模块-</string>
+    <string name='str_search_module'>搜索模块-</string>
+    <string name='str_fileshare_module'>文件共享模块-</string>
+    <string name='str_app_version'>版本</string>
+    <string name='str_fileshare_use_number'>文件共享功能使用用户数</string>
+    <string name='str_search_use_number'>搜索功能使用用户数</string>
+    <string name='str_search_count'>搜索功能使用次数</string>
+    <string name='str_insert_contrast_time'>请将对比时间段填写完整</string>
+    <string name='str_up_to_time'>截止到</string>
+    <string name='str_usage_amount'>使用量</string>
+    <!-- 性能统计 -->
+    <string name='stat_apperror'>性能统计</string>
+    <string name='stat_apperror_all'>全部</string>
+    <string name='stat_apperror_submit'>确定</string>
+    <string name='stat_apperror_time'>时间</string>
+    <string name='stat_apperror_day'>日</string>
+    <string name='stat_apperror_week'>周</string>
+    <string name='stat_apperror_month'>月</string>
+    <string name='stat_apperror_list'>程序错误个数统计数据表</string>
+    <string name='stat_apperror_export'>导出</string>
+    <string name='stat_apperror_date'>日期</string>
+    <string name='stat_apperror_sys_platform'>系统平台</string>
+    <string name='stat_apperror_prd_version'>产品版本</string>
+    <string name='stat_apperror_sys_platform_version'>系统版本</string>
+    <string name='stat_apperror_sys_platform_version_number'>系统平台版本号</string>
+    <string name='stat_apperror_model'>设备型号</string>
+    <string name='stat_apperror_brand'>设备品牌</string>
+    <string name='stat_apperror_num'>程序错误数</string>
+    <string name='stat_apperror_num_amount'>程序错误个数</string>
+    <string name='stat_appopera_list'> 操作统计数据表</string>
+    <string name='stat_title_click_evt'> 点击事件</string>
+    <!-- 性能统计end -->
+    <!-- 名片交换-->
+    <string name='str_exchange_totalnumb'>总交换名片次数</string>
+    <string name='str_exchange_title'>名片交换</string>
+    <string name='str_exchange_numbers'>人数</string>
+    <string name='str_exchange_times'>次数</string>
+    <string name='str_exchange_proportion'>比例</string>
+    <string name='str_exchange_proportions'>占比</string>
+    <string name='str_exchange_data'>数据表</string>
+    <string name='str_exchange_date'>日期</string>
+    <string name='str_exchange_time_compare'>对比时段</string>
+    <string name='str_exchange_version'>产品版本</string>
+    <string name='str_exchange_sub'>提交</string>
+    <string name='str_exchange_plat'>端</string>
+    <string name='str_exchange_time_no'>第</string>
+    <string name='str_exchange_time_year'>年</string>
+    <string name='str_exchange_time_month'>月</string>
+    <string name='str_exchange_time_day'>日</string>
+    <string name='str_exchange_time_week'>周</string>
+    <string name='str_exchange_scans'>扫码交换</string>
+    <string name='str_exchange_manys'>多人交换</string>
+    <string name='str_exchange_all'>全部</string>
+    <string name='str_exchange_scan'>扫码</string>
+    <string name='str_exchange_many'>多人</string>
+    <string name='str_exchange_export'>导出</string>
+    <string name='str_exchange_compareData'>对比</string>
+    <string name='str_exchange_static'>统计</string>
+    <!-- 名片交换end-->
+    
+    <!-- 扫描用户服务统计start -->
+    <string name="stat_menu_scanner_usage">名片扫描服务</string>
+    <string name="stat_menu_scanner">扫描仪</string>
+    <string name="stat_menu_cooperator">合作商</string>
+    <string name="str_grand_total_partner_number">累计合作商数量</string>
+    <string name="str_new_incre_partner_number">新增合作商数量</string>
+    <!-- 扫描用户服务统计end -->
+
+    <!-- 客服功能 start-->
+    <string name="str_custom">客服功能</string>
+    <string name="str_custom_service_count">服务用户</string>
+    <string name="str_custom_ask_count">咨询用户</string>
+    <string name="str_custom_account">账号</string>
+    <string name="str_custom_name">姓名</string>
+    <string name="str_custom_last_ask_time">最后咨询时间</string>
+    <string name="str_custom_opera">操作</string>
+    <string name="str_custom_unit_person">人</string>
+    <string name="str_custom_please_bind_vr_account">请先绑定虚拟用户！</string>
+    <string name="str_custom_ask_time">咨询时间</string>
+    <string name="str_custom_im_login_fail">登录im失败</string>
+    <string name="str_custom_choose_face">选择表情</string>
+    <string name="str_custom_page_prev">上一页</string>
+    <string name="str_custom_page_next">下一页</string>
+    <string name="str_custom_page_redirect">跳转</string>
+    <string name="str_custom_replyed">已回复</string>
+    <string name="str_custom_not_replyed">未回复</string>
+    <string name="str_custom_vr_user_bind">虚拟用户绑定</string>
+    <string name="str_custom_online_ask">在线咨询</string>
+    <string name="str_custom_ask_record">咨询记录</string>
+    <string name="str_custom_upload_img_too_large">上传图片不能大于%sM</string>
+    <string name="str_custom_upload_img_cannt_empty">上传图片不能为空</string>
+    <string name="str_custom_upload_img_format_error">上传图片格式错误</string>
+    <string name="str_custom_your_account_login_others">你的账号已在其他的地方登录</string>
+    <string name="allow_tupian">请上传gif或jpg或jpeg或png格式图片</string>
+    <!-- 客服功能end -->
+    <!--合作商  -->
+    <string name='official_partner_manage'>合作商管理</string>
+    <string name='official_partner'>合作商</string>
+    <string name='offcialpartner_add'>新增</string>
+    <string name='offcialpartner_industry'>行业</string>
+    <string name='offcialpartner_scanner_count'>扫描仪数量</string>
+    <string name='offcialpartner_scan_card_count'>扫描名片数</string>
+    <string name='offcialpartner_create_time'>创建时间</string>
+    <string name='offcialpartner_see_details'>查看详情</string>
+    <string name='offcialpartner_edit'>编辑</string>
+    <string name='offcialpartner_cancel'>取消</string>
+    <string name='offcialpartner_cancel'>取消</string>
+    <string name='offcialpartner_company'> 企业</string>
+    <string name='offcialpartner_select_type'>请选择合作商类型</string>
+    <string name='offcialpartner_public_place'> 公共场所</string>
+     <string name='offcialpartner_name'>合作商名称</string>
+    <string name='offcialpartner_type'>合作商类型</string>
+    <string name='offcialpartner_email'>邮箱</string>
+    <string name='offcialpartner_linkman'> 联系人</string>
+    <string name='offcialpartner_tel'> 联系电话</string>
+    <string name='offcialpartner_select_industry'>请选择行业</string>
+    <string name='offcialpartner_select_scale'>请选择企业规模</string>
+    <string name='offcialpartner_scale'>规模</string>
+   <string name='offcialpartner_affiliation_industry'> 所属行业</string>
+    <string name='offcialpartner_company_address'> 公司地址</string>
+    <string name='offcialpartner_company_website'>公司网址</string>
+    <string name='offcialpartner_no_empty'>不能为空</string>
+    <string name='offcialpartner_yi_shang'> 以上</string>
+    <string name='no_repeat'>不能重复</string>
+    <string name='offcialpartner_success'>成功</string>
+    <string name='offcialpartner_fail'>失败</string>
+    <string name='offcialpartner_sf'>是否</string>
+    <string name='offcialpartner_province'>省/直辖市</string>
+    <string name='offcialpartner_city'>市</string>
+    <string name='offcialpartner_region'>区/县</string>
+    <string name='offcialpartner_select_province'>请选择省/直辖市</string>
+    <string name='offcialpartner_select_city'>请选择市</string>
+    <string name='offcialpartner_select_region'>请选择区/县</string>
+    <string name='offcialpartner_ren'>人</string>
+    <string name='offcialpartner_yi_xia'> 以下</string>
+    <string name='offcialpartner_format_error'>格式错误</string>
+    <string name='offcialpartner_using'>启用</string>
+    <string name='offcialpartner_no_using'>停用</string>
+    <string name='offcialpartner_send'>发送</string>
+    <string name='offcialpartner_email'>邮件</string>
+    <string name='offcialpartner_format_error'>格式错误</string>
+    
+    <string name='partner_export_csv'>导出csv</string>
+    <string name='partner_export_vcf'>导出vcf</string>
+    <string name='partner_title_img'>图片</string>
+    <string name='partner_title_scan_user'>扫描用户</string>
+    <string name='partner_title_name'>姓名</string>
+    <string name='partner_title_mobile'>手机号</string>
+    <string name='partner_title_postion'>职位</string>
+    <string name='partner_title_ent_name'>公司名称</string>
+    <string name='partner_title_dept'>部门</string>
+    <string name='partner_title_email'>邮箱</string>
+    <string name='partner_title_ent_addr'>公司地址</string>
+    <string name='partner_title_website'>网址</string>
+    <string name='partner_title_fax'>传真</string>
+    <string name='partner_title_tele'>电话</string>
+    <string name='partner_title_scan_time'>扫描时间</string>
+    <!-- 公司规模 -->
+    <string name="STR_ENT_SIZE_ONE">15人以下</string>
+    <string name="STR_ENT_SIZE_TWO">15-50人</string>
+    <string name="STR_ENT_SIZE_THREE">50-150人</string>
+    <string name="STR_ENT_SIZE_FOUR">150-500人</string>
+    <string name="STR_ENT_SIZE_FIVE">500-2000人</string>
+    <string name="STR_ENT_SIZE_SIX">2000人以上</string>
+    <!--  -->
+    <!-- 扫描仪管理 -->
+    <string name="scanner_manager">扫描仪管理</string>
+    <string name="str_scanner_history">历史记录</string>
+    <string name="str_scanner_card_infomation">查看已扫名片</string>
+    <string name="scanner_import">导入</string>
+    <string name="scanner_import_success">导入成功</string>
+    <string name="scanner_import_success_faillist">序列号为%s等导入失败！</string>
+    <string name="scanner_import_fail">导入失败</string>
+    <string name="scanner_import_select">请选择导入的文件</string>
+    <string name="scanner_import_format_error">上传文件格式错误</string>
+    <string name="scanner_import">导入</string>
+    <string name="scanner_id">序列号</string>
+    <string name="scanner_type">类型</string>
+    <string name="scanner_type_lan">局域网</string>
+    <string name="scanner_type_topoint">点对点</string>
+    <string name="scanner_use_status">使用状态</string>
+    <string name="str_scanner_id">名称</string>
+    <string name="scanner_select_all">全部</string>
+    <string name="scanner_select_using">使用中</string>
+    <string name="scanner_select_free">空闲</string>
+    <string name="scanner_select_break">损坏</string>
+    <string name="scanner_btn_del">删除</string>
+    <string name="scanner_btn_add">新增</string>
+    <string name="scanner_btn_outside">外放</string>
+    <string name="scanner_btn_recover">回收</string>
+    <string name="scanner_list_mac">MAC地址</string>
+    <string name="scanner_list_passwd">密码</string>
+    <string name="scanner_list_status">状态</string>
+    <string name="scanner_list_owner">归属合作商</string>
+    <string name="scanner_list_starttime">开始日期</string>
+    <string name="scanner_list_address">地址</string>
+    <string name="scanner_list_oprate">操作</string>
+    <string name="scanner_oprate_record">使用记录</string>
+    <string name="scanner_oprate_edit">编辑</string>
+    <string name="scanner_oprate_print">打印二维码</string>
+    <string name="scanner_btn_ok">确定</string>
+    <string name="scanner_btn_cannel">取消</string>
+    <string name="scanner_confirm_recover_l">确认回收这</string>
+    <string name="scanner_confirm_recover_r">台设备吗？</string>
+
+    <string name="scanner_recover_faild">回收失败</string>
+    <string name="scanner_recover_success">回收成功</string>
+    <string name="scanner_recover_cannot">损坏或空闲的扫描仪，不能做回收操作</string>
+    <string name="scanner_recover_cannot_two">所选扫描仪中存在损坏或空闲的扫描仪，不能做回收操作</string>
+    <string name="scanner_confirm_recover_check">请选择要回收的扫描仪</string>
+
+    <string name="scanner_confirm_del">确认要删除所选扫描仪？</string>
+    <string name="scanner_confirm_del_check">请选择要删除的扫描仪</string>
+    <string name="scanner_del_faild">删除失败</string>
+    <string name="scanner_del_success">删除成功</string>
+    <string name="scanner_del_cannot">使用中的设备不可删除</string>
+    <string name="scanner_del_cannot_two">所选扫描仪中存在使用中的扫描仪，不能做删除操作</string>
+
+    <string name="str_out_booked">外放登记</string>
+    <string name="str_scanner_num">设备数</string>
+    <string name="str_scanner_addr">摆放地址</string>
+    <string name="str_sle_partner">选择企业</string>
+    <string name="str_partner_id">企业ID</string>
+    <string name="str_partner_name">企业名称</string>
+    <string name="str_reg_date">注册日期</string>
+    <string name="str_no_data">无匹配结果</string>
+    <string name="str_add_scanner">新增扫描仪</string>
+    <string name="str_edit_scanner">编辑扫描仪</string>
+    <string name="str_scanner_type">扫描仪类型</string>
+    <string name="str_scanner_status">扫描仪状态</string>
+    <string name="str_mac_addr">MAC地址</string>
+    <string name="str_scanner_model">型号</string>
+    <string name="str_outside_endtime">结束日期</string>
+    <string name="str_partner">企业</string>
+    <string name="str_scannercards_num">扫描名片数</string>
+    <string name="str_scannered_cards_list">查看已扫描名片</string>
+    <string name="str_passwd_format">密码为6-32位字符</string>
+    <string name="str_mac_format">MAC地址长度不能超过32位</string>
+    <string name="str_scannerid_format">序列号为32位以下的数字和字母</string>
+    <string name="str_model_format">型号长度不能超过32位</string>
+    <string name="tip_addr_format">摆放地址长度不能超过100个字符</string>
+    <string name="str_id_exists">此序列号已存在</string>
+    <string name="str_setoutside_fail">外放失败</string>
+    <string name="str_setoutside_succ">外放成功</string>
+    <string name="tip_sel_scanner">请选择扫描仪</string>
+    <string name="tip_sel_partner">请选择合作商</string>
+    <string name="tip_input_addr">请填写摆放位置</string>
+    <string name="tip_cannt_setoutside">所选扫描仪中存在损坏或使用中的扫描仪，不能做外放操作</string>
+    <string name="str_look_detail">查看明细</string>
+    <string name="str_the_partner">所属合作商</string>
+    <string name="str_so_far">至今</string>
+    <!-- 扫描仪管理end -->
+    <!--名片共享 start-->
+    <string name="str_card_share">名片共享</string>
+    <string name="str_card_share_add">新增</string>
+    <string name="str_card_share_original_account">原账号</string>
+    <string name="str_card_share_order_account">订单号</string>
+    <string name="str_card_share_owner">所有者</string>
+    <string name="str_card_share_original_order">原账号/订单号</string>
+    <string name="str_card_share_name">姓名</string>
+    <string name="str_card_share_card_num">名片数量</string>
+    <string name="str_card_share_account_num">共享账号数</string>
+    <string name="str_card_share_sync_time">同步时间</string>
+    <string name="str_card_share_operation">操作</string>
+    <string name="str_card_share_show">查看</string>
+    <string name="str_card_share_cancel_operation">撤销操作</string>
+    <string name="str_card_share_account">共享账号</string>
+    <string name="str_card_share_card">共享名片</string>
+    <string name="str_card_share_no">序号</string>
+    <string name="str_card_share_id">账号</string>
+    <string name="str_card_share_name">姓名</string>
+    <string name="str_card_share_img">图片</string>
+    <string name="str_card_share_user_name">用户名</string>
+    <string name="str_card_share_phone">手机</string>
+    <string name="str_card_share_title">职位</string>
+    <string name="str_card_share_company_name">公司名称</string>
+    <string name="str_card_share_department">部门</string>
+    <string name="str_card_share_mail">邮箱</string>
+    <string name="str_card_share_company_address">公司地址</string>
+    <string name="str_card_share_tel">电话</string>
+    <string name="str_card_share_scan_time">扫描时间</string>
+    <string name="str_card_share_enter">请输入</string>
+    <string name="str_card_share_confirm">确认共享</string>
+    <string name="str_card_share_yes">确认</string>
+    <string name="str_card_share_cancel">取消</string>
+    <string name="str_card_share_none">无</string>
+    <string name="str_card_share_not_empty">不能为空</string>
+    <string name="str_card_share_least_one">至少为一个</string>
+    <string name="str_card_share_repetitive">不能重复</string>
+    <string name="str_card_share_unknown_account">未知的账号</string>
+    <string name="str_card_share_undo_account_operation">  确定要撤销对account的操作吗？</string>
+    <string name="str_card_share_confirm_sync"> 确认同步吗？</string>
+    <string name="str_card_share_fail"> 操作失败</string>
+
+
+
+    <string name="str_print_qrcode">打印二维码</string>
+    <!--名片共享 end-->
+    <!-- 扫描仪统计 -->
+    <string name="stat_usescanner_propnum">平均使用次数</string>
+    <string name="stat_scanner_add_cardnum">扫描名片数</string>
+    <string name="stat_scanner_option_all">全部</string>
+    <string name="stat_scanner_option_public">公共场所</string>
+    <string name="stat_scanner_option_company">企业</string>
+    <string name="stat_usescanner_num">绑定扫描仪数</string>
+    <string name="stat_usescanner_totalnum">总使用次数</string>
+    <string name="stat_usescanner_numprop">平均使用次数</string>
+    <string name="stat_scanner_table_download_title">扫描仪-%s统计%s</string>
+    <!-- 扫描仪统计 end -->
+
+    <!-- 企业后台-设置start -->
+    <string name="str_login_again">重新登录</string>
+    <string name="str_update_pwd_succ_redirect">管理员密码修改成功，%s%s%s 秒后转到登录页。</string>
+    <string name="str_update_mail_complete">管理员邮箱修改成功， 请登录邮箱完成激活，%s%s%s 秒后转到登录页。 </string>
+    <string name="str_update_mail_active_succ">管理员邮箱更换成功，%s%s%s 秒后转到登录页。 </string>
+    <string name="str_com_login">登录</string>
+    <!-- 企业后台-设置end -->
+    
+    <!-- 企业后台-忘记密码start -->
+    <string name="str_com_mail_not_exists">你输入的邮箱不存在，请重新输入</string>
+    <!-- 企业后台-忘记密码end -->
+
+    <!--基础数据管理 -->
+    <string name="basic_data_management">基础数据管理</string>
+    <string name="str_industry_management">行业管理</string>
+    <string name="str_city_management">地区管理</string>
+    <!--基础数据管理end -->
+    
+    <!-- 运营管理 -->
+    <string name="str_operation_manage">运营管理</string>
+    <string name="str_menu_userpush">用户推广</string>
+	<string name="str_menu_activeoperation">活动运营</string>
+	<string name="str_menu_contactsrecommended">人脉推荐</string>
+	<string name="str_menu_h5_page_mgmt">APP H5页面管理</string>
+    <string name="str_menu_h5_active_mgmt">活动规则</string>
+    <string name="str_menu_h5_invoice_mgmt">开具发票</string>
+    <string name="str_menu_h5_exchange_mgmt">兑换规则</string>
+    <string name="str_menu_h5_ora_help_mgmt">APP橙子帮助</string>
+	
+    <string name="operation_menu_activemanage">橙脉小秘书</string>
+    <string name="operation_menu_numcodeemanage">兑换码管理</string>
+    <string name="operation_menu_taskmanage">任务设置</string>
+    
+    <!-- 用户推广start -->
+	<string name="str_userpush_td">回复TD退订</string>
+	<string name="tip_userpush_save_success">保存成功</string>
+	<string name="tip_userpush_save_fail">保存失败</string>
+	<string name="tip_userpush_del_success">删除成功</string>
+	<string name="tip_userpush_del_fail">删除失败</string>
+	<string name="tip_userpush_success">操作成功</string>
+	<string name="tip_userpush_fail">操作失败</string>
+	
+	<string name="str_userpush_email">邮件</string>
+	<string name="str_userpush_msg">短信</string>
+	<string name="str_userpush_broadcast">内部消息</string>
+	<string name="str_userpush_is_notice">是否通知</string>
+	<string name="str_userpush_yes">是</string>
+	<string name="str_userpush_broadcast_range">推送范围</string>
+	<string name="str_userpush_area">地区</string>
+	<string name="str_userpush_industry">行业</string>
+	<string name="str_userpush_job">职能</string>
+	<string name="str_userpush_pushtime">推送时间</string>
+	<string name="str_userpush_title">标题</string>
+	<string name="str_userpush_content">正文</string>
+	<string name="str_userpush_article_content">文章内容</string>
+	<string name="str_userpush_confirm">确认</string>
+	<string name="str_userpush_cancel">取消</string>
+	<string name="str_userpush_reg_user">注册用户</string>
+	<string name="str_userpush_all_user">全部用户</string>
+	
+	<string name="str_userpush_all">全部</string>
+	<string name="str_userpush_author">发布人</string>
+	<string name="str_userpush_add">新增</string>
+	<string name="str_userpush_type">类型</string>
+	<string name="str_userpush_status">状态</string>
+	<string name="str_userpush_operation">操作</string>
+	<string name="str_userpush_not_push">未推送</string>
+	<string name="str_userpush_for_push">待发送</string>
+	<string name="str_userpush_pushed">已推送</string>
+	<string name="str_userpush_del_confirm">确定删除？</string>
+	<string name="str_userpush_push_again">再次推送</string>
+	
+	<string name="str_userpush_all_info">请完整填写信息！</string>
+	<string name="str_userpush_three_one">【地区，行业，职能】请至少输入一项</string>
+	<string name="str_userpush_del_at_least_one">请至少选择一项内容进行删除</string>
+	
+	<string name="str_userpush_select_area">选择地区</string>
+	<string name="str_userpush_province">省/直辖市</string>
+	<string name="str_userpush_city">市</string>
+	<string name="str_userpush_select_industry">选择行业</string>
+	<string name="str_userpush_type1">一级分类</string>
+	<string name="str_userpush_type2">二级分类</string>
+	<string name="str_userpush_select_job">选择职能</string>
+	
+	<string name="str_userpush_wrong_audio_type">音频格式不正确</string>
+	<string name="str_userpush_wrong_audio_size">添加音频失败:请检查文件大小和格式</string>
+	<string name="str_userpush_audio_fail">添加音频失败</string>
+	<!-- 用户推广end -->
+	
+    <!-- Orange -->
+    <string name="str_orgemenu_orange">硬件管理</string>
+    <string name="str_orgmenu_recommend_rule_manage">推荐规则管理</string>
+    <string name="str_orgmenu_label">标签管理</string>
+    <string name="str_orgmenu_cards">卡模板管理</string>
+    <string name="str_orgmenu_cardtype">卡类型管理</string>
+    <string name="str_orgmenu_cardstyle">卡类型模板样式</string>
+    <string name="str_recommended_rules">推荐规则</string>
+    <string name="str_orgmenu_agreement">协议管理</string>
+    <string name="str_orgmenu_agreement_edit">编辑协议</string>
+    <string name="str_orgmenu_nocardlist">用户非模板卡统计</string>
+
+    <string name="str_orgmenu_orapay">Ora Pay银行列表</string>
+
+    <string name="str_orgmenu_pickup_rule_manage">提取规则管理</string>
+    <string name="str_orgmenu_content_type">内容类型管理</string>
+    <string name="str_orgmenu_content_type_edit">编辑内容类型</string>
+    <string name="str_orgmenu_content_type_add">新建内容类型</string>
+    <string name="str_ora_warning_set">预警设置</string>
+    <string name="str_company_alias_manage">公司别名维护</string>
+    <string name="str_company_alias_add">新建别名</string>
+    <string name="str_company_alias_edit">编辑别名</string>
+    
+    <string name="str_orgmenu_data_statistic">数据统计</string>
+    <string name="str_orgmenu_user_statistic">用户统计</string>
+    <string name="str_orgmenu_business">业务</string>
+    <string name="str_orgmenu_search">搜索</string>
+    <string name="str_orgmenu_namecard">名片</string>
+    <string name="str_orgmenu_schedule_card">日程卡</string>
+    <string name="str_orgmenu_punctuality">飞常准</string>
+    <string name="str_orgmenu_entrance_guard">门禁卡</string>
+
+    <string name="str_oramenu_label">推荐规则-标签管理</string>
+    
+    <string name="stat_orange_table_download_title">Orange-%s统计%s</string>
+    
+    <!-- 会员卡模板管理，用户非模板卡统计start -->
+    <string name="tip_orangecard_snapshot_fail">生成模板截图失败</string>
+    <string name="tip_orangecard_snapshot_save_fail">模板截图保存失败</string>
+    <string name="tip_orangecard_front_save_fail">正面图片保存失败</string>
+    <string name="tip_orangecard_back_save_fail">反面图片保存失败</string>
+    <string name="tip_orangecard_no_type_data">保存失败，卡类型没有数据</string>
+    <string name="tip_orangecard_cardunits_edit">发卡单位已修改，请重新编辑模板样式</string>
+    <string name="tip_orangecard_style_fail">保存卡模板数据失败</string>
+    <string name="tip_orangecard_save_success">保存成功</string>
+    <string name="tip_orangecard_save_fail">保存失败</string>
+    <string name="tip_orangecard_del_success">删除成功</string>
+    <string name="tip_orangecard_del_fail">删除失败</string>
+    <string name="tip_orangecard_del_fail_notpl">模板正在使用，不能删除（ID=%s）</string>
+    <string name="tip_orangecard_template_desc_exist">模板名称已存在，请修改</string>
+    <string name="tip_orangecard_bin_code_exist">BIN码(%s)已经存在，请修改</string>
+    <string name="tip_orangecard_bin_failed">BIN码只能输入1-6位数字，请修改</string>
+    
+    <string name="str_orangecard_all">全部</string>
+    <string name="str_orangecard_confirm">确定</string>
+    <string name="str_orangecard_cancel">取消</string>
+    
+    <string name="str_orangecard_property">属性</string>
+    <string name="str_orangecard_property_common">通用属性</string>
+    <string name="str_orangecard_property_cardunits">发卡单位属性</string>
+    <string name="str_orangecard_font">字体</string>
+    <string name="str_orangecard_font_size">字号</string>
+    <string name="str_orangecard_style">样式</string>
+    <string name="str_orangecard_color">颜色</string>
+    <string name="str_orangecard_edit_front">编辑正面</string>
+    <string name="str_orangecard_edito_back">编辑反面</string>
+    <string name="str_orangecard_del">删除</string>
+    <string name="str_orangecard_add_background">点击添加图片</string>
+    <string name="str_orangecard_uploading">上传中...</string>
+    <string name="str_orangecard_apply_to_all">立刻更新到该卡类型的所有卡中</string>
+    <string name="str_orangecard_notice">备注：只在卡类型中编辑模板样式才有，如果勾选，则卡模板中二次修改的样式同步更新</string>
+    <string name="str_orangecard_save">保存</string>
+    
+    <string name="str_orangecard_card_type_name">卡类型名称</string>
+    <string name="str_orangecard_card_company">发卡单位</string>
+    <string name="str_orangecard_please_select">请选择</string>
+    <string name="str_orangecard_grab_rule">抓取规则</string>
+    <string name="str_orangecard_grab_rule_bank">信用卡抓取规则</string>
+    <string name="str_orangecard_template_desc">模板名称</string>
+    <string name="str_orangecard_please_input">请输入</string>
+    <string name="str_orangecard_template_no">模板编号</string>
+    <string name="str_orangecard_template_no_notice">备注：模板编号，系统自动生成，不能修改。生成规则：卡类型2位+发卡单位序号4位+模板序号4位</string>
+    <string name="str_orangecard_bank_bin">发卡行标识代码(BIN)</string>
+    <string name="str_orangecard_bank_bin_placeholder">输入多个BIN码以，号隔开</string>
+    <string name="str_orangecard_add">添加</string>
+    <string name="str_orangecard_bank_bin_notice">用于根据卡号对应卡模板</string>
+    <string name="str_orangecard_keyword">关键字</string>
+    <string name="str_orangecard_keyword_placeholder">输入多个关键词以 ,号隔开</string>
+    <string name="str_orangecard_keyword_notice">用户可根据关键词搜索卡和卡模板</string>
+    <string name="str_orangecard_template_style">模板样式</string>
+    <string name="str_orangecard_edit">编辑</string>
+    <string name="str_orangecard_template_style_notice">备注：模板默认为卡类型模板，可再次修改</string>
+    <string name="str_orangecard_front">正面</string>
+    <string name="str_orangecard_back">反面</string>
+    <string name="str_orangecard_select_label">选择标签</string>
+    <string name="str_orangecard_selected_label">已添加标签</string>
+    <string name="str_orangecard_template_agreement">模板使用协议</string>
+    <string name="str_orangecard_del_confirm">确认删除？</string>
+    <string name="str_orangecard_issynch">同步到用户本地，当前已同步%d幅模板图片</string>
+    
+    <string name="str_orangecard_card_type">卡类型</string>
+    <string name="str_orangecard_please_input_shop_name">输入商户名称</string>
+    <string name="str_orangecard_add_template">添加卡模板</string>
+    <string name="str_orangecard_shop_name">商户名称</string>
+    <string name="str_orangecard_user_num">添加人数</string>
+    
+    <string name="str_orangecard_card_type1">卡类型</string>
+    <string name="str_orangecard_card_company_all">全部单位</string>
+    <string name="str_orangecard_please_input_keyword">输入标签、关键词、名称等查询</string>
+    <string name="str_orangecard_new_template">新增</string>
+    <string name="str_orangecard_add_label">添加标签</string>
+    <string name="str_orangecard_export">导出数据</string>
+    <string name="str_orangecard_add_time">添加时间</string>
+    <string name="str_orangecard_used_num">使用人数</string>
+    <string name="str_orangecard_operation">操作</string>
+    <string name="str_orangecard_tplnum">模板编号</string>
+    <string name="str_orangecard_iscoop">是否合作</string>
+    <string name="str_orangecard_shop_all">全部商户</string>
+    <string name="str_orangecard_shop_coop">合作商户</string>
+    <string name="str_orangecard_shop_nocoop">未合作</string>
+    
+    <string name="str_orangecard_nl_select_data">请选择数据</string>
+    <string name="str_orangecard_tl_using">模板正在使用，不能删除</string>
+    <string name="str_orangecard_tl_select_data">请选择要删除的数据</string>
+    <string name="str_orangecard_tl_del_confirm">是否删除</string>
+    <string name="str_orangecard_tl_select_label">请选择标签</string>
+    <string name="str_orangecard_tl_select_tpldata">请选择模板数据</string>
+    <string name="str_orangecard_nct_select_company">请选择发卡单位</string>
+    <string name="str_orangecard_nct_upload_front">请上传正面背景图片</string>
+    <string name="str_orangecard_nct_add_attr">请添加至少一个卡属性信息</string>
+    <string name="str_orangecard_nct_add_attr_multiple">请添加卡属性：</string>
+    <string name="str_orangecard_nct_select_cardtype">请选择卡类型</string>
+    <string name="str_orangecard_nct_input_desc">请输入模板名称</string>
+    <string name="str_orangecard_nct_add_bin">请添加bin码</string>
+    <string name="str_orangecard_nct_add_keyword">请添加关键字</string>
+    <string name="str_orangecard_nct_add_label">请添加标签</string>
+    <string name="str_orangecard_nct_input_agreement">请填写使用协议</string>
+    <string name="str_orangecard_ets_label_exist">已经存在</string>
+    <string name="str_orangecard_ets_saving">保存中...</string>
+    <string name="str_orangecard_not_empty">内容不能为空</string>
+    <!-- 会员卡模板管理，用户非模板卡统计end -->
+    
+    <!-- 订单管理 -->
+    <string name="str_menu_orderlist">找人订单列表</string>
+    <string name="str_menu_responsibility">责任认定</string>
+    <string name="str_menu_problemorder">不满意订单</string>
+    <string name="str_menu_sharecardcontrol">分享名片控制</string>
+    <string name="str_menu_showOrder">订单详情</string>
+    <string name="str_menu_userorderlist">用户服务订单列表</string>
+    <string name="str_menu_companyorderlist">企业服务订单列表</string>
+    <string name="str_menu_companyPayList">企业充值列表</string>
+    <string name="str_menu_postOrderList">邮寄服务订单列表</string>
+    
+    <!-- 用户，企业服务订单类表start -->
+    <string name="str_order_service_no">订单号</string>
+    <string name="str_order_service_status">订单状态</string>
+    <string name="str_order_service_all">全部</string>
+    <string name="str_order_service_for_pay">待付款</string>
+    <string name="str_order_service_payed">已完成</string>
+    <string name="str_order_service_company_id">企业ID</string>
+    <string name="str_order_service_company_name">企业名称</string>
+    <string name="str_order_service_stype">服务类型</string>
+    <string name="str_order_service_length">时长</string>
+    <string name="str_order_service_authorization">授权</string>
+    <string name="str_order_service_stock">存量</string>
+    <string name="str_order_service_created_time">生成时间</string>
+    <string name="str_order_service_pay_type">支付方式</string>
+    <string name="str_order_service_amount">订单金额</string>
+    <string name="str_order_service_operation">操作</string>
+    <string name="str_order_service_year">年</string>
+    <string name="str_order_service_unit1">个</string>
+    <string name="str_order_service_unit2">张</string>
+    <string name="str_order_service_detail">订单详情</string>
+    
+    <string name="str_order_service_detail_info">订单基本信息</string>
+    <string name="str_order_service_order_detail">订单明细</string>
+    <string name="str_order_service_pay_info">支付信息</string>
+    <string name="str_order_service_money_unit">元</string>
+    <string name="str_order_service_company">企业</string>
+    <string name="str_order_service_99bill">快钱</string>
+    <string name="str_order_service_pay_way">支付类型</string>
+    <string name="str_order_service_pay_no">支付流水号</string>
+    
+    <string name="str_order_service_user_id">用户ID</string>
+    <string name="str_order_service_user_name">用户名称</string>
+    <string name="str_order_service_member_prepay">会员充值</string>
+    <string name="str_order_service_expansion">扩容</string>
+    <string name="str_order_service_member_length">会员</string>
+    <string name="str_order_service_capacity">容量</string>
+    <string name="str_order_service_member_length_unit">月</string>
+    <string name="str_order_service_capacity_unit">张</string>
+    
+    <string name="str_order_service_personal">个人</string>
+    <!-- 用户，企业服务订单类表end -->
+    
+    <!-- 财务管理 -->
+    <string name="str_menu_orderclearlist">订单结算</string>
+    <string name="str_menu_todayclearorder">当日到期结算</string>
+    <string name="str_menu_refundorder">待退款订单</string>
+
+    <string name="str_menu_pendinginvoice">待开发票</string>
+    <string name="str_finance_img_err_big">图片过大</string>
+
+    <!--找人业务start-->
+    <string name="str_finance_auditrecord">审核记录</string>
+    <string name="str_finance_operatetype">操作类型</string>
+    <string name="str_finance_paytype">支付方式</string>
+    <string name="str_finance_paytype_bank">银行卡</string>
+    <string name="str_finance_paytype_alipay">支付宝</string>
+    <string name="str_finance_paytype_weixin">微信</string>
+    <string name="str_finance_paytype_apay">apple pay</string>
+    <string name="str_finance_paytype_all">全部</string>
+    <string name="str_finance_order_status">订单状态</string>
+    <string name="str_finance_order_status_down">已结算</string>
+    <string name="str_finance_order_status_wait">待结算</string>
+    <string name="str_finance_income_name">收款名称</string>
+    <string name="str_finance_income_id">收款ID</string>
+    <string name="str_finance_trade_time">交易时间</string>
+    <string name="str_finance_trade_no">交易流水号</string>
+    <string name="str_finance_income_alipay">收款支付宝</string>
+    <string name="str_finance_seller_commission">卖家分佣</string>
+    <string name="str_finance_comp_commission">公司分佣</string>
+    <string name="str_finance_income_fee">收款手续费</string>
+    <string name="str_finance_payment_fee">付款手续费</string>
+    <string name="str_finance_balance_time">结算时间</string>
+    <string name="str_finance_other">其他</string>
+    <string name="str_finance_balance">结算</string>
+    <string name="str_finance_balance_prompt">结算提示</string>
+    <string name="str_finance_balance_confirm">确认结算</string>
+    <string name="str_finance_balance_batch">批量结算</string>
+
+    <string name="str_finance_balance_order_select">请选择要结算的订单</string>
+    <string name="str_finance_balance_order">结算这些订单吗</string>
+
+    <string name="str_finance_refunded">已退款</string>
+    <string name="str_finance_refund_wait">待退款</string>
+    <string name="str_finance_refund_time">退款时间</string>
+    <string name="str_finance_refund_reason">退款原因</string>
+    <!--找人业务end-->
+
+    <!-- 财务开票找人业务 start -->
+    <string name="str_invoice_status">状态</string>
+    <string name="str_invoice_apply_name">申请名称</string>
+    <string name="str_invoice_numb">发票号</string>
+    <string name="str_invoice_apply_id">申请ID</string>
+    <string name="str_invoice_submit_time">提交时间</string>
+    <string name="str_invoice_billing_time">开票时间</string>
+    <string name="str_invoice_operation">操作</string>
+    <string name="str_invoice_to">至</string>
+    <string name="str_invoice_personal_business">个人开票申请</string>
+    <string name="str_invoice_apply_amount">申请金额</string>
+    <string name="str_invoice_special">专票</string>
+    <string name="str_invoice_general">普票</string>
+    <string name="str_invoice_billing">开票</string>
+    <string name="str_invoice_detail">发票详情</string>
+
+    <!--开票申请-->
+    <string name="str_invoice_title_email">申请邮箱</string>
+    <string name="str_invoice_title_id">用户ID</string>
+    <string name="str_invoice_title_amount">开票金额</string>
+    <string name="str_invoice_title_use_amount">可开金额</string>
+    <string name="str_invoice_title_type">开票类型</string>
+    <string name="str_invoice_title_unit">元</string>
+    <string name="str_invoice_title_contact">联系人</string>
+    <string name="str_invoice_title_telephone">联系电话</string>
+    <string name="str_invoice_title_compname">企业名称</string>
+    <string name="str_invoice_title_taxpercode">纳税人识别码</string>
+    <string name="str_invoice_title_regaddr">公司注册地址</string>
+    <string name="str_invoice_title_regphone">公司注册电话</string>
+    <string name="str_invoice_title_bankposit">开户银行</string>
+    <string name="str_invoice_title_bankaccount">银行账号</string>
+    <string name="str_invoice_title_certificate">税务登记证/营业执照</string>
+    <string name="str_invoice_title_taxper">一般纳税人证明</string>
+    <string name="str_invoice_title_invoicetitle">发票台头</string>
+    <string name="str_invoice_title_submit">确认</string>
+    <string name="str_invoice_title_cancel">取消</string>
+
+    <!--开票页面-->
+    <string name="str_invoice_title_orderinfo">订单基本信息</string>
+    <string name="str_invoice_title_balance">余额</string>
+    <string name="str_invoice_order_numb">订单号</string>
+    <string name="str_invoice_businesstype">业务类型</string>
+    <string name="str_invoice_this_amount">本次开具金额</string>
+    <string name="str_invoice_sum">合计</string>
+    <string name="str_invoice_order_used">选定的订单已开过发票，请重新获取订单开票！</string>
+    <string name="str_invoice_save">保存</string>
+    <string name="str_invoice_billingdetail">开票详情</string>
+    <string name="str_invoice_addnumb">请填写发票号</string>
+    <string name="str_invoice_err_upload">支持jpg和png格式的图片,大小不超过2M</string>
+    <string name="str_invoice_err_faild">图片上传失败</string>
+    <string name="str_invoice_addnumb_eight">请填写发票号（8位数字）</string>
+    <string name="str_invoice_savenumb_faild">保存发票号失败</string>
+
+    <string name="str_invoice_input_err_amount">开票金额填写错误</string>
+    <string name="str_invoice_input_err_bigamount">开票金额不能大于可开金额</string>
+    <string name="str_invoice_input_err_email">申请邮箱不能为空，请使用email格式</string>
+    <string name="str_invoice_input_err_id">用户ID不能为空，格式为11位手机号码</string>
+    <string name="str_invoice_input_err_amount_null">开票金额不能为空，保留两位小数点</string>
+    <string name="str_invoice_input_err_title">请填写发票抬头</string>
+    <string name="str_invoice_input_err_contact">请填写联系人</string>
+    <string name="str_invoice_input_err_phone">请填写联系电话</string>
+    <string name="str_invoice_input_err_comp">请填写企业名称</string>
+    <string name="str_invoice_input_err_taxpayercode">请填写纳税人识别码</string>
+    <string name="str_invoice_input_err_regaddr">请填写公司注册地址</string>
+    <string name="str_invoice_input_err_regphone">请填写公司注册电话</string>
+    <string name="str_invoice_input_err_bankdeposit">请填写公司开户银行</string>
+    <string name="str_invoice_input_err_bankaccount">请填写公司银行账号</string>
+    <string name="str_invoice_format_err_bankaccount">银行账号格式错误，请重新填写</string>
+    <string name="str_invoice_format_err_telephone">联系电话格式错误，请重新填写</string>
+    <string name="str_invoice_format_err_comregphone">公司注册电话格式错误，请重新填写</string>
+    <string name="str_invoice_input_err_taxpayer">请上传一般纳税人证明</string>
+    <string name="str_invoice_input_err_certificate">请上传税务登记证\营业执照</string>
+    <string name="str_invoice_input_err_invoicetype">请选择开票类型</string>
+    <string name="str_invoice_input_err_noamount">可开金额不足</string>
+    <string name="str_invoice_err_certificate_taxpayer">请上传税务登记证/营业执照和一般纳税人证明</string>
+    <string name="str_invoice_alert_success">开票申请添加成功</string>
+    <string name="str_invoice_alert_faild">申请失败</string>
+    <string name="str_invoice_error_apply">请填写全部信息！</string>
+    <string name="str_invoice_cancel_apply">存在未保存的信息，确认取消</string>
+    <!-- 财务开票找人业务 end -->
+
+    <!--硬件管理-->
+    <string name="str_hardmanage_record">硬件记录</string>
+
+	<!-- 人脉推荐start -->
+	<string name="str_cr_content_recommend">人脉推荐</string>
+	<string name="str_cr_datetime">推荐时间</string>
+	<string name="str_cr_person_number">推荐人数</string>
+	<string name="str_cr_recommended_person_number">被推荐人数</string>
+	<string name="str_cr_recommond_user">推荐用户</string>
+	<string name="str_cr_user_id">用户ID</string>
+	<string name="str_cr_username">姓名</string>
+	<string name="str_cr_area">地区</string>
+	<string name="str_cr_industry">行业</string>
+	<string name="str_cr_title">职位</string>
+	<string name="str_cr_position">职能</string>
+	<string name="str_cr_user_cnt">使用次数</string>
+	<string name="str_cr_last_find_time">最后找人时间</string>
+	<string name="str_cr__recommended_vcard">被推荐名片</string>
+	<string name="str_cr_mobile">手机号</string>
+	<string name="str_cr_company">公司</string>
+	<string name="str_cr_holder">持有人</string>
+	<string name="str_cr_input_title">标题：</string>
+	<string name="str_cr__recommended_person">被推荐人：</string>
+	<string name="str_cr_click_choose_recommended">点击选择被推荐人</string>
+	<string name="str_cr_recommend_vcard">推荐人脉</string>
+	<string name="str_cr_click_choose_recommend_vcard">点击选择推荐人脉</string>
+	<string name="str_cr_choose_area">选择地区</string>
+	<string name="str_cr_province_city">省/直辖市</string>
+	<string name="str_cr_user_list">用户列表</string>
+	<string name="str_cr_confirm">确认</string>
+	<string name="str_cr_cancel">取消</string>
+	<string name="str_cr_vcard_list">名片列表</string>
+	<string name="str_cr_content_recommend">人脉推荐</string>
+	<string name="str_cr_content_recommend">人脉推荐</string>
+	<string name="str_cr_content_recommend">人脉推荐</string>
+	<string name="str_cr_enter_title">请输入标题</string>
+	<string name="str_cr_choose_recom_person">请选择被推荐人</string>
+	<string name="str_cr_choose_recom_vcard">请选择推荐人脉</string>
+	<string name="str_cr_recom_succ_tips">推荐成功，点击继续将接着推荐，确认将返回推荐首页</string>
+	<string name="str_cr_add_btn_continue">继续</string>
+	<string name="str_cr_add_btn_ok">确认</string>
+	<string name="str_cr_recom_fail_tips">推荐失败</string>
+	<string name="str_cr_recom_open_pop_waitting">系统正在为您打开弹出层，请稍候再点击</string>
+	<string name="str_cr_mobile_format_tips">用户ID格式错误，必须为完整的手机号格式</string>
+	<string name="str_cr_max_recom_person_num">一次最多能选择99用户</string>
+	<string name="str_cr_please_choose_recom_person">请先选择推荐人</string>
+	<!-- 人脉推荐end -->
+	
+	<!-- 企业用户管理start -->
+	<string name="str_entuser_ent_id">企业ID</string>
+	<string name="str_entuser_ent_name">企业名称</string>
+	<string name="str_entuser_submit_auth_time">提交认证时间</string>
+	<string name="str_entuser_auth_time">认证时间</string>
+	<string name="str_entuser_account_status">帐号状态</string>
+	<string name="str_entuser_scaner_number">扫描仪数量</string>
+	<string name="str_entuser_scan_vcard_number">扫描名片数</string>
+	<string name="str_entuser_account_blocked">锁定</string>
+	<string name="str_entuser_account_active">正常</string>
+	<string name="str_entuser_cancel_auth">取消认证</string>
+	<string name="str_entuser_list_no_data">暂时没有数据</string>
+	<string name="str_entuser_to">至</string>
+	<string name="str_entuser_register_time">注册时间</string>
+	<string name="str_entuser_add_ent">新增企业</string>
+	<string name="str_entuser_admin_last_login_time">管理员最后登录时间</string>
+	<string name="str_entuser_account_block">封号</string>
+	<string name="str_entuser_account_open">解封</string>
+	<string name="str_entuser_btn_edit">编辑</string>
+	<string name="str_entuser_btn_delete">删除</string>
+	<string name="str_entuser_cons_record">消费记录</string>
+	<string name="str_entuser_auth_account">授权账号</string>
+	<string name="str_entuser_detail">详情</string>
+	<string name="str_entuser_opera_fail">操作失败</string>
+	<string name="str_entuser_opera_succ">操作成功</string>
+	<string name="str_entuser_licepath">营业执照:</string>
+	<string name="str_entuser_orgpath">组织机构代码证：</string>
+	<string name="str_entuser_regpath">税务登记证：</string>
+	<string name="str_entuser_contact">联系人：</string>
+	<string name="str_entuser_telephone">联系电话：</string>
+	<string name="str_entuser_detail_address">详细地址：</string>
+	<string name="str_entuser_note">备注</string>
+	<string name="str_entuser_no_submit_reason">未提交原因</string>
+	<string name="str_entuser_btn_ok">确定</string>
+	<string name="str_entuser_btn_through">通过</string>
+	<string name="str_entuser_btn_no_through">不通过</string>
+	<string name="str_entuser_write_reason">请填写未通过原因</string>
+	<string name="str_entuser_btn_cancel">取消</string>
+	<string name="str_entuser_btn_auth">认证</string>
+	<!-- 企业用户管理end -->
+    <!--Orange标签管理start-->
+    <string name="str_orange_label_input">输入标签</string>
+    <string name="str_orange_label_type">标签类型</string>
+    <string name="str_orange_label_type_name">类型名称</string>
+    <string name="str_orange_label_name">标签名称</string>
+    <string name="str_orange_label_all">全部</string>
+    <string name="str_orange_label_get_type_fail">标签类型获取失败</string>
+    <string name="str_orange_label_get_list_fail">标签列表获取失败</string>
+    <string name="str_orange_label_del">删除</string>
+    <string name="str_orange_label_edit">修改</string>
+    <string name="str_orange_label_confirm">确认</string>
+    <string name="str_orange_label_cancel">取消</string>
+    <string name="str_orange_label">标签</string>
+    <string name="str_orange_label_select_all">全选</string>
+    <string name="str_orange_label_add_fail">添加失败</string>
+    <string name="str_orange_label_del_confirm">确认删除所选标签？</string>
+    <string name="str_orange_label_del_fail">删除标签失败</string>
+    <string name="str_orange_label_loading_fail">标签加载失败</string>
+    <string name="str_orange_label_max_length_fail">长度超出限制，请修改后添加</string>
+    <string name="str_orange_label_type_exist_fail">标签类型已经存在，请修改后添加</string>
+    <string name="str_orange_label_exist_fail">标签名称已经存在，请修改后添加</string>
+    <string name="str_orange_label_add">添加</string>
+    <string name="str_orange_label_add_fail">添加失败</string>
+    <string name="str_orange_label_fail">失败</string>
+    <!--Orange标签管理end-->
+
+    <!--Orange 卡类型 start-->
+    <string name="str_orange_type_all">全部</string>
+    <string name="str_orange_type_time">时间</string>
+    <string name="str_orange_type_cardtype">卡类型</string>
+    <string name="str_orange_type_swipetype">刷卡方式</string>
+    <string name="str_orange_type_updatetime">修改时间</string>
+    <string name="str_orange_type_opt">操作</string>
+    <string name="str_orange_type_show">展示</string>
+    <string name="str_orange_type_swipe">刷卡</string>
+    <string name="str_orange_type_edit">编辑</string>
+    <string name="str_orange_type_can_input">可输入</string>
+    <string name="str_orange_type_cannot_input">只展示</string>
+        <!--卡属性举例数据-->
+    <string name="str_orange_cardpropexample_cardnum">卡号</string>
+    <string name="str_orange_cardpropexample_validthru">VALID THRU</string>
+    <string name="str_orange_cardpropexample_pincode">PIN码</string>
+    <string name="str_orange_cardpropexample_phone">电话</string>
+    <string name="str_orange_cardpropexample_telephone">联系电话</string>
+    <string name="str_orange_cardpropexample_barcode">条形码</string>
+    <string name="str_orange_cardpropexample_cardname">卡名称</string>
+    <string name="str_orange_cardpropexample_validity">有效期</string>
+    <string name="str_orange_cardpropexample_password">密码</string>
+    <string name="str_orange_cardpropexample_bankname">银行名称</string>
+    <string name="str_orange_cardpropexample_securitycode">安全码</string>
+    <string name="str_orange_cardpropexample_varificationcode">验证码</string>
+
+    <string name="str_orange_type_cardtypename">卡类型名称</string>
+    <string name="str_orange_type_edit_lssuer">输入发卡单位</string>
+    <string name="str_orange_type_add">添加</string>
+    <string name="str_orange_type_update">修改</string>
+    <string name="str_orange_type_selectall">全选</string>
+    <string name="str_orange_type_del">删除</string>
+    <string name="str_orange_type_used">使用中不能删除和修改</string>
+    <string name="str_orange_type_cardprop">卡片上的属性</string>
+    <string name="str_orange_type_name">名称</string>
+    <string name="str_orange_type_content">实例内容</string>
+    <string name="str_orange_type_mark">文字提示词</string>
+    <string name="str_orange_type_encrypt">加密存储</string>
+    <string name="str_orange_type_strategy">推荐策略优先级</string>
+    <string name="str_orange_type_agreement">模板使用协议</string>
+    <string name="str_orange_type_verify_agreement">请添写协议</string>
+    <string name="str_orange_type_tags">标签</string>
+    <string name="str_orange_type_save">保存</string>
+    <string name="str_orange_type_submit">确定</string>
+    <string name="str_orange_type_cancel">取消</string>
+    <string name="str_orange_type_lssuername">单位名称</string>
+    <string name="str_orange_type_shortname">简称</string>
+    <string name="str_orange_type_sure">确定</string>
+    <string name="str_orange_type_card_prop">卡属性</string>
+    <string name="str_orange_type_edit_propname">输入名称</string>
+    <string name="str_orange_type_edit_propcontent">输入实例内容</string>
+    <string name="str_orange_type_edit_propmark">输入提示内容</string>
+    <string name="str_orange_type_prompt">提示</string>
+    <string name="str_orange_type_changedprop">卡属性已变更，前往修改模板样式</string>
+    <string name="str_orange_type_nomodel">该卡类型暂无模板样式前往编辑</string>
+
+    <string name="str_orange_type_explain">推荐策略说明</string>
+    <string name="str_orange_type_explain_o">1、标签：推荐包含某些标签的卡。</string>
+    <string name="str_orange_type_explain_t">2、日历事件：从最近日历中拿取；若无，则不显示；</string>
+    <string name="str_orange_type_explain_f">2.1设置在里程卡、航程卡下，推荐包含行程的日历信息。</string>
+    <string name="str_orange_type_explain_five">3、相关地点：当前位置直径1公里的商户会员卡。</string>
+    <string name="str_orange_type_explain_s">3.1设置在日历卡下，则是基于日历描述中的位置直径1公里的商户会员卡。</string>
+    <string name="str_orange_type_explain_seven">3.2设置在航程卡下，则推荐包含起落机场的商户会员卡。</string>
+    <string name="str_orange_type_explain_e">4、相关时间：推荐当前时间段经常使用的卡（根据卡时间标签）。</string>
+
+    <string name="str_orange_type_modelstyle">模板样式</string>
+    <string name="str_orange_type_editexplain">点击图片可打开编辑样式页面，并指定到正反面</string>
+    <string name="str_orange_type_front">正面</string>
+    <string name="str_orange_type_con">反面</string>
+
+    <string name="str_orange_type_no_swipe_type">请选择刷卡方式</string>
+    <string name="str_orange_type_no_lssuer">请添加发卡行</string>
+    <string name="str_orange_type_no_prop">请添加卡属性</string>
+    <string name="str_orange_type_sure_del_prop">确定要删除这些属性吗？</string>
+    <string name="str_orange_type_select_del_prop">请选择要删除的属性</string>
+    <string name="str_orange_type_msg_propname">请填属性名称</string>
+    <string name="str_orange_type_msg_propname_used">该属性名称已存在</string>
+    <string name="str_orange_type_msg_content">请填实例内容</string>
+    <string name="str_orange_type_msg_select_cardprop">请选择要修改的卡属性</string>
+    <string name="str_orange_type_sure_del_lssuer">确定要删除这些发卡单位吗？</string>
+    <string name="str_orange_type_select_del_lssuer">请选择要删除的发卡单位</string>
+    <string name="str_orange_type_msg_select_lssuer">请选择要修改的发卡单位</string>
+    <string name="str_orange_type_msg_lssuername">请填写发卡单位名称</string>
+    <string name="str_orange_type_msg_lssuername_used">该发卡单位已存在</string>
+    <string name="str_orange_type_msg_priority_used">该推荐策略已选择</string>
+    <!--Orange 卡类型 end-->
+
+    <!--开票-邮寄名片start-->
+    <string name="tip_send_email_card">邮寄名片</string>
+    <string name="tip_input_reason">请填写拒绝原因</string>
+    <string name="str_bill_fail_msg">开票失败提醒</string>
+    <string name="tip_send_mail_msg">,已发送邮件提醒</string>
+    <string name="tip_send_sms_msg">,已发送短信提醒</string>
+    <string name="str_wait_bill">待开发票</string>
+    <string name="str_wait_input">待录票号</string>
+    <string name="str_already_refuse">已拒绝</string>
+    <string name="str_account_name">用户名称</string>
+    <string name="str_create_time">生成时间</string>
+    <string name="str_bill_time">开票时间</string>
+    <string name="str_invoice_type">发票类型</string>
+    <string name="str_invoice_no">发票号</string>
+    <string name="str_dealing_price">交易金额</string>
+    <string name="str_bill">开票</string>
+    <string name="str_invoice_detail">发票详情</string>
+    <string name="str_order_msg">订单基本信息</string>
+    <string name="str_attachment">附件</string>
+    <string name="str_invoice_title">发票抬头</string>
+    <string name="str_order_price">订单金额</string>
+    <string name="str_rmb">元</string>
+    <string name="str_invoice_qualifications">发票资质</string>
+    <string name="str_taxpayer_code">纳税人识别码</string>
+    <string name="str_company_reg_addr">公司注册地址</string>
+    <string name="str_company_reg_tel">公司注册电话</string>
+    <string name="str_bank_name">开户银行</string>
+    <string name="str_bank_account">银行账户</string>
+    <string name="str_taxpayer_certificate">一般纳税人证明</string>
+    <string name="str_business">营业执照\税务登记证</string>
+    <string name="str_make_sure_bill">确认开票</string>
+    <string name="str_refuse_bill">拒绝开票</string>
+    <string name="str_prompt">提示</string>
+    <string name="str_input_reason">请输入拒绝原因</string>
+    <string name="str_input_reason_long">拒绝原因请小于100个字</string>
+    <string name="tip_img_format">图片只能是jpg,gif,png格式</string>
+    <string name="tip_invoice_no_format">发票号格式错误,发票号为8位数字</string>
+    <string name="tip_fail_reason">尊敬的客户，您好,你的发票申请失败，原因如下：</string>
+    <string name="str_order_status_all">全部</string>
+    <string name="str_order_status_applyinvoice">待开发票</string>
+    <string name="str_order_status_invoicenumb">待录票号</string>
+    <string name="str_order_status_down">已完成</string>
+    <string name="str_order_status_refuse">已拒绝</string>
+
+    <!--开票-邮寄名片end-->
+
+    <!--活动管理start-->
+    <string name="tip_create_success">生成成功</string>
+    <string name="tip_create_error">生成失败</string>
+    <string name="tip_num_time_error">数量、兑换有效期不能为空</string>
+    <string name="tip_add_success">追加成功</string>
+    <string name="tip_add_error">追加失败</string>
+    <string name="tip_none_redeemcode">下无兑换码</string>
+    <string name="str_redeemcode">兑换码</string>
+    <string name="tip_effective_error">此兑换码组不在任务有效期内</string>
+    <string name="tip_num_error">此兑换码组不在任务有效期内</string>
+    <string name="tip_has_task">此时间段已有任务存在</string>
+    <string name="tip_issued_status">发布状态</string>
+    <string name="str_offline">已下线</string>
+    <string name="str_add_active">新增消息</string>
+    <string name="str_activity">活动</string>
+    <string name="str_on_to_off">上线时间 至 下线时间</string>
+    <string name="str_share_num">分享量</string>
+    <string name="str_share_user_num">分享用户量</string>
+    <string name="str_push_user_num">推送用户量</string>
+    <string name="str_already_del">已删除</string>
+    <string name="str_if_notice">是否通知</string>
+    <string name="str_click_choose">单击选择资讯</string>
+    <string name="str_activity_time">活动时间</string>
+    <string name="tip_format_error">音频格式不正确</string>
+    <string name="tip_check_audio">添加音频失败:请检查文件大小和格式</string>
+    <string name="tip_add_audio_fail">添加音频失败</string>
+    <string name="str_push_type">推送方式</string>
+    <string name="str_redeemcode_num">兑换码数量</string>
+    <string name="str_exchange_length">兑换时长</string>
+    <string name="str_exchange_num">兑换存量</string>
+    <string name="str_redeemcode_effective">兑换码有效期</string>
+    <string name="str_task_type">任务类型</string>
+    <string name="str_invited_success">成功邀请</string>
+    <string name="str_task_time">任务时间</string>
+    <string name="str_redeemcode_group">兑换码组</string>
+    <string name="str_request_person">成功人数要求</string>
+    <string name="str_cards_num">张</string>
+    <string name="str_persons_num">人</string>
+    <string name="str_standard_time">达标时间</string>
+    <string name="str_success_person_num">成功人数</string>
+    <string name="str_choose_redeemcode">选择兑换码</string>
+    <string name="str_authorized_time">时长</string>
+    <string name="str_stock">存量</string>
+    <string name="str_code_num">号码数量</string>
+    <string name="str_choose_news">选择资讯</string>
+    <string name="str_waiting_push">待推送</string>
+    <string name="str_operatorer">操作人</string>
+    <string name="str_create_redeemcode">生成兑换码</string>
+    <string name="str_remaining_num">剩余数量</string>
+    <string name="str_consume_list">消费列表</string>
+    <string name="str_add_to">追加</string>
+    <string name="str_creating">生成中</string>
+    <string name="str_not_created">未生成</string>
+    <string name="str_add_to_redeemcode">追加兑换码</string>
+    <string name="str_add_to_num">追加数量</string>
+    <string name="str_add_task">新增任务</string>
+    <string name="str_finish_user">达标用户</string>
+    <string name="str_task_request">任务要求</string>
+    <string name="str_recipient_id">兑换人ID</string>
+    <string name="str_release_time">兑换时间</string>
+    <string name="str_recipient_name">兑换人姓名</string>
+    <string name="str_if_exchange">是否兑换</string>
+    <string name="str_exchange_time">兑换时间</string>
+    <string name="str_redeemcode_user_id">使用人ID</string>
+    <string name="str_redeemcode_user_name">使用人姓名</string>
+    <string name="str_exchange_content">兑换内容</string>
+    <string name="str_days_authorized">日授权</string>
+    <string name="str_inside_message">内部消息</string>
+    <string name="str_sms">短信</string>
+    <string name="str_not_send">未发送</string>
+    <string name="str_waiting_send">待发送</string>
+    <string name="str_sended">已发送</string>
+    <string name="str_send_agin">再次推送</string>
+    <string name="str_article_content">文章内容</string>
+    <string name="str_revoke">撤回</string>
+    <!--活动管理end-->
+
+    <!--地区行业职能start-->
+    <string name="str_choose_area">选择地区</string>
+    <string name="str_c_province_city">省/直辖市</string>
+    <string name="str_c_city">市</string>
+    <string name="str_choose_industry">选择行业</string>
+    <string name="str_first_category">一级分类</string>
+    <string name="str_second_category">二级分类</string>
+    <!--地区行业职能end-->
+
+
+    <string name="str_mypanel">我的面板</string>
+    <string name="suite">套餐管理</string>
+    <string name="orderbiz">订单管理</string>
+    <string name="orderbiz_detail">订单详情</string>
+    <string name="suite_list">套餐信息列表</string>
+
+</resources>

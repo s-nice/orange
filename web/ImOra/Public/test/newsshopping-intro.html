@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>公司简介</title>
+<link rel="stylesheet" href="__PUBLIC__/css/newsshopping.css" />
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var bannerWidth=$('.warp_banner li:first').width();
+	$('.warp_banner ul:first').width($('.warp_banner ul:first li').length*bannerWidth);
+	
+	//banner翻页按钮事件绑定
+	$('.warp_banner ol li').each(function(i){
+		$(this).on('click',function(){
+			turn(i);
+			$(this).addClass('active').siblings().removeClass('active');
+		})
+	});
+
+	//banner翻页函数
+	function turn(num){
+		$('.warp_banner div:first').animate({'scrollLeft':num*bannerWidth});
+	}
+	turn(0);//初始化
+	
+	//分享按钮
+	$('.warp_fenxiang span').on('click',function(){
+		var obj=$(this).next();
+		if (obj.is(':visible')){
+			obj.animate({top:50,opacity:0},'fast',function(){
+				$(this).hide();
+			});
+		} else {
+			obj.show().css({top:50,opacity:0}).animate({top:0,opacity:1},'fast');
+		}
+	});
+});
+</script>
+<style type="text/css">
+.warp_content_w p{font:16px/24px '微软雅黑';margin:10px 0px;}
+</style>
+</head>
+<body>
+	<div class="warp_shopping">
+		<div class="warp_header">
+			<div class="warp_logo_nav">
+				<div class="warp_logo"><a href="#"><img src="__PUBLIC__/images/shopping_logo.png" /></a></div>
+				<div class="warp_nav">
+					<ul>
+						<li><a href="#">免费模板</a></li>
+						<li class="on"><a href="#">付费模板</a></li>
+						<li><a href="#">编辑模板</a></li>
+						<li><a href="#">服务</a></li>
+					</ul>
+				</div>
+				<div class="warp_search">
+					<input type="text" value="输入您要查找的关键词" placeholder="输入您要查找的关键词"class="inputtext_shopping"  />
+				</div>
+				<div class="warp_vip">
+					<ul>
+						<li><a href="#">免费注册</a></li>
+						<li><a href="#">VIP会员</a></li>
+						<li><a href="#">立即登录</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="warp_banner">
+				<div style='position:relative;width:1200px;height:360px;overflow:hidden;'>
+					<ul>
+						<li><img src="__PUBLIC__/images/shopping_banner1.jpg" /></li>
+						<li><img src="__PUBLIC__/images/shopping_banner2.jpg" /></li>
+						<li><img src="__PUBLIC__/images/shopping_banner1.jpg" /></li>
+					</ul>
+				</div>
+				<ol>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<div class="warp_fenxiang">
+					<span><img src="__PUBLIC__/images/shopping_icon_fx.png" /></span>
+					<ul style='height:96px;'>
+						<li><img src="__PUBLIC__/images/shopping_icon_wx.png" /></li>
+						<li><img src="__PUBLIC__/images/shopping_icon_sina.png" /></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="warp_content">
+		<div class="warp_content_w">
+			<div class="Section0" style="layout-grid: 15.6000pt;">
+	<p class="MsoNormal">
+		<b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-weight: bold; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+				face="微软雅黑">业务描述及商业模式：</font></span></b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p></o:p></span>
+	</p>
+	<p class="MsoNormal">
+		<span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;">Ora（即北京橙鑫数据科技有限公司）成立于2013年，致力于为终端用户提供极致的产品和服务，创造真正便捷、有温度、高品质的智能科技产品和生活方式。</span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p></o:p></span>
+	</p>
+	<p class="MsoNormal">
+		<span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">目前公司自主开发产品</font>&mdash;&mdash;“设计师设计平台”，旨在服务于有名片使用需求的商务人士、职场精英，为更好的契合这一精英群体的身份特质、迎合该层次受众的审美需求，故开发此付费平台。除了平台免费提供的名片模板外，Ora另开发付费模板模块，从用户进行模板风格选择、付费下单、设计师开始设计、设计交稿至完成交易，为用户提供一条龙服务。</span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p></o:p></span>
+	</p>
+	<p class="MsoNormal">
+		<span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">此外，</font>Ora有着十分清晰的商业模式&mdash;&mdash;自主研发软件、配套智能硬件设施以及云端数据服务三位一体，橙脉APP是一个提供真实可靠人脉连接服务的移动互联网平台，以建设可持续发展的绿色商业为目标，以实现可持续发展的绿色商业为愿景，将人性化的智能关怀融入产品，通过贴心的个性服务，实现高效工作与乐享生活的完美结合，用数字促进社交，用数字重塑温情，打造有温度的智能生活新方式。</span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p></o:p></span>
+	</p>
+	<p class="MsoNormal">
+		<b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-weight: bold; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+				face="微软雅黑">目标用户</font></span></b><b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-weight: bold; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+				face="微软雅黑">：</font></span></b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">国内中高端商务人群</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">，</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">有名片设计需求的公司</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p></o:p></span>
+	</p>
+	<p class="MsoNormal">
+		<b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-weight: bold; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+				face="微软雅黑">收费模式</font></span></b><b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-weight: bold; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+				face="微软雅黑">：</font></span></b><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">按照用户的个性化设计需求和平台设计师报价付费</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">，</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">双方确认作品无误后</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">，</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">完成整个交易</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">。</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">同时用户也可以直接购买设计师统一设计好的名片形态</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">，</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">完成支付后即可使用相关原创设计</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><font
+			face="微软雅黑">。</font></span><span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p></o:p></span>
+	</p>
+	<p class="MsoNormal">
+		<span
+			style="mso-spacerun: 'yes'; font-family: 微软雅黑; mso-bidi-font-family: 'Times New Roman'; font-size: 10.5000pt; mso-font-kerning: 1.0000pt;"><o:p>&nbsp;</o:p></span>
+	</p>
+</div>
+		</div>
+	</div>
+	<div class="warp_footer">
+		<div class="footer_box">
+			<ul>
+				<li><a href="">常见问题</a></li>
+				<li class="jiange">/</li>
+				<li><a href="">联系我们</a></li>
+				<li class="jiange">/</li>
+				<li><a href="newsshopping-intro.html">公司简介</a></li>
+				<li class="jiange">/</li>
+				<li><a href="newsshopping-privacy.html">隐私政策</a></li>
+                <li class="jiange">/</li>
+                <li><a href="newsshopping-refund-policy.html">退款政策</a></li>
+				<li class="jiange">/</li>
+				<li><a href="">更新记录</a></li>
+			</ul>
+			<p>服务热线：400-8987-518 &nbsp; Copyright @  2017  北京橙鑫科技有限公司  版权所有</p>
+		</div>
+        <div class="footer_box">
+        </div>
+        <div class="footer_box">
+            <ul>
+                <li>友情链接 ： <a href="https://m.kuaidi100.com/" target="_blank">快递查询</a></li>
+            </ul>
+        </div>
+	</div>
+</body>
+</html>

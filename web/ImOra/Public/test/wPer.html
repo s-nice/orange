@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<!-- uc强制竖屏 -->
+	<meta name="screen-orientation" content="portrait">
+	<!-- QQ强制竖屏  -->
+	<meta name="x5-orientation" content="portrait">
+	<title>个人经历</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/wList.css">
+</head>
+<body>
+	<div class="warmp">
+		<div class="per_name">
+			<h3>牛二</h3>
+		</div>
+		<div class="name_title">
+			<h4>基本信息</h4>
+		</div>
+		<div class="per_list">
+			<ul>
+				<li><span>姓名：</span><em>牛二</em></li>
+				<li><span>年龄：</span><em>26</em></li>
+				<li><span>出生日期：</span><em>2017-4-10</em></li>
+				<li><span>血型：</span><em>o型</em></li>
+			</ul>
+		</div>
+		<div class="per_item">
+			<p>关于事情的由来……</p>
+			<p>关于事情的由来……</p>
+			<p>关于事情的由来……</p>
+		</div>
+	</div>
+
+
+
+<script>
+	var iScale = 1;
+	iScale = iScale / window.devicePixelRatio;
+	document.write('<meta name="viewport" content="height=device-height,width=device-width,initial-scale='+iScale+',minimum-scale='+iScale+',maximum-scale='+iScale+',user-scalable=yes" />')
+	//执行rem动态设置
+	var supportOrientation = (typeof window.orientation === 'number' && typeof window.onorientationchange === 'object');
+	var orientation;
+	var init = function(){
+		var updateOrientation = function(){
+			if(supportOrientation){
+				orientation = window.orientation;
+			}else{
+				orientation = (window.innerWidth > window.innerHeight) ? 90 : 0;
+			}
+			fontSize();
+	      	//reloadPop();
+		};
+		var eventName = supportOrientation ? 'orientationchange' : 'resize';
+		window.addEventListener(eventName, updateOrientation, false);
+		updateOrientation();
+	};
+	window.addEventListener('DOMContentLoaded',init,false);
+	/**
+	 * 将 html 的字体大小 设置为  屏幕宽度 / 设计稿宽度  * 100. 这样就可以将页面内字体和其他元素的宽度直接 / 100, 将单位顺利从 px 转成 rem 
+	 */
+	function fontSize(){
+		var iWidth;
+		var width = document.documentElement.clientWidth;
+		var height = document.documentElement.clientHeight;
+		var myOrientation = typeof window.orientation === 'number' ? window.orientation : orientation;
+		iWidth = ( myOrientation%180 === 0) ? (width > height ? height : width) : (width > height ? width : height);
+		document.getElementsByTagName('html')[0].style.fontSize = iWidth / 7.2 + 'px';
+	}
+</script>
+</body>
+</html>

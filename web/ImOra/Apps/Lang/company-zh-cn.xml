@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- title -->
+<string name="str_title_company_system">橙脉企业平台</string>
+<string name="str_title_logout_system">注销</string>
+<!--购买授权-->
+    <string name="str_menu_index">首页</string>
+    <string name="str_menu_buy_auth">购买授权</string>
+    <string name="str_accredit_bought">当前已购授权</string>
+    <string name="str_accredit_buy">购买</string>
+    <string name="str_accredit_discrib_no">未分配</string>
+    <string name="str_accredit_expire_time">到期日期</string>
+    <string name="str_accredit_number">授权数</string>
+    <string name="str_accredit_card_number">名片存储量</string>
+    <string name="str_accredit_length_time">购买时长</string>
+    <string name="str_accredit_buy_time">购买日期</string>
+    <string name="str_accredit_renew">续费</string>
+    <string name="str_accredit_year">年</string>
+    <string name="str_accredit_"></string>
+<!-- 企业模块左侧菜单 -->
+    <string name="str_menu_business">企业</string>
+    <string name="str_menu_business_infomation">基本信息</string>
+    <string name="str_menu_business_movement">企业动态</string>
+    <string name="str_menu_business_cards">企业名片</string>
+    <string name="str_business_manage">企业管理</string>
+    <string name="str_menu_employees">员工</string>
+    <string name="str_menu_employees_invite">员工邀请</string>
+    <string name="str_menu_employees_addstaff">邀请/编辑</string>
+    <string name="str_menu_employees_importstaff">批量导入</string>
+    <string name="str_menu_employees_customrule">自定义</string>
+    <string name="str_menu_employees_newconsumerules">新建/编辑</string>
+    <string name="str_menu_employees_customer_share">客户共享</string>
+    <string name="str_menu_employees_consumption_rules">消费规则</string>
+    <string name="str_menu_customer">客户</string>
+    <string name="str_menu_customer_card">客户名片</string>
+    <string name="str_menu_customer_company">客户公司</string>
+    <string name="str_menu_customer_employees_customer">员工客户</string>
+    <string name="str_menu_financial">财务</string>
+    <string name="str_menu_financial_invoice_qualification">发票资质</string>
+    <string name="str_menu_financial_apply_invoice">申请发票</string>
+    <string name="str_menu_system">系统</string>
+    <string name="str_menu_system_set_role">设置角色权限</string>
+    <string name="str_menu_system_login_passwd">修改登录密码</string>
+    <string name="str_menu_system_change_loguser">更换登录账号</string>
+    <string name="str_menu_report">报表</string>
+    <string name="str_menu_report_businesscard_statistics">名片行业占比统计</string>
+    <string name="str_menu_report_area_statistics">名片区域占比统计</string>
+    <string name="str_menu_report_cardgrowth_statistics">名片增幅趋势统计</string>
+<!-- 企业模块左侧菜单 end -->
+<!-- 客户 -->
+    <string name="str_breadcrumbs_distribution">数据分配</string>
+    <string name="str_breadcrumbs_exportcard">导出</string>
+    <string name="str_breadcrumbs_importcard">导入</string>
+    <string name="str_import_upload_max_size">文件最大支持20M</string>
+    
+    
+    
+
+<!--财务-->
+    <string name="str_finance">财务</string>
+    <string name="str_menu_financial_manage">财务管理</string>
+    <string name="str_invoice_qualified">发票资质</string>
+    <string name="str_invoice_qualified_edit">发票资质修改</string>
+    <string name="str_apply_invoice">申请发票</string>
+    <string name="str_company_name">企业名称</string>
+    <string name="str_can_apply_num">可申请金额</string>
+    <string name="str_billing_num">开票金额</string>
+    <string name="str_rmb">元</string>
+    <string name="str_cumulative_charge">累计充值</string>
+    <string name="str_already_billing">已开发票</string>
+    <string name="str_apply">申请</string>
+    <string name="str_apply_time">申请时间</string>
+    <string name="str_billing_money">发票金额</string>
+    <string name="str_billing_title">发票抬头</string>
+    <string name="str_billing_status">状态</string>
+    <string name="str_in_billing">开票中</string>
+    <string name="str_already_billing">已开票</string>
+    <string name="str_taxpayer_code">纳税人识别码</string>
+    <string name="str_reg_addr">公司注册地址</string>
+    <string name="str_reg_tel">公司注册电话</string>
+    <string name="str_opened_bank">开户银行</string>
+    <string name="str_bank_account">银行账户</string>
+    <string name="str_taxpayer_certify">一般纳税人证明</string>
+    <string name="str_submit_save">保存</string>
+    <string name="str_taxpayer_code_empty">纳税人识别码不能为空！</string>
+    <string name="str_reg_addr_empty">公司注册地址不能为空！</string>
+    <string name="str_reg_tel_empty">公司注册电话不能为空！</string>
+    <string name="str_opened_bank_empty">开户银行不能为空！</string>
+    <string name="str_bank_account_empty">银行账户不能为空！</string>
+    <string name="str_taxpayer_certify_empty">一般纳税人证明不能为空！</string>
+    
+    
+    
+<!--财务 end-->
+
+<!--系统设置-->
+
+    <string name="str_role_discribe">角色权限描述</string>
+    <string name="str_check_user">选择员工</string>
+    <string name="str_add_user">添加员工</string>
+    <string name="str_check_authority">选择权限</string>
+    <string name="str_add_authority">添加权限</string>
+    <string name="str_reset">重置</string>
+    <string name="str_make_sure">确认</string>
+    <string name="str_select">查询</string>
+    <string name="str_update_pwd">修改登录密码</string>
+    <string name="str_update_pwd_discribe">为了账户安全请您定期修改登录密码，修改密码后需重新登录。</string>
+    <string name="str_change_email">更换管理员邮箱</string>
+    <string name="str_change_email_discribe">更换邮箱请慎重，修改后您将使用新邮箱登录和管理企业平台，更换邮箱后需登录新邮箱认证后生效。</string>
+    <string name="str_login_pwd">登录密码</string>
+    <string name="str_new_email">新邮箱</string>
+    <string name="str_old_pwd">原始密码</string>
+    <string name="str_role_cannt_empty">角色名称和权限描述不能为空</string>
+    <string name="tip_effective_email">请填入有效邮箱</string>
+    <string name="tip_pwd_not_eq">新密码和确认密码不一致</string>
+	<string name="str_system_set">系统设置</string>
+	<string name="str_sys_role_list">角色列表</string>
+	<string name="str_sys_role_add_edit">新增编辑角色</string>
+	<string name="str_sys_role_del">角色删除</string>
+<!--系统设置 end-->
+
+	<!-- 企业认证start -->
+	<string name="str_entuser_opera_fail">操作失败</string>
+	<string name="str_entuser_opera_succ">操作成功</string>
+	<string name="str_entuser_licepath">营业执照:</string>
+	<string name="str_entuser_orgpath">组织机构代码证：</string>
+	<string name="str_entuser_regpath">税务登记证：</string>
+	<string name="str_entuser_contact">联系人：</string>
+	<string name="str_entuser_telephone">联系电话：</string>
+	<string name="str_entuser_detail_address">详细地址：</string>
+	<string name="str_entuser_auth_status">认证状态：</string>
+	<string name="str_entuser_auth_submitting">提交审核</string>
+	<string name="str_entuser_auth_succ">认证成功</string>
+	<string name="str_entuser_auth_fail">认证失败</string>
+	<string name="str_entuser_check_note">审核说明：</string>
+	<string name="str_entuser_ent_qualifi">企业资质：</string>
+	<string name="str_entuser_certi_not_one">三证未合一</string>
+	<string name="str_entuser_certi_one">三证合一</string>
+	<string name="str_entuser_contact_info">联系信息：</string>
+	<string name="str_entuser_province">省</string>
+	<string name="str_entuser_city">市</string>
+	<string name="str_entuser_notice_1">请上传扫描件或者复印件加盖</string>
+	<string name="str_entuser_notice_2">企业公章</string>
+	<string name="str_entuser_notice_3">后的拍照图片，并确保各项信息清析可见。</string>
+	<string name="str_entuser_notice_4">*请确认您填写的内容真实有效，提交后不可以修改。</string>
+	<!-- 企业认证end -->
+	
+	<!-- 企业注册start -->
+	<string name="str_reg_basic_info">基本信息</string>
+	<string name="str_edit_basic_info">编辑基本信息</string>
+	<string name="str_reg_ent_auth">企业认证</string>
+	<string name="str_reg_email_verify">邮箱验证</string>
+	<string name="str_reg_ent_name">企业姓名</string>
+	<string name="str_reg_name_note">请与执照一致，注册后不能修改</string>
+	<string name="str_reg_industry">所属行业</string>
+	<string name="str_reg_choose">选择</string>
+	<string name="str_reg_email">邮箱</string>
+	<string name="str_reg_ent_admin_account">企业平台管理员账户</string>
+	<string name="str_reg_password">密码</string>
+	<string name="str_reg_again_password">确认密码</string>
+	<string name="str_reg_ent_size">企业规模</string>
+	<string name="str_reg_website">官网URL</string>
+	<string name="str_reg_slide_verify">滑动验证</string>
+	<string name="str_reg_next_step">下一步</string>
+	<string name="str_reg_ent_agree">《企业平台服务协议》</string>
+	<string name="str_reg_image_note">请上传扫描件或者复印件加盖企业公章后的拍照图片，并确保各项信息清析可见。</string>
+	<string name="str_reg_submit">提交</string>
+	<string name="str_reg_tip_succ">恭喜您完成企业平台注册</string>
+	<string name="str_reg_tip_login_admin_email">请登录管理员邮箱完成验证。</string>
+	<string name="str_reg_return_login">返回登录</string>
+	<string name="str_reg_admin_email">管理员邮箱</string>
+	<string name="str_reg_verify_succ">验证成功!</string>
+	<string name="str_reg_check_tips">我们会在一个工作日内完成企业认证审核，您可以登录平台查看企业认证审核状态</string>
+	<string name="str_reg_to_login">去登录</string>
+	<string name="str_reg_exaple">例：</string>
+	<!-- 企业注册end -->
+	
+	<!--找回密码start  -->
+	<string name="str_pwd_account_valid">账号验证</string>
+	<string name="str_pwd_label_complete">完成 </string>
+	<string name="str_pwd_email">邮箱</string>
+	<string name="str_pwd_slide_verify">滑动验证</string>
+	<string name="str_pwd_btn_submit">提交</string>
+	<string name="str_pwd_btn_cancel">取消</string>
+	<string name="str_pwd_email_not_empty">邮箱不能为空</string>
+	<string name="str_pwd_email_format_error">邮箱格式错误</string>
+	<string name="str_pwd_send_email_tip">发送邮件完成,请查看邮箱</string>
+	<string name="str_pwd_find_pwd_succ">找回密码成功！</string>
+	<string name="str_pwd_login_email_link">请登录您的邮箱，点击重置密码链接重设密码！</string>
+	<string name="str_pwd_sec_redirect_login">秒后跳转到登录页。</string>
+	<string name="str_pwd_input_login_pwd">请输入登录密码完成邮箱更改 </string>
+	<string name="str_pwd_password">密码</string>
+	<string name="str_pwd_password_not_empty">密码不能为空</string>
+	<string name="str_pwd_admin_email">管理员邮箱 </string>
+	<string name="str_pwd_auth_succ">认证成功， 请设置登录密码。</string>
+	<string name="str_pwd_again_password">确认密码</string>
+	<string name="str_pwd_password_tip">注：密码可以为字母、数字、字符组成，不少于8位，最长16位。</string>
+	<string name="str_pwd_btn_ok">确定</string>
+	<string name="str_pwd_password_not_empty">密码不能为空!</string>
+	<string name="str_pwd_again_pwd_not_empty">确认密码不能为空！</string>
+	<string name="str_pwd_two_password_not_same">两次输入的密码不一致，请重新输入！</string>
+	<string name="str_pwd_set_new_succ">密码设置成功，</string>
+	<string name="str_pwd_fail">失败</string>
+	
+
+	<!--找回密码end  -->
+	
+	<!-- 登录 -->
+    <string name="login_username">用户名</string>
+    <string name="login_password">密码</string>
+	
+	<!-- 企业资料完善start -->
+	<string name="str_info_ent_logo">企业LOGO：</string>	
+	<string name="str_info_upload_img_tip">请上传JPG、JPEG或PNG格式图片,最大不超过2M.</string>	
+	<string name="str_info_ent_name">企业名称：</string>	
+	<string name="str_info_industry">所属行业：</string>	
+	<string name="str_info_choose">选择</string>	
+	<string name="str_info_ent_size">企业规模：</string>	
+	<string name="str_info_website">企业官网：</string>	
+	<string name="str_info_ent_desc">企业简介：</string>	
+	<string name="str_info_btn_save">保存</string>	
+	<string name="str_info_image_format_error">图片格式不对</string>  
+	<string name="str_info_website_format_error">企业官网格式错误</string>
+	<string name="str_info_update_succ">修改成功</string>
+	<string name="str_info_update_fail">修改失败</string>
+	<!-- 企业资料完善end -->
+
+	<!--登陆后首页start-->
+	<string name="str_index_can_do">您现在可以</string>
+	<string name="str_index_customer_manage">客户管理</string>
+	<string name="str_index_staff_manage">管理员工</string>
+	<string name="str_publish_company_news">发布企业动态</string>
+	<string name="str_show_data_statistics">查看数据统计</string>
+	<string name="str_company_certification">企业认证</string>
+	<string name="str_index_pass">通过</string>
+	<string name="str_index_not_pass">未通过</string>
+	<string name="str_index_certification">认证</string>
+	<string name="str_user_authority">用户授权</string>
+	<string name="str_has_opened">已开通</string>
+	<string name="str_index_int">个</string>
+	<string name="str_index_manage">管理</string>
+	<string name="str_consumer_account">消费账户</string>
+	<string name="str_index_balance">余额</string>
+	<string name="str_index_pay">充值</string>
+	<string name="str_current_card_num">当前名片数</string>
+	<string name="str_index_piece">张</string>
+	<string name="str_index_add_day">本日新增</string>
+	<string name="str_index_add_week">本周新增</string>
+	<string name="str_index_add_month">本月新增</string>
+	<string name="str_index_show">查看</string>
+	<string name="str_card_scanner">名片扫描仪</string>
+	<string name="str_index_one">台</string>
+	<string name="str_index_scan_day">本日扫描</string>
+	<string name="str_index_scan_week">本周扫描</string>
+	<string name="str_index_scan_month">本月扫描</string>
+	<!--登陆后首页end-->
+
+	<!--企业动态start-->
+	<string name="str_news_news">新闻</string>
+	<string name="str_news_notice">公告</string>
+	<string name="str_news_all">全部</string>
+	<string name="str_news_last_three_months">最近三个月</string>
+	<string name="str_news_last_twelve_months">最近十二个月</string>
+	<string name="str_news_by_months">按月份查看</string>
+	<string name="str_news_title">标题</string>
+	<string name="str_news_query">查询</string>
+	<string name="str_news_title">标题</string>
+	<string name="str_news_publish">发布</string>
+	<string name="str_news_date">日期和时间</string>
+	<string name="str_news_type">类型</string>
+	<string name="str_news_issuer">发布人</string>
+	<string name="str_news_operation">操作</string>
+	<string name="str_news_edit">编辑</string>
+	<string name="str_news_del">删除</string>
+	<string name="str_news_not_publish">您还没有发布过企业动态!</string>
+	<string name="str_news_query_no_data">没有符合您要查询的企业动态。</string>
+	<string name="str_news_fill_in_complete_information">请填写完整信息</string>\
+	<string name="str_news_del_fail">删除失败</string>
+	<string name="str_news_publish_fail">发布失败</string>
+	<string name="str_news_content">内容</string>
+	<string name="str_news_current_user">当前用户</string>
+	<string name="str_news_branch">部门</string>
+	<string name="str_news_del_confirm">您确认删除该条动态吗?此操作不可以恢复！</string>
+	<string name="str_news_confirm">确认</string>
+	<string name="str_news_cancel">取消</string>
+	<string name="str_business_movement_list">企业动态列表</string>
+	<string name="str_business_movement_add">新增企业动态</string>
+	<string name="str_business_movement_edit">编辑企业动态</string>
+	<string name="str_business_movement_del">删除企业动态</string>
+	<string name="str_business_cards_edit">编辑企业名片</string>
+	
+
+	<!--企业动态end-->
+
+	<!--ueditor提示start-->
+	<string name="str_ue_audio_format_error">音频格式不正确</string>
+	<string name="str_ue_add_audio_fail">添加音频失败:请检查文件大小和格式</string>
+	<!--ueditor提示end-->
+
+	<!--客户公司start-->
+	<string name="str_customer_manage">客户管理</string>
+	<string name="str_customer_cards_list">名片列表</string>
+	<string name="str_customer_cards_export">导出名片</string>
+	<string name="str_customer_cards_import">导入名片</string>
+	<string name="str_customer_company_list">查看</string>
+	<string name="str_customer_data_distribution">数据分配</string>
+	<string name="customer_company_name">公司名称</string>
+	<string name="customer_company_query">查询</string>
+	<string name="customer_company_industry">行业</string>
+	<string name="customer_company_card_num">名片总量</string>
+	<string name="customer_company_operation">操作</string>
+	<string name="customer_company_show">查看</string>
+	<!--客户公司end-->
+
+	<!--员工start-->
+	<string name="str_menu_employees_manage">员工管理</string>
+	<string name="str_employee_name">姓名</string>
+	<string name="str_employee_mobile">手机</string>
+	<string name="str_employee_email">邮箱</string>
+	<string name="str_employee_department">部门</string>
+	<string name="str_employee_position">职位</string>
+	<string name="str_employee_superior">上级</string>
+	<string name="str_employee_role">平台角色</string>
+	<string name="str_employee_pay">找人消费</string>
+	<string name="str_employee_op">操作</string>
+	<string name="str_employee_all_depart">所有部门</string>
+	<string name="str_employee_search">查询</string>
+	<string name="str_employee_list">员工列表</string>
+	<string name="str_employee_add">新增</string>
+	<string name="str_employee_import">批量导入</string>
+	<string name="str_employee_edit">编辑</string>
+	<string name="str_employee_del">删除</string>
+	<string name="str_rule_add">新建</string>
+	<string name="str_rule_title">规则标题</string>
+	<string name="str_rule_timecycle">时间周期</string>
+	<string name="str_rule_num">数量</string>
+	<string name="str_rule_money">金额</string>
+	<string name="str_rule_price">单价</string>
+	<string name="str_rule_unlimit">不限</string>
+	<string name="str_rule_limit">限制</string>
+	<string name="str_rule_lt_piece">张以内</string>
+	<string name="str_rule_lt_yuan">元以内</string>
+	<string name="str_rule_max">最大值</string>
+	<string name="str_rule_everyday">每天</string>
+	<string name="str_rule_everyweek">每周</string>
+	<string name="str_rule_everymonth">每月</string>
+	<string name="str_rule_everyyear">每年</string>
+	<string name="tip_title_repeat">此规则标题重复</string>
+	<string name="tip_save_succ">保存成功</string>
+	<string name="tip_save_fail">保存失败</string>
+	<string name="tip_del_succ">删除成功</string>
+	<string name="tip_del_fail">删除失败</string>
+	<string name="str_consumerules_list">规则列表</string>
+	<string name="str_consumerules_add">新增规则</string>
+	<string name="str_consumerules_edit">编辑规则</string>
+	<string name="str_consumerules_del">删除规则</string>
+	<string name="str_customershare_list">共享列表</string>
+	<string name="str_customershare_add">新建共享</string>
+	<string name="str_customershare_edit">编辑共享</string>
+	<string name="str_customershare_del">删除共享</string>
+	<string name="str_no_department">无部门</string>
+	<string name="str_phone_num">手机号</string>
+	<string name="str_is_existed">已存在,请重新输入</string>
+	<string name="str_no_residuenum">此授权无剩余数量，请刷新后重新选择</string>
+	<string name="str_department_title_num">部门与职位数量不一致</string>
+	<string name="str_eng_department_title_num">英文部门与职位数量不一致</string>
+	<string name="tip_email_has_bind">邮箱%s已被绑定</string>
+	<string name="tip_mobile_has_bind">手机%s已被绑定</string>
+	<string name="tip_succ_error_num">导入成功%s人，失败%s人</string>
+	<string name="tip_error_prison">,失败的原因有</string>
+	<string name="tip_import_finish">导入完成</string>
+	<string name="tip_model_format_error">导入模板格式错误</string>
+	<string name="str_import_model">员工批量导入模板</string>
+	<string name="str_basic_message">基础信息</string>
+	<string name="str_chinese_part">中文</string>
+	<string name="str_english_part">英文</string>
+	<string name="str_employee_telephone">电话</string>
+	<string name="str_phone_num_login">此手机号码用于登录橙脉APP</string>
+	<string name="str_email_login">此邮箱用于登录橙脉企业平台</string>
+	<string name="str_fax">传真</string>
+	<string name="str_employee_author">员工权限</string>
+	<string name="str_give_authority">分配授权</string>
+	<string name="str_no_give_authority">不分配授权</string>
+	<string name="str_storagenum">存量</string>
+	<string name="str_exprietime">到期日期</string>
+	<string name="str_use_comany_platform_consumer">使用企业支付找人消费</string>
+	<string name="str_use_comany_platform">使用企业平台</string>
+	<string name="str_allow">允许</string>
+	<string name="str_company_platform_role">企业平台角色</string>
+	<string name="str_upload_file">上传文件</string>
+	<string name="str_file_max_size">文件最大支持20M</string>
+	<string name="str_model_download">《批量导入文件模板下载》</string>
+	<string name="str_mass_set_authority">批量设置导入员工权限</string>
+	<string name="str_sorry_no_data">抱歉，没有搜索到相关的数据</string>
+	<!--员工end-->
+</resources>

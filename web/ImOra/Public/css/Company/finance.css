@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+
+/**
+*
+*发票资质样式
+*
+**/
+
+.invoice_warp{width:100%; min-height:836px; background:#fff; overflow:hidden;margin: 0 auto;margin-top:14px;}
+.invoice_content{width:62%; height:auto; background:#fff; overflow:hidden;margin: 0 auto;}
+@media (max-width:1300px){
+	.invoice_content{width:65%;}
+}
+@media (max-width:1100px){
+	.invoice_content{width:75%;}
+}
+@media (max-width:992px){
+	.invoice_content{width:85%;}
+}
+.div_label { height: 35px; margin-top:15px;}
+.div_label_img { height: 210px; margin-top: 20px;}
+.span_label{width:150px; height:35px; display: inline-block;text-align:right; margin-right: 10px; font: 16px/35px "微软雅黑"; color:#333;float: left;}
+.div_label em{ margin-right:5px; line-height: 35px; color: red;}
+.span_title{ display: inline-block; height: 35px; font:16px/35px "微软雅黑"; color:#333;}
+.title_bold{font-size:16px;font-weight:500;color:#333;}
+.div_label input { height: 35px; width:355px;text-indent:10px;font-family:"微软雅黑";font-size:12px;}
+.div_label_img .div_prove {height: 173px; width: 250px; float: left; position: relative;border:1px solid #ccc;background:#f2f2f2;}
+.div_prove span.add_img{font-family:"Arial Negreta", "Arial";font-size:72px;font-style:normal;font-weight:700;text-align:center;cursor:pointer;line-height:173px;display:inline-block;width:100%;height:100%;}
+.div_prove span.remove_img{line-height:16px;color:#fff;font-size:18px;height:20px;position:absolute;right:0;top:0;width:20px;font-weight:400;border-radius:50%;text-align:center;z-index:333;display:none;cursor:pointer;background:#333;}
+.div_prove span.remove_img:hover{background:#eb2222;}
+.div_label_img input,.div_label_img img { height:auto;max-width:100%; position: absolute;left: 0; top: 0;bottom:0;right:0;margin:auto;z-index:30;}
+.div_label_img input{z-index: 100; opacity: 0; filter:alpha(opacity=50);}
+.div_label_btn span {text-align: center;display:inline-block; width: 120px; height:35px; background:#505050; border-radius: 3px; line-height: 35px; cursor: pointer; color: #fff;font-size:14px;margin-right:15px;}
+.div_label_btn span.right_w{background:#d7d7d7;color:#333;}
+.div_label_ts{font: 14px/24px "微软雅黑"; color:#333; margin-left: 158px; margin-top: 10px;}
+.div_label_ts i{ color:#ff0000;}
+@media (max-width:992px){
+	.invoice_content{width:80%;}
+	.div_label input { height: 35px; width:255px;}
+}
+
+/**
+*
+*申请发票样式
+*
+**/
+.content{width: 100%; margin: 0 auto;}
+.apply_msg {width: 100%; height: 40px;}
+.apply_msg span.span_msg{font-size: 14px; color:#333; line-height: 40px; display: inline-block; margin:0 20px 0 10px;}
+.apply_msg span.span_btn{display:inline-block; width: 120px; height: 30px; background:#505050; font: 14px/30px "微软雅黑"; color:#fff; border-radius: 3px; margin-top: 5px; margin-right: 10px; line-height: 30px; cursor: pointer; text-align: center; float: right;}
+.apply_title {height: 40px;margin:0 10px;color: RGB(51,51,51);margin-top:10px;}
+.apply_list {height: 40px;margin:0 10px;color: RGB(51,51,51);}
+.apply_title span{ height: 40px; display: inline-block; margin: 0; float: left;  line-height: 40px; font-size: 14px;padding-left: 10px;border:1px solid #f4f4f4;border-left:none;}
+.apply_list span{ height: 40px; display: inline-block; margin: 0; float: left;  line-height: 40px;  font-size: 12px;padding-left: 10px;border:1px solid #f4f4f4;border-left:none;border-top:none;}
+.apply_list span.border_left,.apply_title span.border_left{border-left:1px solid #f4f4f4;}
+.apply_list span.blue_text{color:#3a8cbb;}
+/**
+*
+*申请样式
+*
+**/
+.apply_content{width:100%; min-height:836px; background:#fff; overflow:hidden;}
+.apply_auto{ width:60%; height:420px; overflow:hidden;margin:0 auto;}
+@media (max-width:950px){
+	.apply_auto{width:84%;}
+}
+.apply_label { width: 100%; height: 35px; margin-top:20px;}
+.div_label_btn { width:100%; height: 45px;margin-top:25px;margin-left:23.5%;}
+.btn_m_top{margin-top:60px;}
+.div_label_img { width:100%; height: 125px;}
+.div_label_img span em{color:red;margin-right:5px;line-height:35px;}
+.span_apply{ width: 150px; text-align: right; display: inline-block; margin-right: 10px; font:18px/35px "微软雅黑"; color:#333; float: left;}
+.span_apply em{ line-height: 35px; color:#ff0000; margin-right: 3px;}
+.span_title_apply{ display: inline-block; height: 35px; font:18px/35px "微软雅黑"; color:#333;}
+.span_title_apply b{font-weight:400;font-family:"微软雅黑";}
+.apply_label input {margin-left:3px; height:35px; width: 240px; font: 14px/35px "微软雅黑"; color:#333;text-indent:10px;}
+.apply_label_btn{ margin-left:163px;}
+.apply_label_btn span { display:inline-block; width: 100px; height: 35px;  border-radius: 3px; margin: 20px auto; line-height: 35px; cursor: pointer;}
+.btn_sub{margin-right:38px!important;background:#505050; color: #fff; font: 14px/35px "微软雅黑"; text-align:center;}
+.btn_can{background:#d7d7d7!important; color:#333!important; font: 14px/35px "微软雅黑"; text-align:center;}
+.apply_label .apply_xz{float:left;position:relative;margin-top: 9px;}
+.apply_label .apply_xz label{display:inline-block;width:18px;height:18px;background:url("../../images/s_blue.png") no-repeat;background-position:-100px 0; color:#333;}
+.apply_label .apply_xz input{width:18px; height:18px; opacity:0;filter:alpha(opacity=0);position:absolute;left:0;top:0;z-index:22;}
+.apply_xz input[type="radio"]:hover+label{background:url("../../images/s_blue.png") no-repeat;background-position:-120px 0;}
+.apply_xz input[type="radio"]:checked+label{background:url("../../images/s_blue.png") no-repeat;background-position:-140px 0;}
+.apply_label em{float:left;font: 14px/35px "微软雅黑";margin-left:3px;margin-right:15px;}
+@media screen and (min-width:320px) and (max-width: 768px) {
+    .apply_auto{width:90%;margin:0 auto;}
+}
+/*文本框获取焦点样式*/
+.form_focus:focus{box-shadow:none;border:1px solid #3c8dbc;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

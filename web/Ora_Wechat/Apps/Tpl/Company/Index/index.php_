@@ -1,0 +1,676 @@
+<layout name="../Layout/Company/AdminLTE_layout" />
+<include file="@Layout/Company/popup" />
+<div class="card-main">
+	<!-- 面包屑start -->
+	<include file="Common/breadCrumbs"/>
+	<!-- 面包屑end -->
+	<div class="card-search">
+		<div class="search-text">
+			<input type="text" placeholder="可根据姓名、公司、职位、邮箱、手机号等搜索" autocomplete='off' value="{$get.keyword}"/>
+			<button type="button">搜索</button>
+		</div>
+		<div class="if-search">
+			<span>更多筛选条件</span>
+			<em class="xia-icon-i"></em>
+		</div>
+		<div class="if-table">
+			<span title="<if condition="$get.tagname neq ''">{$get.tagname}<else/>标签搜索</if>"><if condition="$get.tagname neq ''">{$get.tagname}<else/>标签搜索</if></span>
+			<em class="xia-icon-i"></em>
+			<ul class="if-label-menu">
+			    <li tid="" title="全部标签">全部标签</li>
+				<foreach name="tags" item='v'>
+				<li <if condition="$v['id'] eq $get['tags']">class='active'</if>tid="{$v.id}" title="{$v.tags}">{$v.tags}</li>
+				</foreach>
+			</ul>
+		</div>
+	</div>
+	<div class="if-more clear" <if condition="$get.ismv eq '1'">style='display: block'</if>>
+		<div class="if-input">
+			<div class="if-input-item clear">
+				<div class="if-big-m">
+					<span>创建人：</span>
+					<input class="more-i-d hand creator" eid='{$get.eid}' value='{$get.ename}' type="text" autocomplete='off' placeholder="创建者" />
+					<em class="xia-s-m"><b></b></em>
+					<ul class="more-menu-m">
+						<li eid=''>无</li>
+					</ul>
+				</div>
+				<div class="if-big-m">
+					<span>公司：</span>
+					<input class="more-i-d" type="text" autocomplete='off' value='{$get.org}'/>
+				</div>
+				<div class="if-big-m">
+					<span>部门：</span>
+					<input class="more-i-d" type="text" autocomplete='off' value='{$get.depar}'/>
+				</div>
+			</div>
+			<div class="if-input-item clear">
+				<div class="if-big-m">
+					<span>职位：</span>
+					<input class="more-i-d" type="text" autocomplete='off' value='{$get.title}'/>
+				</div>
+				<div class="if-big-m">
+					<span>地址：</span>
+					<input class="more-i-d" type="text" autocomplete='off' value='{$get.adr}'/>
+				</div>
+				<div class="if-big-m">
+					<span>姓名：</span>
+					<input class="more-i-d" type="text" autocomplete='off' value='{$get.fn}'/>
+				</div>
+			</div>
+			<div class="if-input-item clear">
+				<div class="if-big-m">
+					<span>邮箱：</span>
+					<input class="more-i-d" type="text" autocomplete='off' value='{$get.email}'/>
+				</div>
+				<div class="if-big-m">
+					<span>交换时间：</span>
+					<input id='js_begintime' class="m-time-input" type="text" autocomplete='off' value='{$get.stime}' />
+					<i class="more-line">-</i>
+					<input id='js_endtime' class="m-time-input" type="text" autocomplete='off' value='{$get.etime}' />
+				</div>
+			</div>
+			<div class="more-if-btn">
+				<button type="button">立即搜索</button>
+			</div>
+		</div>
+		<!--小三角-->
+		<div class="sh-s-jiao"></div>
+		<!--关闭按钮-->
+		<span class="close-more hand"></span>
+	</div>
+	<div class="l_main clear">
+		<div class="card_nav">
+			<ul>
+                <if condition="$get.issearch eq '1'">
+                <li class="active"><a href="javascript:void(0);">搜索结果<em>({$totalCount})</em></a></li>
+                <else/>
+                <li <if condition="$get['type'] eq ''">class="active"</if>><a href="javascript:void(0);" type=''>所有名片<em>(<?php echo $counts['selfcount']+$counts['bindcount']?>)</em></a></li>
+				<li <if condition="$get['type'] eq '1'">class="active"</if>><a href="javascript:void(0);" type='1'>我创建的名片<em>({$counts.selfcount})</em></a></li>
+				<li <if condition="$get['type'] eq '2'">class="active"</if>><a href="javascript:void(0);" type='2'>共享给我的名片<em>({$counts.bindcount})</em></a></li>
+                </if>
+			</ul>
+			<div class="card-remove">名片回收站</div>
+		</div>
+		<div class="l-content">
+			<div class="l-con-nav">
+				<ul class="l-btn">
+					<li class="biao_i btn-hover"><if condition="($Think.session.Company.roleid eq '1') OR ($get.type neq '2')"><button type="button">标记为</button></if></li>
+					<!-- <li class="fa_i btn-hover"><button type="button">群发邮件</button></li> -->
+					<if condition="($Think.session.Company.roleid eq '1') OR ($get.type neq '2')"><li class="enjoy_ch btn-hover"><button type="button">添加共享</button></if></li>
+					<if condition="($Think.session.Company.roleid eq '1') OR ($get.type neq '2')"><li class="bian_i btn-hover"><button type="button">编辑</button></li></if>
+					<li class="remove_i btn-hover"><button type="button">删除</button></li>
+					<li class="add_i"><button type="button">+&nbsp添加名片</button></li>
+				</ul>
+				<include file="@Layout/pagemain" />
+				<!--名片墙按钮-->
+				<div class="wall-href">
+					<div class="wall-menu">
+						<span></span>
+					</div>
+					<div class="wall-img-ex">
+						<ul class="ex-list">
+							<li class="active">
+								<span class="w-small-icon"></span>
+								<em>小图<i></i></em>
+							</li>
+							<li class="m-tip">
+								<span class="w-middle-icon"></span>
+								<em>中图<i></i></em>
+							</li>
+							<li class="b-tip">
+								<span class="w-big-icon"></span>
+								<em>大图<i></i></em>
+							</li>
+							<li class="l-tip">
+								<span class="list-icon"></span>
+								<em>列表<i></i></em>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="table-list">
+				<table class="card-table">
+					<thead class="t-head">
+						<tr>
+							<td class="col-sm-1 col-md-1">
+								<label class="input-th" for=""><input type="checkbox" autocomplete='off'/><em></em></label>
+							</td>
+							<td class="col-sm-2 col-md-2">
+								名片图像
+							</td>
+							<td class="col-sm-3 col-md-3">姓名/公司</td>
+							<td class="col-sm-2 col-md-2">部门/职位</td>
+							<td class="col-sm-2 col-md-2">联系方式</td>
+							<td class="col-sm-2 col-md-2">创建者</td>
+						</tr>
+					</thead>
+					<tbody class="t-body">
+					  <foreach name="list" item='v'>
+					  <tr>
+					  	<td class="td1 col-sm-1 col-md-1">
+					  		<label class="input-th" for="">
+                    			<input type="checkbox" vcardid="{$v.vcardid}" autocomplete='off' section="{$v.section}" accountid="{$v.accountid}"/>
+                    			<em></em>
+                    		</label>
+					  	</td>
+                    	<td class="td1 col-sm-3 col-md-3">
+                    		<img src="{$v.picture}" alt="" vcardid="{$v.vcardid}" class='hand'/>
+                    	</td>
+                    	<td class="td2 col-sm-3 col-md-3">
+                    		<h4 class="tit_one" title="{$v['front']['FN'][0]}">{$v['front']['FN'][0]}</h4>
+                    		<h4 title="{$v['front']['ORG'][0]}">{$v['front']['ORG'][0]}</h4>
+                    		<div class="t_tags">
+                    			<em>Tags:</em>
+                    			<div class="tag-box">
+	                    			<foreach name="v.remark" item='vv'>
+	                    			<span class='hand' tid="{$vv.id}" title='{$vv.tags}'>{$vv.tags}</span>
+	                    			</foreach>
+	                    		</div>
+                    		</div>
+                    	</td>
+                    	<td class="td3 col-sm-2 col-md-2">
+                    		<h3 class="tit_one" title="{$v['front']['DEPAR'][0]}">{$v['front']['DEPAR'][0]}</h3>
+                    		<h3 title="{$v['front']['TITLE'][0]}">{$v['front']['TITLE'][0]}</h3>
+                    	</td>
+                    	<td class="td4 td4-icon col-sm-2 col-md-2">
+                    		<p class="tel_i tit_one" title="{$v['front']['TEL'][0]}">{$v['front']['TEL'][0]}</p>
+                    		<p class="phone_i" title="{$v['front']['CELL'][0]}">{$v['front']['CELL'][0]}</p>
+                    		<p class="email_i" title="{$v['front']['EMAIL'][0]}">{$v['front']['EMAIL'][0]}</p>
+                    	</td>
+                    	<td class="td4 col-sm-2 col-md-2">
+                    		<p class="name-color hand creator" eid="{$v.accountid}" title="{$v.accountname}">{$v.accountname}</p>
+                    		<p class="time-color">{$v.createdtime}</p>
+                    	</td>
+                    </tr>
+					  </foreach>
+					</tbody>
+				</table>
+			</div>
+			<!--照片墙-->
+			<div class="img-wall" style="display:none;">
+				<div class="wall-null"></div>
+				<div class="wall-content">
+					<ul class="wall-list small-img">
+						<li>
+							<img src="__PUBLIC__/images/mobile_img_card.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/canvasbg.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/mobile_img_card.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/canvasbg.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/mobile_img_card.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/canvasbg.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/mobile_img_card.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+						<li>
+							<img src="__PUBLIC__/images/canvasbg.png" alt="" />
+							<p>交换时间：2017.11.17</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="page-box">
+			<include file="@Layout/pagemain" />
+		</div>
+	</div>
+</div>
+
+<!--  分享二维码弹框  -->
+<include file="Common/entQrCode"/>
+<!--  修改密码弹框    -->
+<div class="ora-dialog js_forget_wrap" >
+	<div class="vision-dia-mian">
+		<div class="dia-add-vis">
+			<h4>修改密码</h4>
+			<div class="dia-add-vis-menu">
+				<h5><em>*</em>当前密码</h5>
+				<div class="dia_menu all-width-menu">
+					<input class="fu-dia" type="text" autocomplete='off' />
+					<p class="error-p">当前密码错误</p>
+				</div>
+			</div>
+			<div class="dia-add-vis-menu">
+				<h5><em>*</em>新密码</h5>
+				<div class="dia_menu all-width-menu">
+					<input class="fu-dia" type="text" autocomplete='off' />
+					<p class="error-p">当前密码错误</p>
+				</div>
+			</div>
+			<div class="dia-add-vis-menu">
+				<h5><em>*</em>确认新密码</h5>
+				<div class="dia_menu all-width-menu">
+					<input class="fu-dia" type="text" autocomplete='off' />
+
+				</div>
+			</div>
+		</div>
+		<div class="dia-add-v-btn clear">
+			<button type="button" id="js_forget_cancel">取消</button>
+			<button class="bg-di" type="button">确认</button>
+		</div>
+	</div>
+</div>
+
+<!--名片信息-->
+<div class="x-dialog info-dialog">
+	<div class="x-main">
+		<div class="x-tit">
+			<h3><!-- 廖文纯 -->(空)</h3>
+			<span class="close-dia"></span>
+		</div>
+		<div class="tab-qie">
+			<span type='i' class="hand active">名片信息<em></em></span>
+			<span type='s' class='hand'>权限设置<em></em></span>
+		</div>
+		<!--信息部分-->
+		<div class="x-content">
+			<div class="x-edit">
+				<div class="edit-icon">
+					<a class="edit-i-x"><span></span><em>编辑</em></a>
+					<a class="remove-i-x"><span></span><em>删除</em></a>
+				</div>
+			</div>
+			<div class="x-info clear">
+				<div class="x-info-l">
+					<div class="l-img">
+						<ul>
+							<li>
+    							<img src="" alt="" class='hand'/>
+    							<img src="" alt="" class='hand'/>
+							</li>
+						</ul>
+					</div>
+					<span class="left-btn-i btn-img" style='opacity:0.1;display:none;'></span>
+					<span class="right-btn-i btn-img" style='opacity:0.1;display:none;'></span>
+				</div>
+				<div class="x-info-r">
+					<div class="r-conent">
+						<h4><!-- 廖文纯 -->(空)</h4>
+						<p><!-- 总裁 --></p>
+						<p><!-- 厦门中信房地产有限公司 --></p>
+						<div class="x-per-info">
+							<span>创建者：</span><em class="x-name"><!-- 郭玲 --></em><span>创建时间：</span><em class="x-time"><!-- 2017/01/01 --></em>
+						</div>
+						<div class="x-label">
+						    <em class="label-em" style='display:none;'><aa>tpl</aa><i></i></em>
+						    <span>Tags：</span>
+						    <div class="tag_dia">
+						    	<button type="button"><b></b>添加标签</button>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="x-oer-info">
+				<h3>名片信息</h3>
+				<div class="x-info-list">
+					<div class="x-info-item clear">
+						<i class="x-phone-i i-icon"></i>
+						<div class="x-i-l">
+							<dl class="x-i-dl">
+								<dt>手机</dt>
+								<dd></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="x-info-item clear">
+						<i class="x-mobile-i i-icon"></i>
+						<div class="x-i-l">
+							<dl class="x-i-dl">
+								<dt>工作电话</dt>
+								<dd></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="x-info-item clear">
+						<i class="x-email-i i-icon"></i>
+						<div class="x-i-l">
+							<dl class="x-i-dl">
+								<dt>邮箱</dt>
+								<dd></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="x-info-item clear">
+						<i class="x-map-i i-icon"></i>
+						<div class="x-i-l">
+							<dl class="x-i-dl">
+								<dt>地址</dt>
+								<dd></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="x-info-item clear">
+						<i class="x-inte-i i-icon"></i>
+						<div class="x-i-l">
+							<dl class="x-i-dl">
+								<dt>网址</dt>
+								<dd></dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--权限选择-->
+		<div class="x-content x-qu-height con-none">
+			<div class="qu-item-x clear">	
+				<div class="tit-ch">
+					<h3>有权查看的同事</h3>
+					<button type="button">添加</button>
+				</div>
+				<ul class="look-list">
+				    <li style='display:none;' type='1'>
+						<span><aa>明星</aa></span>
+						<em></em>
+					</li>
+					<li>
+						<span><aa>明星</aa><b>(创)</b></span>
+						<em></em>
+					</li>
+				</ul>
+			</div>
+			<div class="qu-item-x clear">	
+				<div class="tit-ch">
+					<h3>有权查看的部门</h3>
+					<button type="button">添加</button>
+				</div>
+				<ul class="look-list">
+					<li style='display:none;' type='2'>
+						<span>明星</span>
+						<em></em>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--编辑名片信息弹框-->
+<div class="x-dialog edit-card-dialog">
+	<div class="x-main">
+		<div class="x-tit">
+			<h3>廖文纯</h3>
+			<span class="close-dia"></span>
+		</div>
+		<div class="x-content">
+			<div class="edit-c-img">
+				<div class="card-img-ed">
+					<img class='hand' src="__PUBLIC__/images/mobile_img_card.png" alt="" />
+					<canvas id="cardEditor" width="1200" height="720" style='cursor:default;display:none;background:url(/images/canvasbg.png);'></canvas>
+					<span class="left-btn-i btn-img" style='opacity:0.1;display:none;'></span>
+					<span class="right-btn-i btn-img" style='opacity:0.1;display:none;'></span>
+				</div>
+				<div class="x-per-info edit-ch">
+					<span>创建者：</span><em class="x-name">郭玲</em><span>创建时间：</span><em class="x-time">2017/01/01</em>
+				</div>
+			</div>
+			<div class="edit-form front">
+				<div class="edit-form-item" tpl='1'>
+					<span>姓名</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='FN' required_ max='6'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>公司</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='ORG' required_ max='30'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>部门</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='DEPAR' max='12'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>职位</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='TITLE' required_ max='12'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>手机</span>
+					<input class="ed-i-input" type="mobile_" autocomplete='off' name='CELL' required_/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>工作电话</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='TEL'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>邮箱</span>
+					<input class="ed-i-input" type="email_" autocomplete='off' name='EMAIL'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>地址</span>
+					<input class="ed-i-input" type="text" autocomplete='off' required_ name='ADR' max='70'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>网址</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='URL' max='25'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+			</div>
+			<div class="edit-form back" style='display:none;'>
+				<div class="edit-form-item" tpl='1'>
+					<span>姓名</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='FN' max='6'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>公司</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='ORG' max='30'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>部门</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='DEPAR' max='12'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>职位</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='TITLE' max='12'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>手机</span>
+					<input class="ed-i-input" type="mobile_" autocomplete='off' name='CELL' />
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>工作电话</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='TEL' />
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>邮箱</span>
+					<input class="ed-i-input" type="email_" autocomplete='off' name='EMAIL' />
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>地址</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='ADR' max='70'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+				<div class="edit-form-item clear" tpl='1'>
+					<span>网址</span>
+					<input class="ed-i-input" type="text" autocomplete='off' name='URL' max='25'/>
+					<em class="add-i-ed icon-edit"></em>
+					<em class="remove-i-ed icon-edit" style='display:none;'></em>
+					<p class="error-p clear none"></p>
+				</div>
+			</div>
+			<div class="edit-btn-d right-edit">
+				<button class="edit-btn-s" type="button">保存</button>
+				<button class="edit-btn-s ed-btn-diff" type="button">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--标签管理弹框-->
+<div class="i-label-dailog">
+	<div class="label_main">
+		<h4>编辑名片标签</h4>
+		<div class="label-s-input">
+			<div class="qu-search">
+				<input class="q-input" type="text" placeholder="请输入标签名(搜素结果包含选中标签)" autocomplete='off'/>
+				<em class=q-search-icon><img src="__PUBLIC__/images/q-search.png" alt="" /></em>
+			</div>
+		</div>
+		<div class="ilabel-list">
+			<ul class="la-list">
+				<foreach name='tags' item='v'>
+                <li>
+					<label class="input-th" for=""><input type="checkbox" tid="{$v.id}" autocomplete='off'/><em></em></label>
+					<span title="{$v.tags}">{$v.tags}</span>
+				</li>
+			    </foreach>
+			</ul>
+		</div>
+		<div class="i-label-btn">
+			<div class="i-btn-left i-l-btn">
+				<label class="lab-in" for=""><input type="checkbox" autocomplete='off'/><i></i><em>只看已选</em></label>
+				<if condition="($Think.session.Company.roleid eq 1) OR ($Think.session.Company.roleid eq 2)">
+				<button type="button" href="{:U('Company/Label/index')}">公司标签管理</button>
+				</if>
+			</div>
+			<div class="i-btn-right i-l-btn">
+				<button type="button">取消</button>
+				<button class="i-l-di" type="button">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--遮罩-->
+<div class="bg-op-dialog"></div>
+<!--预览图片弹框-->
+<div class="look-card-dialog">
+	<div class="l-card">
+		<span class="hand img-colose"></span>
+		<img src="/images/canvasbg.png" bgsrc="/images/canvasbg.png" alt="" />
+	</div>
+</div>
+<link href="__PUBLIC__/js/jsExtend/datetimepicker/datetimepicker.css" rel="stylesheet" text="text/css">
+<script src="__PUBLIC__/js/jsExtend/datetimepicker/datetimepicker.js"></script>
+<script>
+var ISOPEN="{$isopen}";
+var ROLE="{$Think.session.Company.roleid}";
+var ACCOUNT="{$Think.session.Company.clientid}";
+var URL="{:U('Company/Index/index')}";
+var URL_CARD_TRASH="{:U('Company/recovers/index')}";
+var URL_ADD_TAG="{:U('Company/Index/addTag')}";
+var URL_ADD_DEL="{:U('Company/Index/delCard')}";
+var URL_CARD_AUTH="{:U('Company/Index/cardAuth')}";
+var URL_CARD_DEL_AUTH="{:U('Company/Index/delCardAuth')}";
+var URL_CARD_INFO="{:U('Company/Index/cardInfo')}";
+var URL_CARD_SAVE="{:U('Company/Index/cardSave')}";
+var URL_EMPLOYEES="{:U('Company/Index/getEmployees')}";
+
+var MAXTAGNUM="{$maxtagnum}"
+var SEARCHTYPE="{$get.searchType}";
+var ISMV="{$get.ismv}";
+
+$(function(){
+	$.index.init();
+});
+
+//选择要操作的名片
+//flag==no check list selected
+function __selectCards(flag){
+	var $all=$('.t-body input:checked');
+	if (!flag && $all.length==0){
+		$.dialog.alert({content:"请选择名片"});
+		return false;
+	}
+
+	var ids=[];
+	$all.each(function(){
+		ids.push($(this).attr('vcardid'));
+	});
+
+	return ids;
+}
+
+//删除名片回调
+function __delcallback(cardid){
+	var ids=[];
+	if (cardid){
+		ids.push(cardid);
+	} else {
+		ids=__selectCards();
+		if (!ids) return;
+	}
+    
+	$.ajax({
+        'type':'post',
+        'async':true,
+        'url':URL_ADD_DEL,
+        'data':{cards:ids.join(',')},
+        'success':function(rst){
+			rst=$.parseJSON(rst);
+			$.dialog.alert({content:rst.msg});
+			if (rst.status==0){
+    			setTimeout(function(){
+        			location.reload();
+        		}, 1500);
+    		}
+		}
+    });
+}
+</script>

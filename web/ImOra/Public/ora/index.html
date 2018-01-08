@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+    	<!-- meta character set -->
+        <meta charset="utf-8">
+		<!-- Always force latest IE rendering engine or request Chrome Frame -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>橙鑫数据科技</title>		
+		<!-- Meta Description -->
+        <meta name="description" content=" ">
+        <meta name="keywords" content=" ">
+        <meta name="author" content=" ">
+		
+		<!-- Mobile Specific Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- CSS
+		================================================== -->
+		
+		<!--<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>-->
+		
+		<!-- Fontawesome Icon font -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="css/jquery.fancybox.css">
+        <!-- Main Stylesheet -->
+        <link rel="stylesheet" href="css/main.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="css/owl.carousel.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="css/slit-slider.css">
+		<!-- bootstrap.min -->
+        <link rel="stylesheet" href="css/animate.css">
+		
+
+		<!-- Modernizer Script for old Browsers -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
+
+    </head>
+	
+    <body id="body">
+
+		<!-- preloader -->
+		<div id="preloader">
+            <div class="loder-box">
+            	<div class="battery"></div>
+            </div>
+		</div>
+		<!-- end preloader -->
+
+        <!--
+        Fixed Navigation
+        ==================================== -->
+        <header id="navigation" class="navbar-inverse navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+					
+					<!-- logo -->
+					<h1 class="navbar-brand">
+						<a href="#body">Blue</a>
+					</h1>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav">
+                        <li class="on"><a href="#body">首页</a></li>
+                        <li><a href="#service">核心技术</a></li>
+                        <li><a href="#portfolio">我们的服务</a></li>
+                        <li><a href="#testimonials">行业解决方案</a></li>
+                        <li><a href="#price">关于橙鑫</a></li>
+                        <li class="contact"><a href="#contact">联系我们</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+				
+            </div>
+        </header>
+        <!--
+        End Fixed Navigation
+        ==================================== -->
+		
+		<main class="site-content" role="main">
+		
+        <!--
+        Home Slider
+        ==================================== -->
+		
+		<section id="home-slider">
+            <div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">				
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2"  >
+
+                    <canvas id="c" width="1366" height="246"></canvas>
+<script>
+
+var w = c.width = window.innerWidth,
+h = c.height = window.innerHeight,
+ctx = c.getContext('2d'),
+opts = {
+	len: 20,
+	count: 50,
+	baseTime: 10,
+	addedTime: 10,
+	dieChance: .05,
+	spawnChance: 1,
+	sparkChance: .1,
+	sparkDist: 10,
+	sparkSize: 2,
+	color: 'hsl(hue,100%,light%)',
+	baseLight: 50,
+	addedLight: 10,
+	shadowToTimePropMult: 6,
+	baseLightInputMultiplier: .01,
+	addedLightInputMultiplier: .02,
+	cx: w / 2,
+	cy: h / 2,
+	repaintAlpha: .04,
+	hueChange: .1
+},
+tick = 0,
+lines = [],
+dieX = w / 2 / opts.len,
+dieY = h / 2 / opts.len,
+baseRad = Math.PI * 2 / 6;
+ctx.fillStyle = 'black';
+ctx.fillRect(0, 0, w, h);
+function loop() {
+	window.requestAnimationFrame(loop); ++tick;
+	ctx.globalCompositeOperation = 'source-over';
+	ctx.shadowBlur = 0;
+	ctx.fillStyle = 'rgba(20,20,20,alp)'.replace('alp', opts.repaintAlpha);
+	ctx.fillRect(0, 0, w, h);
+	ctx.globalCompositeOperation = 'lighter';
+	if (lines.length < opts.count && Math.random() < opts.spawnChance) lines.push(new Line);
+	lines.map(function(line) {
+		line.step()
+	})
+}
+function Line() {
+	this.reset()
+}
+Line.prototype.reset = function() {
+	this.x = 0;
+	this.y = 0;
+	this.addedX = 0;
+	this.addedY = 0;
+	this.rad = 0;
+	this.lightInputMultiplier = opts.baseLightInputMultiplier + opts.addedLightInputMultiplier * Math.random();
+	this.color = opts.color.replace('hue', tick * opts.hueChange);
+	this.cumulativeTime = 0;
+	this.beginPhase()
+}
+Line.prototype.beginPhase = function() {
+	this.x += this.addedX;
+	this.y += this.addedY;
+	this.time = 0;
+	this.targetTime = (opts.baseTime + opts.addedTime * Math.random()) | 0;
+	this.rad += baseRad * (Math.random() < .5 ? 1 : -1);
+	this.addedX = Math.cos(this.rad);
+	this.addedY = Math.sin(this.rad);
+	if (Math.random() < opts.dieChance || this.x > dieX || this.x < -dieX || this.y > dieY || this.y < -dieY) this.reset()
+}
+Line.prototype.step = function() {++this.time; ++this.cumulativeTime;
+	if (this.time >= this.targetTime) this.beginPhase();
+	var prop = this.time / this.targetTime,
+	wave = Math.sin(prop * Math.PI / 2),
+	x = this.addedX * wave,
+	y = this.addedY * wave;
+	ctx.shadowBlur = prop * opts.shadowToTimePropMult;
+	ctx.fillStyle = ctx.shadowColor = this.color.replace('light', opts.baseLight + opts.addedLight * Math.sin(this.cumulativeTime * this.lightInputMultiplier));
+	ctx.fillRect(opts.cx + (this.x + x) * opts.len, opts.cy + (this.y + y) * opts.len, 2, 2);
+	if (Math.random() < opts.sparkChance) ctx.fillRect(opts.cx + (this.x + x) * opts.len + Math.random() * opts.sparkDist * (Math.random() < .5 ? 1 : -1) - opts.sparkSize / 2, opts.cy + (this.y + y) * opts.len + Math.random() * opts.sparkDist * (Math.random() < .5 ? 1 : -1) - opts.sparkSize / 2, opts.sparkSize, opts.sparkSize)
+}
+loop();
+window.addEventListener('resize',
+function() {
+	w = c.width = window.innerWidth;
+	h = c.height = window.innerHeight;
+	ctx.fillStyle = 'black';
+	ctx.fillRect(0, 0, w, h);
+	opts.cx = w / 2;
+	opts.cy = h / 2;
+	dieX = w / 2 / opts.len;
+	dieY = h / 2 / opts.len
+});
+    
+</script>
+						<div class="bg-img bg-img-1"></div>
+                          
+						<div class="slide-caption">
+                            <div class="caption-content">
+                           
+                                <h2  >让人工智能成就未来</h2>
+                                <span class="animated fadeInDown " style="display:block;margin-bottom:60px;">借助橙鑫技术，可帮助企业加速获取解决方案，以制定更明智的决策。</span><a href="#" class="btn2">我要咨询</a>
+                               
+                           
+                               
+                            </div>
+                            
+                        </div>
+						
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+					
+						<div class="bg-img bg-img-1"></div>
+						<div class="slide-caption"><div class="caption-content">
+                             <h2 class="animated fadeInDown" style="font-weight:100;">遇见数据，遇见未来</h2>
+                                <span class="animated fadeInDown " style="display:block;margin-bottom:60px;">橙鑫致力于为企业挖掘数据蕴藏的价值，提升企业经营业绩</span> 
+                        </div>
+					</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						
+						<div class="bg-img bg-img-3"></div>
+						<div class="slide-caption">
+                            <div class="caption-content">
+                                <h2  class="animated fadeInDown" style="display:block;margin-bottom:60px;color:#fff;line-height:150%;font-weight:100;">在这里碰撞<br>文化&amp;灵感的火花</h2>
+                               
+                                <a href="#" class="btn2">加入我们</a>
+                            </div>
+                        </div>
+
+					</div>
+
+				</div><!-- /sl-slider -->
+
+                <!-- 
+                <nav id="nav-arrows" class="nav-arrows">
+                    <span class="nav-arrow-prev">Previous</span>
+                    <span class="nav-arrow-next">Next</span>
+                </nav>
+                -->
+                
+                <nav id="nav-arrows" class="nav-arrows hidden-xs hidden-sm visible-md visible-lg">
+                    <a href="javascript:;" class="sl-prev">
+                        <i class="fa fa-angle-left fa-4x"></i>
+                    </a>
+                    <a href="javascript:;" class="sl-next">
+                        <i class="fa fa-angle-right fa-4x"></i>
+                    </a>
+                </nav>
+                
+
+				<nav id="nav-dots" class="nav-dots visible-xs visible-sm hidden-md hidden-lg">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+				</nav>
+
+			</div><!-- /slider-wrapper -->
+		</section>
+			
+		<div class="copyrights">Collect from <a href="#" >1111</a></div>
+
+
+		<!-- Service section -->
+		<section id="service" class="parallax" style="padding-bottom:140px;">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center">
+						<h2 class="wow animated bounceInLeft">核心技术</h2>
+						<p class="wow animated bounceInRight">如何让您的业务变得更加智慧</p>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa i1"></i>
+							</div>
+							<h3>大数据分析平台</h3>
+							<p>橙鑫提供完整的大数据和分析解决方案组合，推动企业往认知商业的发展。我们的解决方案可以帮助企业运用数据解答最棘手的业务难题，发现新的模式，形成突破性的构想。 </p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.3s">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa i2"></i>
+							</div>
+							<h3>深度学习框架</h3>
+							<p>针对海量数据的云端托管深度学习平台，助力客户轻松使用深度学习技术，打造智能应用和服务。</p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.6s">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa i3"></i>
+							</div>
+							<h3>智能硬件</h3>
+							<p>借助我们的连接器、天线和传感器，橙鑫可以帮助您扫清创新型消费者体验发展道路上的障碍。</p>
+						</div>
+					</div>
+				
+					<div class="col-md-3 col-sm-6 col-xs-12 text-center wow animated zoomIn" data-wow-delay="0.9s">
+						<div class="service-item">
+							<div class="service-icon">
+								<i class="fa i4"></i>
+							</div>
+							
+							<h3>物联网</h3>
+							<p>通过持续技术创新和不断积累行业经验，建立互信、共赢的生态合作机制，帮助行业用户快速实现万物互联的商业价值</p>							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+		<!-- end Service section -->
+        
+        
+		
+		<!-- portfolio section -->
+		<section id="portfolio" class="parallax" style=" background:url(img/servercebg.png) no-repeat;background-size:contain；">
+			<div class="container">
+				<div class="row">
+				
+					<div class="sec-title text-center wow animated fadeInDown">
+						<h2>我们的服务</h2>
+						<p>为橙鑫产品注入人工智能</p>
+					</div>
+					
+
+					<ul class="project-wrapper wow animated fadeInUp">
+						
+						
+						<li class="portfolio-item li01">
+							<figcaption class="mask">
+								<h3>图像识别</h3>
+								<p>根据用户上传的不同种类的图片，橙鑫会在最短时间内识别图片中商品，提供多种类标签，颜色解析，为您全面解析图片。 </p>
+							</figcaption>
+							
+						</li>
+						
+						<li class="portfolio-item li02">
+							<figcaption class="mask">
+								<h3>文字识别</h3>
+								<p>通俗讲就是将图片中的文字识别出来。我们提供的服务包括银行卡、票据、文档、车票、名片识别等文字识别场景。</p>
+							</figcaption>
+							
+						</li>
+						
+                        <li class="portfolio-item li03">
+						
+							<figcaption class="mask">
+							  <h3>语音识别</h3>
+								<p>橙鑫拥有世界顶尖智能语音识别技术。精准、快速、省流量，语音识别从未如此优秀。</p>
+						  </figcaption>
+							
+					  </li>
+                        
+                        
+                        <li class="portfolio-item li04">
+							
+							<figcaption class="mask">
+							  <h3>语义识别</h3>
+								<p>智能对话，多领域覆盖。涵盖了衣食住行中绝大部分的使用场景使语义理解无处不在。</p>
+						  </figcaption>
+							
+					  </li>
+                        
+						
+				  </ul>
+					
+				</div>
+			</div>
+		</section>
+		<!-- end portfolio section -->
+        
+        
+        
+		
+		<!-- Testimonial section -->
+		<section id="testimonials" class="parallax" style=" background:#fafafa;padding-bottom:120px;">
+			
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center" style="padding-top:80px;">
+							<h2 style="color:#666;">行业解决方案</h2>
+						</div>
+						
+						<div id="testimonial" class=" wow animated fadeInUp" >
+							<div >
+							  <div class="case">
+							    <div class="l"><h2>智慧商业</h2><p>随着互联网、物联网、云计算、大数据、移动终端技术的快速深度融合发展，商业日益变得智慧、高效和便捷。智慧商业的实质是以信息技术为支撑，创新人类商业模式及管理手段，提高社会整体效能。</p>
+                                <p class="btn">我要咨询</p>
+                                </div>
+							    <div class="r"><span class="l"><img src="img/a.png" width="554" height="297"></span></div>
+						      </div>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+			
+		</section>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		<!-- end Testimonial section -->
+		
+		<!-- Price section -->
+		<section id="price" class="gsjjbox">
+			<div class="container">
+			  <div class="row">
+				
+			    <div class="sec-title text-center wow animated fadeInDown">
+						<h2>关于橙鑫</h2>
+						<p>致力于人工智能商务数据解决方案</p>
+				  </div>
+				</div>
+              <div class="intro">
+                   <div class="l"><img src="img/about.png" width="556" height="301"></div>
+                   <div class="r">北京橙鑫数据科技有限公司(以下简称橙鑫数据)，为香港上市公司橙天嘉禾集团全资投资子公司。<br>
+                     <br>
+北京橙鑫数据科技有限公司自2013年成立至今，始终秉承创新、极致、简约的产品理念，帮助用户乐享品质生活。
+<br>
+<br>
+公司位于北京东三环核心商圈，拥有独立欧式院落，办公面积超过8000平方米，院内3000平方米的绿地不仅为员工营造出舒适的办公环境，也体现出公司的绿色商业愿景。 </div>
+                </div>
+			</div>
+		</section>
+		<!-- end Price section -->
+		
+        
+     
+        
+        
+		<!-- Social section -->
+		<section id="social" class="parallax">
+			<div class="overlay">
+				<div class="container">
+					<div class="row">
+					
+						<div class="sec-title text-center white wow animated fadeInDown">
+							<!-- <h2>FOLLOW US</h2>
+							<p>Beautifully simple follow buttons to help you get followers on</p>-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end Social section -->
+		
+		<!-- Contact section -->
+		<section id="contact" >
+			<div class="container" style=" background:#fafafa;;padding:30px;">
+				<div class="row">
+					
+					<div class="sec-title text-center wow animated fadeInDown">
+						<h2>联系我们</h2>
+					</div>
+					
+					
+					
+					
+				  <div class="col-md-5 wow animated fadeInRight" style="margin-left:2%;margin-right:5%;float:left;">
+						<address class="contact-details">
+                          <h3>北京橙鑫数据科技有限公司</h3>
+
+							<p><i class="fa fa-phone"></i>Phone: 010-58230505 </p>
+							<p><i class="fa fa-envelope"></i>hr@imora.com</p>
+						<p><i class="fa fa-pencil"></i>北京市朝阳区亮马桥路安家楼1号  100125</p></address>
+					</div>
+                    <div style="float:left;"><img src="img/map.png"></div>
+		
+				</div>
+			</div>
+		</section>
+		<!-- end Contact section -->
+		
+		
+		</main>
+		
+		<footer id="footer">
+			<div class="container">
+				<div class="row text-center">
+					<div class="footer-content">
+						
+						
+						<div class="footer-social">
+							<ul>
+								<li class="wow animated zoomIn"><a href="#"><i class="fa fa-thumbs-up fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.3s"><a href="#"><i class="fa fa-twitter fa-3x"></i></a></li>
+								<li class="wow animated zoomIn" data-wow-delay="0.6s"><a href="#"><i class="fa fa-skype fa-3x"></i></a></li>
+							</ul>
+						</div>
+						
+						<p>© 2013-2017 Chengxin  Co., Ltd. All Rights Reserved <span style="color:#f7941e;">北京橙鑫数据科技有限公司</span> - 京ICP备134533号 </p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<!-- Essential jQuery Plugins
+		================================================== -->
+		<!-- Main jQuery -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+		<!-- Twitter Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+		<!-- Single Page Nav -->
+        <script src="js/jquery.singlePageNav.min.js"></script>
+		<!-- jquery.fancybox.pack -->
+        <script src="js/jquery.fancybox.pack.js"></script>
+		<!-- Google Map API -->
+		
+		<!-- Owl Carousel -->
+        <script src="js/owl.carousel.min.js"></script>
+        <!-- jquery easing -->
+        <script src="js/jquery.easing.min.js"></script>
+        <!-- Fullscreen slider -->
+        <script src="js/jquery.slitslider.js"></script>
+        <script src="js/jquery.ba-cond.min.js"></script>
+		<!-- onscroll animation -->
+        <script src="js/wow.min.js"></script>
+		<!-- Custom Functions -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- AI扫描仪分布图 -->
+    <string name="str_aimap_title">AI扫描仪分布图</string>
+    
+    <!-- 人脉360 -->
+    <string name="str_360_title">人脉360</string>
+    <string name="str_360_zhang">张</string>
+    <string name="str_360_job_card">职能名片数量</string>
+    <string name="str_360_count">数量</string>
+    <string name="str_360_company_card">公司名片数量</string>
+    <string name="str_360_industry_card">行业名片数量</string>
+    <string name="str_360_ren">人</string>
+    <string name="str_360_loading">加载中...</string>
+    <string name="str_360_map">地图</string>
+    <string name="str_360_relation">人脉图谱</string>
+    <string name="str_360_statistic">统计</string>
+    <string name="str_360_timeline">时间线</string>
+    <string name="str_360_company">公司</string>
+    <string name="str_360_job">职位</string>
+    <string name="str_360_phone">电话</string>
+    <string name="str_360_join_to">加入到了我的朋友圈</string>
+    <string name="str_360_check_personal_card">请设置【个人名片】</string>
+    <string name="str_360_same_city">同城</string>
+    <string name="str_360_same_industry">同行</string>
+    <string name="str_360_bigman">大人物</string>
+    <string name="str_360_same_job">同职</string>
+    <string name="str_360_me">我</string>
+    <string name="str_360_guanxi">关系</string>
+    <string name="str_360_friend">好友</string>
+    
+    <!-- Line扫描仪语音 -->
+    <string name="str_line_a1">扫描仪启动中，请稍等</string>
+	<string name="str_line_a2">马上就好了</string>
+	<string name="str_line_a3">请用Line扫描二维码登录</string>
+	<string name="str_line_a4">网络好像有点问题，请耐心等待几分钟</string>
+	<string name="str_line_a5">登录成功，请放入名片，按启动键开始识别</string>
+	<string name="str_line_a6">名片已发送到Line官方账号</string>
+	<string name="str_line_a7">请放入名片，或再按一次退出扫描</string>
+	
+    <!--Line相关-->
+    <string name="str_line_help">使用说明</string>
+    <string name="str_line_set_success">设置成功</string>
+    <string name="str_line_set_fail">设置失败</string>
+    <string name="str_line_no_scanner">没有匹配到扫描仪</string>
+    <string name="str_line_show">点击查看</string>
+    <string name="str_line_card_scan_success">名片识别成功</string>
+    <string name="str_line_scan_fail_direction">OCR识别不成功，请检查名片拍摄方向是否正确</string>
+    <string name="str_line_no">否</string>
+    <string name="str_line_yes">是</string>
+    <string name="str_line_is_set_mycard">是否设置为【我的名片】？</string>
+    <string name="str_line_no_profile">没有获取到用户信息</string>
+    <string name="str_line_scan_finish">扫描名片已结束</string>
+    <string name="str_line_bind_success">绑定成功</string>
+    <string name="str_line_card_none">没有找到名片</string>
+    <string name="str_line_card_none">搜索结果</string>
+    <string name="str_line_save_userinfo_fail">官方账号绑定失败</string>
+    
+    <!-- 扫描结果 -->
+    <string name="str_result_title">扫描结果</string>
+    <string name="str_result_scan_success">已识别</string>
+    <string name="str_result_show_fail">显示名片失败</string>
+    
+    <!--微信公众号列表翻译-->
+    <string name="str_g_list_title">名片搜索</string>
+    <string name="str_g_list_search">搜索</string>
+    <string name="str_g_list_search_unit">张名片</string>
+    <string name="str_g_list_delete">删除</string>
+    <string name="str_g_list_delete_faild">删除失败</string>
+    <string name="str_g_list_no_card">你当前没有名片，请先创建名片</string>
+    <string name="str_g_list_no_search">抱歉, 未查询到名片</string>
+    <string name="str_g_list_loading">加载中...</string>
+    <string name="str_g_list_btn_say">按住说话</string>
+    <string name="str_g_list_up_search">松开搜索</string>
+    <string name="str_g_list_inrecording">录音中...</string>
+    <string name="str_g_list_user_denyrecording">用户拒绝授权录音</string>
+    <string name="str_g_list_recognition_failure">识别失败,请重新语音</string>
+    <string name="str_g_list_record_short">录音时间太短,请重新语音</string>
+    <string name="str_g_list_putcontent_search">请输入搜索内容</string>
+    <string name="str_g_list_place_friends">朋友圈</string>
+    <string name="str_g_list_export">导出</string>
+    <!--任意扫-->
+    <string name="str_sweep_list_no_search">抱歉, 未查询到</string>
+    <string name="str_sweep_list_search_unit">张</string>
+    <!--详情页-->
+    <string name="str_g_detail_mycard">我的名片</string>
+    <string name="str_mycard_name">姓名</string>
+    <string name="str_mycard_company">公司名称</string>
+    <string name="str_mycard_workaddr">工作地址</string>
+    <string name="str_mycard_phone">手机</string>
+    <string name="str_mycard_telephone">工作电话</string>
+    <string name="str_mycard_workemail">工作邮箱</string>
+    <string name="str_mycard_site">网址</string>
+    <string name="str_mycard_submit">确认提交</string>
+    <string name="str_mycard_cancelself">取消个人名片</string>
+    <string name="str_mycard_setself">设为个人名片</string>
+    <string name="str_g_detail_map_nocontact">无相关地图</string>
+    <string name="str_g_detail_no_backside_info">抱歉，此名片没有反面相关信息</string>
+    <string name="str_g_detail_backlist">返回到列表</string>
+    <string name="str_g_detail_uploadimg_test">上传图片测试</string>
+    <string name="str_g_detail_cardnoinfo">当前名片未解析到有效信息</string>
+    <string name="str_g_detail_nocard_toupload">抱歉，你当前还没有自己的名片哦，请先上传自己的名片，然后到名片编辑页面设置为自己的名片。</string>
+    <string name="str_cardinfo_title">名片信息</string>
+    <string name="str_cardinfo_know">知道了</string>
+    <string name="str_cardinfo_no_cardinfo">当前名片未解析到有效信息</string>
+    <!---->
+    <!--no card-->
+    <string name="str_nocard_title_createcard">创建名片</string>
+    <string name="str_nocard_nocard">您还没有创建您的名片哦</string>
+    <string name="str_nocard_sharefast">快速分享</string>
+    <string name="str_nocard_identify">彰显身份</string>
+    <string name="str_nocard_createfast">一秒快速创建</string>
+    <string name="str_nocard_controlload">加载控件中</string>
+
+    <!---->
+    <!--名片编辑-->
+    <string name="str_card_edit_title">名片编辑</string>
+    <string name="str_card_edit_set_usercard">是否设为个人名片</string>
+    <string name="str_card_edit_inputusername">请输入姓名</string>
+    <string name="str_card_edit_inputcompname">请输入公司名称</string>
+    <string name="str_card_edit_inputaddr">请输入地址</string>
+    <string name="str_card_edit_inputtelephone">请输入电话</string>
+    <string name="str_card_edit_inputphone">请输入手机</string>
+    <string name="str_card_edit_inputurl">请输入网址</string>
+    <string name="str_card_edit_inputemail">请输入邮箱</string>
+    <string name="str_card_edit_save">保存</string>
+    <string name="str_card_edit_cannel">取消</string>
+    <string name="str_card_edit_success">修改成功</string>
+    <string name="str_card_edit_faild">修改失败</string>
+    <!---->
+    <!--一键导出-->
+    <string name="str_onekey_export">一键导出</string>
+    <string name="str_onekey_export_sent_success">发送已成功</string>
+    <string name="str_onekey_export_sendto_email">此操作将把您所有的名片以附件的形式发到您的邮箱</string>
+    <string name="str_onekey_export_confirm">确认</string>
+
+    <!---->
+    <!--橙橙-->
+    <string name="str_cc_qcode">二维码</string>
+    <!---->
+    <!--扫描所有-->
+    <string name="str_scannerall_title">扫描其他</string>
+    <string name="str_scannerall_lately">最近</string>
+    <string name="str_scannerall_nodata">没有数据</string>
+    <string name="str_scannerall_new">新</string>
+    <!---->
+    <!--个人详情-->
+    <string name="str_user_info_title">个人详情</string>
+    <!---->
+    <!--名片识别-->
+    <string name="str_scannercard_shibie">名片识别</string>
+    <string name="str_scannercard_cardfront">拍照名片正面</string>
+    <string name="str_scannercard_ing">识别中……</string>
+    <!---->
+    <!--公司详情-->
+    <string name="str_company_title">公司详情</string>
+    <string name="str_company_news">公司新闻</string>
+    <string name="str_company_name">企业名称</string>
+    <string name="str_company_status">登记状态</string>
+    <string name="str_company_jiguan">注册机关</string>
+    <string name="str_company_code">注册号码</string>
+    <string name="str_company_xinyongcode">企业社会信用代码</string>
+    <string name="str_company_addr">地址</string>
+    <string name="str_company_fanwei">经营范围</string>
+    <string name="str_company_laiyuan">文字来源</string>
+    <string name="str_company_time">时间</string>
+    <string name="str_company_weizhi">未知</string>
+    <!---->
+    <!--公司详情-->
+    <string name="str_company_title">公司列表</string>
+    <string name="str_company_list_nodata">暂无数据</string>
+    <string name="str_company_list_input_data">请输入更精确的公司名称</string>
+    <string name="str_company_list_laoding">正在加载</string>
+    <string name="str_company_list_true_compa_name">没有您想要的？请正确填写您的公司名称</string>
+</resources>

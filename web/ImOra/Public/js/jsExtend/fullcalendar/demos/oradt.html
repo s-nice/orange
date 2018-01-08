@@ -1,0 +1,130 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>FullCalendar应用</title>
+<link rel="stylesheet" type="text/css" href="../fullcalendar.css">
+<link rel="stylesheet" type="text/css" href="../fancybox.css">
+<style type="text/css">
+#calendar{width:960px; margin:20px auto 10px auto}
+.fancy{width:450px; height:auto}
+.fancy h3{height:30px; line-height:30px; border-bottom:1px solid #d3d3d3; font-size:14px}
+.fancy form{padding:10px}
+.fancy p{height:28px; line-height:28px; padding:4px; color:#999}
+.input{height:20px; line-height:20px; padding:2px; border:1px solid #d3d3d3; width:100px}
+.btn{-webkit-border-radius: 3px;-moz-border-radius:3px;padding:5px 12px; cursor:pointer}
+.btn_ok{background: #360;border: 1px solid #390;color:#fff}
+.btn_cancel{background:#f0f0f0;border: 1px solid #d3d3d3; color:#666 }
+.btn_del{background:#f90;border: 1px solid #f80; color:#fff }
+.sub_btn{height:32px; line-height:32px; padding-top:6px; border-top:1px solid #f0f0f0; text-align:right; position:relative}
+.sub_btn .del{position:absolute; left:2px}
+.specialday{background-color:red;color:white}
+</style>
+<script src='../lib/jquery.js'></script>
+<script src='../jquery.fancybox-1.3.1.pack.js'></script>
+<script src='../lib/jquery-ui.min.js'></script>
+<script src='../fullcalendar.js'></script>
+<script src='../WdatePicker.js'></script>
+<script type="text/javascript">
+$(function() {
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prevYear,prev,next,nextYear today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay',
+        },
+        viewDisplay: function (view) {//每次日历加载以及日历的view改变的时候触发一次
+        	                setFocusDays([new Date('2014/1/30'), new Date('2014/12/30'), new Date('2013/12/31')], 'calendar', 'specialday', view);
+        	         },
+        dayRender: function (date, cell) {
+	       	var today = new Date(); date.getMonth() < today.getMonth() 
+	      	if (date.getYear() < today.getYear()) {	      	    
+	      		cell.css("background-color", "#FAEAE6");
+	       	}
+	       	if(date.getYear() === today.getYear()){
+	       		if(date.getMonth() < today.getMonth()){
+	       			cell.css("background-color", "#FAEAE6");
+	       		}else if(date.getMonth() === today.getMonth()){
+	       			if(date.getDate() < today.getDate()){
+	       				cell.css("background-color", "#FAEAE6");
+	       			}else if(date.getDate() === today.getDate()){
+	       				cell.css("background-color", "#fcf8e3");
+	       			}else{
+	       				cell.css("background-color", "##d9edf7");
+	       			}
+	       		}else{
+	       			cell.css("background-color", "##d9edf7");
+	       		}
+	       	}
+	       	if(date.getYear() > today.getYear()){
+	       		cell.css("background-color", "##d9edf7");
+	       	};
+        },
+        currentTimezone: 'America/Chicago',
+        firstDay:0,
+        editable: false,
+        timeFormat: 'H:mm',
+        axisFormat: 'H:mm',
+        events: '../schedule.php',
+        //单击日期时触发
+        dayClick: function(date, allDay, jsEvent, view) {
+			var selDate =$.fullCalendar.formatDate(date,'yyyy-MM-dd');
+			$.fancybox({
+				'type':'ajax',
+				'href':'event.php?action=add&date='+selDate
+			});
+        }, 
+        //点击事件时触发
+        eventClick: function(calEvent, jsEvent, view) { 
+            $.fancybox({ 
+                'type':'ajax', 
+                'href':'event.php?action=edit&id='+calEvent.id 
+            }); 
+        } 
+    });
+});
+</script>
+</head>
+
+<body>
+<div id="main" style="width:1060px">
+   <div id='calendar'></div>
+</div>
+
+</body>
+<script>
+function isSameDay(d1, d2) {//判断2个日期对象是否为同一天
+    return d1.getDate() == d2.getDate() && d1.getMonth() == d2.getMonth() && d1.getFullYear() == d2.getFullYear();
+}
+//setFocusDays参数说明
+//@days：日期对象数组，对比当前fullCalendar显示的日期，以便添加样式，注意是日期对象
+//@calendarID：fullCalendar的容器id
+//@cls：要给对比成功的日期容器添加的样式名称
+//@view：当前fullCalendar显示view（显示模式）对象
+function setFocusDays(days, calendarID, cls, view) {
+    //fullCalendar由于没有重新生成table，所以上一次对比可能成功的样式没有去掉
+    //要注意先清空可能已经设置的td样式，要不对不不成功上一次设置的td样式还会保留下来
+    $('#' + calendarID + ' th,#' + calendarID + ' td').removeClass(cls);
+    var currentDate = view.start, viewName = view.name;
+    if (viewName == 'basicDay') setBasicDay(days, calendarID, cls, currentDate); //按日显示,currentDate即为显示的日期
+    else if (viewName == 'basicWeek') setBasicWeek(days, calendarID, cls, currentDate); //按周显示，currentDate即为显示的周的星期一
+    else {//按月份显示
+        var startDate = view.visStart, endDate = view.visEnd; //fullCalendar当前显示开始日期和结束日期
+        var divDay = $('#' + calendarID + ' div.fc-day-number'); //获取fullCalendar显示日期的div容器
+        var index = 0;
+        var year = startDate.getFullYear(), month = startDate.getMonth(), date = startDate.getDate(); //记录开始日期的年月日，以便进行还原操作
+        for (var i = 0; i < days.length; i++) {
+            index = 0; //重置下标
+            while (!isSameDay(startDate, endDate)) {
+                if (isSameDay(days[i], startDate)) {//跨月容器增加了透明样式，注意去掉
+                    divDay.eq(index).closest('td').addClass(cls).removeClass('fc-other-month');
+                    break;
+                }
+                startDate.setDate(startDate.getDate() + 1); //fullCalendar显示的下一个日期
+                index++;
+            }
+            startDate = new Date(year + '/' + (month + 1) + '/' + date); //还原开始日期，以便和下一个需要的日期对比
+        }
+    }
+}
+</script>
+</html>

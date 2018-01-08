@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <!-- AI扫描仪分布图 -->
+    <string name="str_aimap_title">AIスキャナー分布図</string>
+    
+    <!-- 人脉360 -->
+    <string name="str_360_title">人脈360</string>
+    <string name="str_360_zhang">枚</string>
+    <string name="str_360_job_card">職業の名刺数</string>
+    <string name="str_360_count">数</string>
+    <string name="str_360_company_card">会社の名刺数</string>
+    <string name="str_360_industry_card">業界の名刺数</string>
+    <string name="str_360_ren">人</string>
+    <string name="str_360_loading">ローディング中...</string>
+    <string name="str_360_map">地図</string>
+    <string name="str_360_relation">人脈図録</string>
+    <string name="str_360_statistic">統計</string>
+    <string name="str_360_timeline">タイムライン</string>
+    <string name="str_360_company">会社</string>
+    <string name="str_360_job">職業</string>
+    <string name="str_360_phone">電話</string>
+    <string name="str_360_join_to">様が友達になりました</string>
+    <string name="str_360_check_personal_card">【個人名刺】を設定してください</string>
+    <string name="str_360_same_city">同城</string>
+    <string name="str_360_same_industry">同業</string>
+    <string name="str_360_bigman">大人物</string>
+    <string name="str_360_same_job">同職</string>
+    <string name="str_360_me">私</string>
+    <string name="str_360_guanxi">関係</string>
+    <string name="str_360_friend">親友</string>
+    
+    <!-- Line扫描仪语音 -->
+    <string name="str_line_a1">スキャナー起動中です、少々お待ち下さい</string>
+    <string name="str_line_a2">すぐに終わります</string>
+    <string name="str_line_a3">スキャナー番号を入力するか、またはバーコード写真を送って接続してください</string>
+    <string name="str_line_a4">ネット通信に問題があるようです、少々待っていてください</string>
+    <string name="str_line_a5">接続に成功しました、名刺を入れ、起動ボタンを押してください</string>
+    <string name="str_line_a6">名刺情報を公式アカウントに送信します </string>
+    <string name="str_line_a7">名刺を入れ続けるか、またはもう一回ボタンを押し終了してください</string>
+    
+    <!--Line相关-->
+    <string name="str_line_help">使用説明</string>
+    <string name="str_line_set_success">設定成功</string>
+    <string name="str_line_set_fail">設定失敗</string>
+    <string name="str_line_no_scanner">当たるスキャナがありません</string>
+    <string name="str_line_show">詳細情報</string>
+    <string name="str_line_card_scan_success">名刺認識成功</string>
+    <string name="str_line_scan_fail_direction">OCR認識失敗，名刺撮影方向の正しさをチェックしてください</string>
+    <string name="str_line_no">いいえ</string>
+    <string name="str_line_yes">はい</string>
+    <string name="str_line_is_set_mycard">「個人名刺」と設定しますか？</string>
+    <string name="str_line_no_profile">ユーザー情報がありません</string>
+    <string name="str_line_scan_finish">名刺スキャンが終わりました</string>
+    <string name="str_line_bind_success">接続完了</string>
+    <string name="str_line_card_none">当たる名刺がありません</string>
+    <string name="str_line_card_none">検索結果</string>
+    <string name="str_line_save_userinfo_fail">公式アカウント接続に失敗しました</string>
+    
+    <!-- 扫描结果 -->
+    <string name="str_result_title">スキャン結果</string>
+    <string name="str_result_scan_success">認識成功</string>
+    <string name="str_result_show_fail">名刺イメージ獲得失敗</string>
+    <string name="str_result_my_email">メールアドレスを入力してください</string>
+    <string name="str_result_send_to_email">名刺データをメール添付ファイルで送りします</string>
+    <string name="str_result_cancel">キャンセル</string>
+    <string name="str_result_ok">確認</string>
+    <string name="str_result_outputing">出力中...</string>
+    <string name="str_result_output_success">出力完了！</string>
+    <string name="str_result_output_fail">出力失敗！</string>
+    <string name="str_result_wrong_email">間違ったメールアドレスです。</string>
+    
+    <!--微信公众号列表翻译-->
+    <string name="str_g_list_title">名刺検索</string>
+    <string name="str_g_list_search">検索</string>
+    <string name="str_g_list_search_unit">枚の名刺</string>
+    <string name="str_g_list_delete">削除</string>
+    <string name="str_g_list_delete_faild">削除失敗</string>
+    <string name="str_g_list_no_card">あなたは今は名刺がありませんから、先に名刺を作成して下さい</string>
+    <string name="str_g_list_no_search">申し訳ございません、該当する名刺が見つかりませんでした</string>
+    <string name="str_g_list_loading">ローディング...</string>
+    <string name="str_g_list_btn_say">押して話す</string>
+    <string name="str_g_list_up_search">放して検索</string>
+    <string name="str_g_list_inrecording">レコーディング中...</string>
+    <string name="str_g_list_user_denyrecording">ユーザーが録音授権を拒否する</string>
+    <string name="str_g_list_recognition_failure">音声認識失败して、リトライ下さい</string>
+    <string name="str_g_list_record_short">録音時間が短すぎるして、リトライ下さい</string>
+    <string name="str_g_list_putcontent_search">検索内容を入力して下さい</string>
+    <string name="str_g_list_place_friends">友達サークル</string>
+    <string name="str_g_list_export">出力</string>
+    
+    <!--详情页-->
+    <string name="str_g_detail_mycard">私の名刺</string>
+    <string name="str_mycard_name">名前</string>
+    <string name="str_mycard_company">会社名</string>
+    <string name="str_mycard_workaddr">アドレス</string>
+    <string name="str_mycard_phone">携帯</string>
+    <string name="str_mycard_telephone">電話</string>
+    <string name="str_mycard_workemail">電子メール</string>
+    <string name="str_mycard_site">サイト</string>
+    <string name="str_mycard_submit">確認提出</string>
+    <string name="str_mycard_cancelself">私の名刺を取り消す</string>
+    <string name="str_mycard_setself">私の名刺をセットにする</string>
+    <string name="str_g_detail_map_nocontact">関連地図はない</string>
+    <string name="str_g_detail_no_backside_info">申し訳ございませんが、名刺は反面情報がありません</string>
+    <string name="str_g_detail_backlist">リストに戻る</string>
+    <string name="str_g_detail_uploadimg_test">画像をアップロードテストする</string>
+    <string name="str_g_detail_cardnoinfo">目標名刺は有効情報を解析することはできません</string>
+    <string name="str_g_detail_nocard_toupload">すみません、あなた今はまだ自分の名刺ありませんですよ、先に自分の名刺をアップロードする、そして名刺編集ページに自分の名刺を設定ください</string>
+    <string name="str_cardinfo_title">名刺の情報</string>
+    <string name="str_cardinfo_know">分かった</string>
+    <string name="str_cardinfo_no_cardinfo">目標名刺は有効情報を解析することはできません</string>
+    <!---->
+    <!--no card-->
+    <string name="str_nocard_title_createcard">名刺の作成</string>
+    <string name="str_nocard_nocard">あなたはまだ自分の名刺を作成していません</string>
+    <string name="str_nocard_sharefast">急速に共有</string>
+    <string name="str_nocard_identify">身分を表出</string>
+    <string name="str_nocard_createfast">一秒の高速作成</string>
+    <string name="str_nocard_controlload">モジュールの読み込み</string>
+
+    <!---->
+    <!--名片编辑-->
+    <string name="str_card_edit_title">名刺編集</string>
+    <string name="str_card_edit_set_usercard">個人の名刺を設定するかどうか</string>
+    <string name="str_card_edit_inputusername">名前を入力してください</string>
+    <string name="str_card_edit_inputcompname">会社名を入力してください</string>
+    <string name="str_card_edit_inputaddr">アドレスを入力してください</string>
+    <string name="str_card_edit_inputtelephone">携帯番号を入力してください</string>
+    <string name="str_card_edit_inputphone">電話番号を入力してください</string>
+    <string name="str_card_edit_inputurl">サイトを入力してください</string>
+    <string name="str_card_edit_inputemail">電子メールを入力してください</string>
+    <string name="str_card_edit_save">セーブ</string>
+    <string name="str_card_edit_cannel">キャンセル</string>
+    <string name="str_card_edit_success">更新に成功しました</string>
+    <string name="str_card_edit_faild">更新に失敗しました</string>
+    <!---->
+    <!--一键导出-->
+    <string name="str_onekey_export">ワンクリックをエクスポート</string>
+    <string name="str_onekey_export_sent_success">成功を送信する</string>
+    <string name="str_onekey_export_sendto_email">この操作はあなたのすべての名刺を添付した形式であなたの電子メールに発送する</string>
+    <string name="str_onekey_export_confirm">OK</string>
+
+    <!---->
+    <!--橙橙-->
+    <string name="str_cc_qcode">QRコード</string>
+    <!---->
+    <!--扫描所有-->
+    <string name="str_scannerall_title">その他をスキャン</string>
+    <string name="str_scannerall_lately">最近</string>
+    <string name="str_scannerall_nodata">データがない</string>
+    <string name="str_scannerall_new">新規</string>
+    <!---->
+    <!--个人详情-->
+    <string name="str_user_info_title">個人の詳細</string>
+    <!---->
+    <!--名片识别-->
+    <string name="str_scannercard_shibie">名刺認識</string>
+    <string name="str_scannercard_cardfront">名刺正面を撮る</string>
+    <string name="str_scannercard_ing">認識中……</string>
+    <!---->
+    <!--公司详情-->
+    <string name="str_company_title">会社の詳細</string>
+    <string name="str_company_news">会社ニュース</string>
+    <string name="str_company_name">企業名</string>
+    <string name="str_company_status">登録状態</string>
+    <string name="str_company_jiguan">登録機関</string>
+    <string name="str_company_code">登録番号</string>
+    <string name="str_company_xinyongcode">企業社会信用コード</string>
+    <string name="str_company_addr">アドレス</string>
+    <string name="str_company_fanwei">経営範囲</string>
+    <string name="str_company_laiyuan">文字の出所</string>
+    <string name="str_company_time">時間</string>
+    <string name="str_company_weizhi">不詳</string>
+    <!---->
+    <!--公司详情-->
+    <string name="str_company_title">会社リスト</string>
+    <string name="str_company_list_nodata">一時的にデータがない</string>
+    <string name="str_company_list_input_data">もっと正確な会社名を入力して下さい</string>
+    <string name="str_company_list_laoding">ローディング</string>
+    <string name="str_company_list_true_compa_name">しないのですか。正確な会社名を入力して下さい</string>
+    <string name="str_email_content_1">%s様、</string>
+    <string name="str_email_content_2">サービスをご利用して誠にありがとうございました！</string>
+    <string name="str_email_content_3">ただいま、ご名刺ファイルはすでに生成され、添付ファイルをご査収ください。</string>
+    <string name="str_email_content_4">詳しい情报について、橙源サービス号をご購読して下さい：</string>
+    <string name="str_email_content_6">橙源科学技術株式会社</string>
+    <string name="str_email_content_7">名刺ファイル</string>
+    <string name="str_excel_header_1">名前</string>
+    <string name="str_excel_header_2">英語名前</string>
+    <string name="str_excel_header_3">職位</string>
+    <string name="str_excel_header_4">電話番号</string>
+    <string name="str_excel_header_5">携帯電話番号</string>
+    <string name="str_excel_header_6">会社</string>
+    <string name="str_excel_header_7">部門</string>
+    <string name="str_excel_header_8">アドレス</string>
+    <string name="str_excel_header_9">ホームページ</string>
+    <string name="str_excel_header_10">メールアドレス</string>
+    <string name="str_excel_header_11">スキャー時間</string>
+</resources>

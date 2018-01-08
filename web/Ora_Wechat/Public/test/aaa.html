@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS入门学习</title>
+    <script type="text/javascript" src="/js/jquery/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="parentCtrl">
+  <p>data in parent controller : {{aaa}}</p>
+  <div ng-controller="childCtrl">
+    <input type="text" ng-model="aaa">
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+angular.module('myApp', [])
+
+.controller('parentCtrl', ['$scope', function($scope){
+    $scope.data = {
+        name: 'htf'
+    }
+    $scope.aaa=1;
+}])
+
+.controller('childCtrl', ['$scope', function($scope){
+
+}])
+</script>
+</html>

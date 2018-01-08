@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- uc强制竖屏 -->
+	<meta name="screen-orientation" content="portrait">
+	<!-- QQ强制竖屏  -->
+	<meta name="x5-orientation" content="portrait">
+	 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<title>微信列表页</title>
+	<link rel="stylesheet" href="__PUBLIC__/css/wList.css">
+</head>
+<body>
+	<div class="warmp">
+		<div class="search_top">
+			<div class="search_text">
+				<input placeholder="请输入搜索内容" type="text"><span><img src="__PUBLIC__/images/soud.png"></span>
+			</div>
+			<button type="button">搜索</button>
+		</div>
+		<div class="content_img swiper-container">
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"><!-- <span class="remove_card">删除</span> --></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"><!-- <span class="remove_card">删除</span> --></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+				<li class="swiper-slide"><img src="__PUBLIC__/images/d_card.png"></li>
+			</ul>
+		</div>
+	</div>
+<script src="__PUBLIC__/js/jquery-3.1.1.min.js"></script>
+<script src="__PUBLIC__/js/swiper.min.js"></script>
+<script>
+	//执行rem动态设置
+	var supportOrientation = (typeof window.orientation === 'number' && typeof window.onorientationchange === 'object');
+	var orientation;
+	var init = function(){
+		var updateOrientation = function(){
+			if(supportOrientation){
+				orientation = window.orientation;
+			}else{
+				orientation = (window.innerWidth > window.innerHeight) ? 90 : 0;
+			}
+			fontSize();
+	      	//reloadPop();
+		};
+		var eventName = supportOrientation ? 'orientationchange' : 'resize';
+		window.addEventListener(eventName, updateOrientation, false);
+		updateOrientation();
+	};
+	window.addEventListener('DOMContentLoaded',init,false);
+	/**
+	 * 将 html 的字体大小 设置为  屏幕宽度 / 设计稿宽度  * 100. 这样就可以将页面内字体和其他元素的宽度直接 / 100, 将单位顺利从 px 转成 rem 
+	 */
+	function fontSize(){
+		var iWidth;
+		var width = document.documentElement.clientWidth;
+		var height = document.documentElement.clientHeight;
+		var myOrientation = typeof window.orientation === 'number' ? window.orientation : orientation;
+		iWidth = ( myOrientation%180 === 0) ? (width > height ? height : width) : (width > height ? width : height);
+		document.getElementsByTagName('html')[0].style.fontSize = iWidth / 7.2 + 'px';
+	}
+	var swiper = new Swiper('.swiper-container', {
+        direction : 'vertical',
+        pagination: '.swiper-pagination',
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        observer:true,
+       // observeParents:true,
+        coverflow: {
+            rotate: -45,
+            stretch: 15,
+            depth: 100,
+            modifier: 1,
+            speed: 200,
+            slideShadows: true
+        },
+        onTouchEnd: function(swiper,evnt){
+         //  console.log($(evnt.target),evnt.type,evnt.target||evnt.srcElement)
+        }
+    });
+</script>
+</body>
+</html>

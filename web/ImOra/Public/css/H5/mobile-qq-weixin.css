@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+.news_title p{font:bold 0.96rem/1.3rem '微软雅黑'; }
+/*
+.news_content_c p{font:0.222rem/0.933rem '微软雅黑';display:block; color:#ccc; margin-top:0.266rem;}
+.news_content_c p span.big{font-size:0.333rem;}
+.news_content_c p span.small{font-size:0.166rem;}
+.news_content_c p span.bigger{font-size:0.659rem;}
+*/
+/*
+.news_content_c p{font:0.333rem/0.933rem '微软雅黑';display:block; color:#ccc; margin-top:0.266rem;}
+.news_content_c p span.big{font-size:0.659rem;font-family:'Microsoft YaHei','微软雅黑'}
+.news_content_c p span.small{font-size:0.222rem;font-family:'Microsoft YaHei','微软雅黑'}
+.news_content_c p span.bigger{font-size:0.959rem;font-family:'Microsoft YaHei','微软雅黑'}
+*/
+
+.news_content_c p{font:0.58rem/0.8rem '微软雅黑';display:block; color:#ccc;}
+.news_content_c p span.normal{font:0.35rem/0.8rem '微软雅黑';}
+.news_content_c p span.big{font:0.435rem/1.022rem '微软雅黑';}
+.news_content_c p span.small{font:0.29rem/0.657rem '微软雅黑';}
+.news_content_c p span.bigger{font:0.725rem/1.32rem '微软雅黑';}

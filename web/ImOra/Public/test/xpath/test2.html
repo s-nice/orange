@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.imora_selected{border:1px solid black !important}
+</style>
+</head>
+<body>
+	<div>
+	<span>111</span>
+	<span>222</span>
+	<span>222</span>
+	</div>
+	<hr>
+	<label>值1</label><input type='text' autocomplete='off' key='aa'><span></span><br>
+	<label>值2</label><input type='text' autocomplete='off' key='bb'><span></span><br>
+</body>
+<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/jsExtend/browser.js"></script>
+<script type="text/javascript">
+var data={};
+$('input').on('focus', function(){
+	startMonitor($(this));
+}).on('blur', function(){
+	stopMonitor($(this));
+});
+
+$('*').on('click', function(){
+	if (!$(this).hasClass('imora_selected')){
+		return;
+	}
+	var key=$(this).attr('identifer');
+	var path=$(this).removeClass('imora_selected').data('imora_path');
+	for(var i=0;i<data[key].length;i++){
+		if (data[key][i]==path){
+			data[key].splice(i,1);
+			break;
+		}
+	}
+	
+	$('input[key="'+key+'"]').next().html(data[key].join(',,,'));
+});
+
+function startMonitor($obj){
+	$obj.data('oldVal', $obj.val());
+	var it=setInterval(function(){
+		var oldVal=$obj.data('oldVal');
+		if ($obj.val()!='' && oldVal!=$obj.val()){
+			//触发
+			search($obj);
+			$obj.data('oldVal', $obj.val());
+		}
+	}, 100);
+	$obj.data('it', it);
+}
+
+function stopMonitor($obj){
+	clearInterval($obj.data('it'));
+}
+
+function search($obj){
+	var val=$obj.val();
+	var flag=true;
+	var key=$obj.attr('key');
+	var paths=[];
+	$('*').each(function(){
+		if ($(this)[0].localName=='input' || $(this).text()!=val){
+			return;
+		}
+		
+		$('.imora_selected').each(function(){
+			if ($(this).attr('identifer')==key){
+				return;
+			}
+			$(this).removeClass('imora_selected');
+		});
+		$(this).addClass('imora_selected').attr('identifer', key);
+		
+		var arr=[];
+		
+		locate($(this), arr);
+		arr.reverse();
+		
+		var path=getPath(arr);
+		!!val && paths.push(path);
+		flag=false;
+		$(this).data('imora_path', path);
+	});
+	
+	if (flag){
+		$('*').removeClass('imora_selected');
+		$obj.next().html('');
+	} else {
+		data[key]=paths;
+		$obj.next().html(paths.join(',,,'));
+	}
+}
+
+
+function getPath(arr){
+	var path='/';
+	for(var i=0;i<arr.length;i++){
+		if (i%2==0){
+			path+=arr[i];
+		} else {
+			path+='['+arr[i]+']/';
+		}
+	}
+	
+	path=path.substring(0, path.length-1);
+	return path;
+}
+
+function locate($obj,arr){
+	if ($obj.parent().length==0){
+		return;
+	}
+	//IE9从0开始，其他从1开始
+	var offset=browser.type=='IE'?0:1;
+	
+	var tag=$obj[0].localName;
+	var $siblings=$obj.siblings(tag);
+	if ($siblings.length>0){
+		//找到$obj是第几个
+		$obj.parent().find(tag).each(function(num){
+			if ($obj[0][$.expando]!=$(this)[0][$.expando]){
+				return;
+			}
+			$obj.data('num', num);
+			return false;
+		});
+		$obj.data('num')!=undefined && arr.push(parseInt($obj.data('num'))+offset);
+	} else {
+		arr.push(offset);
+	}
+	arr.push(tag);
+	locate($obj.parent(), arr);
+}
+</script>
+</html>

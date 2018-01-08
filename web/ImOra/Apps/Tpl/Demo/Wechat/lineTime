@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>时间线</title>
+		<link rel="stylesheet" href="__PUBLIC__/css/wePage.css" />
+		<script src="__PUBLIC__/js/oradt/h5/fontSize.js"></script>
+	</head>
+	<body>
+		<nav class="nav_height"></nav>
+		<nav class="navs">
+			<span>地图</span>
+			<span>人脉图谱</span>
+			<span>统计</span>
+			<span class="on">时间线</span>
+		</nav>
+		<section class="time_card">
+			<div class="time_list">
+				<div class="time_item">
+					<div class="join_time"><span><em></em></span>2017年8月01日</div>
+					<div class="t_card_info">
+						<h5>琳琳加入到了我的朋友圈</h5>
+						<img src="__PUBLIC__/images/wei/2.png" alt="" />
+						<ul>
+							<li><b>公司：</b><small>联想集团</small></li>
+							<li><b>职位：</b><small>总经理</small></li>
+							<li><b>电话：</b><small>+8618910869172</small></li>
+						</ul>
+					</div>
+				</div>
+				<div class="time_item">
+					<div class="join_time"><span><em></em></span>2017年8月01日</div>
+					<div class="t_card_info">
+						<h5>琳琳加入到了我的朋友圈</h5>
+						<img src="__PUBLIC__/images/wei/2.png" alt="" />
+						<ul>
+							<li><b>公司：</b><small>联想集团</small></li>
+							<li><b>职位：</b><small>总经理</small></li>
+							<li><b>电话：</b><small>+8618910869172</small></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

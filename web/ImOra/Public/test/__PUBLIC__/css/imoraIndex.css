@@ -1,0 +1,66 @@
+@CHARSET "UTF-8";
+/* CSS Document */
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,tr,td,img,div{margin:0;padding:0;border:0; float:none;}
+body{font-size:12px;font-family:'SourceHanSansCN-Normal','微软雅黑','Tahoma','黑体','宋体'; background:#fff;}
+body,html{background:#fff; overflow-x:hidden;}
+/*html,body{width:100%;}*/
+ul,ol{list-style-type:none;}em,i,cite{font-style:normal;}
+select,input{vertical-align:middle;}
+input{outline:none;}
+img,embed{vertical-align:top;border:none;}
+a{text-decoration:none;color:#666666; outline: medium none; font-family:'Microsoft yahei';}
+a:hover{color:#0075c2;text-decoration: none;}
+.font{}
+.left{ float:left}
+.right{ float:right;}
+.clear{ clear:both;}
+textarea{overflow:auto;resize:none;}
+.clear:after{clear:both;content:'';display:block}
+.clear{zoon:1;}
+.hand{cursor:pointer;}
+
+.warp{width:100%;min-width:1200px;overflow:hidden;}
+.warp_header{width:100%;max-height:932px;overflow:hidden;position:relative;}
+.banner_img{width:100%;max-height:932px;overflow:hidden;}
+.banner_img img{width:100%;height:auto;}
+.warp_header div.imora{width:585px;height:32px;position:absolute;left:0;top:0;bottom:0;right:0;margin:auto;font-size:38px;font-family:"Century Gothic";color:#fff;}
+.warp_top{width:1200px;height:80px;position:absolute;top:0;left:50%;margin-left:-602px;z-index:99;}
+.warp_top div.logo{margin-top:20px;float:left;}
+.warp_top div.login_box{float:right;}
+.login_box ul li{float:left;font:12px/80px "微软雅黑";color:#999;margin-left:11px;}
+.login_box ul li a{color:#999;}
+.login_box ul li span.country_icon{float:left;width:20px;height:13px;background:url("../img/warp_language_pic.png") no-repeat;margin:33.5px 5px 0 9px;}
+.login_box ul li em{margin-left:2px;}
+.about_our{width:1200px;margin:0 auto;padding-top:143px;padding-bottom:178px;}
+.about_our h2{font-size:30px;color:#333;font-family:"微软雅黑";font-weight:400;padding-bottom:20px;position:relative;}
+.about_our h2 em{position:absolute;left:0;bottom:0;width:48px;height:0;border-bottom:2px solid #666;}
+.about_our h3{font-size:24px;font-family:"微软雅黑";font-weight:400;color:#333;margin-top:80px;margin-bottom:53px;}
+.about_our h3 span{float:left;width:20px;height:20px;background:url("../img/about_icon.png") no-repeat;margin-right:20px;margin-top:8px;}
+.about_our p{color:#666;font:14px/20px "微软雅黑";}
+.img_show{margin-top:20px;height:320px;}
+.img_show div{width:385px;height:320px;float:left;}
+.center_img{margin:0 22px 0 22px;}
+.contact_our{width:100%;min-width:1200px;height:930px;background:#f5f5f5;}
+.our_center{width:1200px;margin:0 auto;}
+.font_left{width:360px;float:left;}
+.font_left h2{font-size:30px;color:#333;font-family:"微软雅黑";font-weight:400;margin-top:283px;padding-bottom:20px;position:relative;}
+.font_left h2 em{position:absolute;left:0;bottom:0;width:48px;height:0;border-bottom:2px solid #666;}
+.font_left h3{font-size:18px;font-family:"微软雅黑";color:#333;font-weight:400;padding-top:70px;padding-bottom:25px;}
+.font_left p{font-size:12px;color:#333;line-height:20px;font-family:"微软雅黑";}
+.map_right{width:837px;float:left;margin-top:70px;}
+.time_our{width:100%;min-width:1200px;height:929px;background:url("../img/team_bg.jpg") no-repeat;}
+.time_center{width:1200px;margin:0 auto;}
+.time_center h2{font-size:30px;color:#333;font-family:"微软雅黑";font-weight:400;padding-top:123px;padding-bottom:20px;position:relative;}
+.time_center h2 em{position:absolute;left:0;bottom:0;width:48px;height:0;border-bottom:2px solid #666;}
+.time_center h4{font:14px/20px "微软雅黑";color:#333;padding-top:78px;}
+.time_center p{width:1101px;font-size:14px;font-family:"微软雅黑";color:#666;line-height:20px;}
+.join_our{width:128px;height:39px;border:1px solid #333;background:none;display:block;font-family:"微软雅黑";font-size:14px;margin-top:30px;}
+.footer{width:100%;height:150px;background:#23282b;}
+.footer_center{width:1200px;margin:0 auto;}
+.footer_center p{text-align:center;line-height:150px;color:#6a6c6d;font-size:12px;font-family:"微软雅黑";float:left;}
+.center_auto{width:717px;margin:0 auto;}
+.href_box{width:160px;float:left;margin-top:56.5px;margin-left:47px;}
+.href_box span{float:left;width:40px;height:37px;background:url("../img/foo_icon.jpg") no-repeat;}
+.href_box span.span2{background-position:-40px 0;}
+.href_box span.span3{background-position:-80px 0;}
+.href_box span.span4{background-position:-120px 0;}

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商城</title>
+<link rel="stylesheet" href="__PUBLIC__/css/newsshopping.css" />
+<style>
+.warp_logo {
+    padding-top: 20px;
+}
+.warp_right {
+    float: right;
+    height: 70px;
+}
+.warp_logo img {
+    height: 42px;
+    width: 42px;
+}
+.warp_nav {
+    margin-right: 35px;
+    float: left;
+    height: 70px;
+    width:auto;
+}
+.warp_Language {
+    margin-right: 30px;
+    float: left;
+    height: 70px;
+    width: auto;
+}
+.warp_Language span {
+    color: #999;
+    font-family: "Microsoft YaHei","微软雅黑";
+    font-size: 12px;
+    line-height: 80px;
+}
+.warp_Language span.name_span {
+    margin: 35px 8px 0 15px;
+    color: #999;
+    display: block;
+    float: left;
+    font-family: "Microsoft YaHei","微软雅黑";
+    font-size: 12px;
+    height: 40px;
+    line-height: 70px;
+}
+
+.warp_Language span i, .warp_Language span em, .warp_Language span b {
+    display: block;
+    float: left;
+    margin: 0 4px;
+}
+.warp_Language span b {
+    height: 40px;
+    margin-left: 3px;
+}
+.warp_vip {
+    width: auto;
+}
+.warp_nav ul li.warp_hs a,.warp_vip ul li a {
+    color: #999;
+}
+
+.footer_box ul li {
+    margin: 0 5px;
+}
+.footer_box ul {
+    margin: 0 23px 0 400px;
+}
+</style>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var bannerWidth=$('.warp_banner li:first').width();
+	$('.warp_banner ul:first').width($('.warp_banner ul:first li').length*bannerWidth);
+	
+	//banner翻页按钮事件绑定
+	$('.warp_banner ol li').each(function(i){
+		$(this).on('click',function(){
+			turn(i);
+			$(this).addClass('active').siblings().removeClass('active');
+		})
+	});
+
+	//banner翻页函数
+	function turn(num){
+		$('.warp_banner div:first').animate({'scrollLeft':num*bannerWidth});
+	}
+	turn(0);//初始化
+	
+	//分享按钮
+	$('.warp_fenxiang span').on('click',function(){
+		var obj=$(this).next();
+		if (obj.is(':visible')){
+			obj.animate({top:50,opacity:0},'fast',function(){
+				$(this).hide();
+			});
+		} else {
+			obj.show().css({top:50,opacity:0}).animate({top:0,opacity:1},'fast');
+		}
+	});
+	
+	//-----付费浏览网页START
+	//付费查看第一页弹层
+	function fukuan(){
+		maskShow();
+		$('.fukuan_pop').show();
+	}
+	$('.warp_logo_nav a, .warp_footer a').on('click',function(){
+		fukuan();
+	});
+	//fukuan();
+	maskHide();
+	
+	//付费查看第一页弹层-关闭
+	$('.fukuan_pop .fukuan_pop_close').on('click',function(){
+		maskHide();
+		$('.fukuan_pop').hide();
+	});
+	
+	//付费查看第二页弹层-关闭
+	$('.caxun_pop .caxun_pop_close').on('click',function(){
+		maskHide();
+		$('.caxun_pop').hide();
+	});
+	
+	//付费查看第三页弹层-关闭
+	$('.login_pop .caxun_pop_close').on('click',function(){
+		maskHide();
+		$('.login_pop').hide();
+		$('form')[0].reset();
+		$('.login_name input').val($('.login_name input').attr('placeholder'));
+	});
+	
+	//付费查看第一页弹层-下一步
+	$('.fukuan_pop_bin .pop_input').on('click',function(){
+		$('.caxun_pop i:first').html('IMORA信息查询');
+		$('.caxun_pop em:first').html(5);
+		$('.caxun_popright').show();
+		$('.fukuan_pop').hide();
+		$('.caxun_pop').show();
+	});
+	
+	//付费查看第二页弹层-上一步
+	$('.caxun_popright').on('click',function(){
+		$('.fukuan_pop').show();
+		$('.caxun_pop').hide();
+	});
+	
+	//付费查看第二页弹层-选择付费方式
+	$('.caxun_pop_c li').on('click',function(){
+		if ($(this).hasClass('active')){
+			$(this).removeClass('active');
+		} else {
+			$(this).addClass('active').siblings().removeClass('active');	
+		}
+		btnDisableCaxun();
+	});
+	
+	//没有选择付费方式，则disable下一步按钮
+	function btnDisableCaxun(){
+		if ($('.caxun_pop_c li.active').length==0){
+			$('.caxun_pop_bin .pop_input').removeClass('active').attr('disabled',true);
+		} else {
+			$('.caxun_pop_bin .pop_input').addClass('active').removeAttr('disabled');
+		}
+	}
+	btnDisableCaxun();
+	
+	//付费查看第二页弹层-下一步
+	$('.caxun_pop_bin .pop_input').on('click',function(){
+		//logo，登录名称更变
+		var li=$('.caxun_pop_c li.active');
+		if (li.attr('img')){
+			$('.login_pop_top img:first').show().attr('src',li.attr('img'));	
+		} else {
+			$('.login_pop_top img:first').hide();
+		}
+		
+		$('.login_pop_top i:first').html(li.attr('name'));
+		
+		//名称，价格更变
+		var name=$('.caxun_pop i:first').html();
+		var price=$('.caxun_pop em:first').html();
+		$('.login_pop i:first').html(name);
+		$('.login_pop em:first').html(price);
+		
+		//显示
+		$('.caxun_pop').hide();
+		$('.login_pop').show();
+	});
+	
+	//-----付费浏览网页E-N-D
+	///////////////////////
+	//-----浏览模板START
+	
+	//点击模板，弹出付费层
+	$('.warp_content_c a').each(function(){
+		$(this).on('click',function(){
+			var name=$(this).find('h2').html();
+			var price=$(this).find('em').html().substring(1);
+			$('.caxun_pop i:first').html(name);
+			$('.caxun_pop em:first').html(price);
+			$('.caxun_popright').hide();
+			maskShow();
+			$('.caxun_pop').show();
+			
+		});
+	});
+	
+	//模板购买付费层-关闭
+	$('.goumai_pop .caxun_pop_close').on('click',function(){
+		maskHide();
+		$('.goumai_pop').hide();
+	});
+	
+	//-----浏览模板E-N-D
+	//遮罩显示
+	function maskShow(){
+		$('.shopping_mask').height($(document).height()).show();
+	}
+	
+	//遮罩关闭
+	function maskHide(){
+		$('.shopping_mask').hide();
+	}
+	
+	//placeholder相关
+	$(":text").on('focus',function(){
+		if ($(this).attr('placeholder')==$(this).val()){
+			$(this).val('');
+		}
+	}).on('blur',function(){
+		if ($(this).val()==''){
+			$(this).val($(this).attr('placeholder'));
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<div class="warp_shopping">
+		<div class="warp_header">
+			<div class="warp_logo_nav">
+				<div class="warp_logo"><a href="./"><img src="__PUBLIC__/img/warp_logo.png" /></a></div>
+				
+	            <div class="warp_right">
+	                <div class="warp_nav">
+	                    <ul>
+	                        <li class="warp_hs"><a href="">橙脉APP（敬请期待）</a></li>
+	                        <li class="warp_hs"><a href="">名片扫描仪（敬请期待）</a></li>
+	                        <li><a href="imora_cn_about.html">关于我们</a></li>
+	                        <li><a href="imora_cn_mall.html">商城</a></li>
+	                    </ul>
+	                </div>
+	                <div class="warp_Language">
+	                    <span class="name_span"><img src="__PUBLIC__/img/warp_language_pic.png" /></span>
+	                    <span>
+	                        <i>中文</i>
+	                        <b>/</b>
+	                        <em>英文</em>
+	                    </span>
+	                </div>
+	                <div class="warp_vip">
+	                    <ul>
+	                        <li><a href="">登录</a></li>
+	                        <li><a href="">注册</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+			</div>
+			<div class="warp_banner">
+				<div style='position:relative;width:1200px;height:360px;overflow:hidden;'>
+					<ul>
+						<li><img src="__PUBLIC__/images/shopping_banner1.jpg" /></li>
+						<li><img src="__PUBLIC__/images/shopping_banner2.jpg" /></li>
+						<li><img src="__PUBLIC__/images/shopping_banner1.jpg" /></li>
+					</ul>
+				</div>
+				<ol>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<div class="warp_fenxiang">
+					<span><img src="__PUBLIC__/images/shopping_icon_fx.png" /></span>
+					<ul style='height:96px;'>
+						<li><img src="__PUBLIC__/images/shopping_icon_wx.png" /></li>
+						<li><img src="__PUBLIC__/images/shopping_icon_sina.png" /></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="warp_content">
+		<div class="warp_content_w">
+			<div class="warp_content_nav"><span>最新模板</span><i>原创</i><em>热门</em></div>
+			<div class="warp_content_c">
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t1.jpg" /></span>
+						<h2>Hedeker Wealth & Law</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.9</b>
+							<em>￥60.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t2.jpg" /></span>
+						<h2>Rambling Muse</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.2</b>
+							<em>￥30.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t3.jpg" /></span>
+						<h2>Nokia I&M</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.1</b>
+							<em>￥29.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t4.jpg" /></span>
+						<h2>Twice Fashion</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.9</b>
+							<em>￥19.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t5.jpg" /></span>
+						<h2>Nokia I&M</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.9</b>
+							<em>￥60.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t6.jpg" /></span>
+						<h2>Curious Space Identity</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.2</b>
+							<em>￥30.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t7.jpg" /></span>
+						<h2>Hedeker Wealth & Law</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.1</b>
+							<em>￥29.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t8.jpg" /></span>
+						<h2>Truth Branding</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.9</b>
+							<em>￥19.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t9.jpg" /></span>
+						<h2>SD/ Brand</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.9</b>
+							<em>￥60.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t10.jpg" /></span>
+						<h2>SD/ Brand</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.2</b>
+							<em>￥30.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t11.jpg" /></span>
+						<h2>SD/ Brand</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.1</b>
+							<em>￥29.00</em>
+						</div>
+					</div>
+				</a>
+				<a href="#">
+					<div class="warp_content_l">
+						<span><img src="__PUBLIC__/images/shopping_pic_t12.jpg" /></span>
+						<h2>Clutch Bodyshop</h2>
+						<i>Socio Design</i>
+						<div class="warp_content_l_p">
+							<b><img src="__PUBLIC__/images/shopping_icon_wjx.png" />4.9</b>
+							<em>￥19.00</em>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="warp_footer">
+		<div class="footer_box">
+			<ul>
+				<li><a href="">常见问题</a></li>
+				<li class="jiange">/</li>
+				<li><a href="">联系我们</a></li>
+				<li class="jiange">/</li>
+				<li><a href="http://www.oradt.com/newsshopping-intro.html">公司简介</a></li>
+				<li class="jiange">/</li>
+				<li><a href="http://www.oradt.com/newsshopping-privacy.html">隐私政策</a></li>
+				<li class="jiange">/</li>
+				<li><a href="">更新记录</a></li>
+			</ul>
+			<p>Copyright @  2016  北京橙鑫数据科技有限公司  版权所有</p>
+		</div>
+	</div>
+	
+	<div class="shopping_mask"></div>
+	<!-- 我要付款 POP -->
+	<div class="fukuan_pop">
+		<div class="fukuan_pop_close hand"><img src="__PUBLIC__/images/shopping_icon_close.png" /></div>
+		<div class="fukuan_pop_c">
+			<span><img src="__PUBLIC__/images/shopping_pic_pop.jpg" /></span>
+			<div class="fukuan_pop_w">
+				<i>尊敬的用户： </i>
+				<em>仅需支付 <b>RMB 5</b>即可继续浏览IMORA官网详细信息，您也可以使用IMORA账户信息进行登录和浏览，IMORA将为您提供
+更为丰富的内容和更加便捷的使用体验。</em>
+			</div>
+		</div>
+		<div class="fukuan_pop_bin"><input type="button" value="我要付款" class="pop_input active hand" /></div>
+	</div>
+	
+	<!-- IMORA 查询  -->
+	<div class="caxun_pop">
+		<div class="caxun_pop_close hand"><img src="__PUBLIC__/images/shopping_icon_close_h.png" /></div>
+		<div class="caxun_pop_title">
+			<i>IMORA信息查询</i>
+			<span>总计 <b>RMB</b><em>5</em></span>
+		</div>
+		<div class="caxun_pop_c">
+			<ul>
+				<li img="__PUBLIC__/images/shopping_fkfs_z.png" name='支付宝登录'><img src="__PUBLIC__/images/shopping_icon_zfb.png" /></li>
+				<li img="__PUBLIC__/images/shopping_fkfs_wx.png" name='微信登录'><img src="__PUBLIC__/images/shopping_icon_wxc.png" /></li>
+				<li img="__PUBLIC__/images/shopping_fkfs_p.png" name='ApplePay登录'><img src="__PUBLIC__/images/shopping_icon_pay.png" /></li>
+				<li img="__PUBLIC__/images/shopping_fkfs_pp.png" name='PayPal登录'><img src="__PUBLIC__/images/shopping_icon_payp.png" /></li>
+				<li name='其他登录'>其他付款方式</li>
+				<li name='网银登录'>添加快捷/网银付款</li>
+			</ul>
+		</div>
+		<div class="caxun_pop_ts"><i><img src="__PUBLIC__/images/shopping_icon_poppic.png" /></i><em>你在安全的环境中，请放心使用！</em></div>
+		<div class="caxun_pop_bin"><input type="button" value="下一步" class="pop_input hand" disabled/></div>
+		<div class="caxun_popright hand">返回上一页</div>
+	</div>
+	
+	<!-- 支付宝登录  -->
+	<div class="login_pop">
+		<div class="caxun_pop_close hand"><img src="__PUBLIC__/images/shopping_icon_close_h.png" /></div>
+		<div class="caxun_pop_title">
+			<i>IMORA信息查询</i>
+			<span>总计 <b>RMB</b><em>5</em></span>
+		</div>
+		<div class="login_pop_c">
+			<div class="login_pop_top"><img src="__PUBLIC__/images/shopping_fkfs_z.png" /><i>支付宝登录</i></div>
+			<div class="login_pop_input">
+				<form>
+				<div class="login_name"><i><img src="__PUBLIC__/images/shopping_icon_loginname.png" /></i><input type="text" value="手机号/会员名/邮箱" placeholder="手机号/会员名/邮箱"/></div>
+				<div class="login_password"><i><img src="__PUBLIC__/images/shopping_icon_loginpassword.png" /></i><input type="password" /></div>
+				</form>
+				<p>忘记登录密码</p>
+			</div>
+			<div class="login_pop_bin"><input type="button" value="确认付款" class="login_input" /></div>
+		</div>
+	</div>
+</body>
+</html>

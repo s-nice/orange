@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="__PUBLIC__/css/newsindex.css" />
+<script type="text/javascript" src="jstest/jquery.js"></script>
+<script type="text/javascript" src="jstest/touch-0.2.14.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var winWidth;//屏幕宽
+    var index=0;//第几个幻灯片
+	var stop=false;
+    
+    //不同分辨率的切换自适应
+    $(window).on('resize',function(){
+        winWidth=$(this).width();
+        $('.warp_banner_c ul li').width(winWidth);
+        $('.warp_banner_c ul').width(winWidth*$('.warp_banner_c ul li').length);
+        $('.warp_banner_c').scrollLeft(winWidth*index);
+    });
+    $(window).resize();
+
+    $('.warp_banner').on('mouseover',function(){
+    	stop=true;
+    }).on('mouseout',function(){
+    	stop=false;
+    });
+    
+	//切换按钮
+    $('.warp_banner ol li').each(function(i){
+        $(this).attr('i',i).on('click',function(){
+            turn($(this).attr('i'));
+        });
+    });
+	
+	//手势切换
+    touch.on('.warp_banner_c', 'swipeleft', function(e){
+		e.preventDefault();
+		turn(index+1);
+	});
+    touch.on('.warp_banner_c', 'swiperight', function(e){
+		e.preventDefault();
+		turn(index-1);
+	});
+    
+    //左右切换按钮
+	$('.prev').on('click',function(){
+		turn(index-1);
+	});
+	$('.next').on('click',function(){
+		turn(index+1);
+	});
+	
+    //切换方法
+	function turn(i){
+		if(i<0 || i>$('.warp_banner_c ul li').length-1){
+			return;
+		}
+		index=i;
+		$('.warp_banner_c').animate({'scrollLeft':winWidth*index},'normal');
+		$('.warp_banner ol li').eq(i).addClass('active').siblings().removeClass('active');
+	}
+	turn(0);
+	
+	setInterval(function(){
+		if (stop) return;
+		if (index+1 >= $('.warp_banner_c ul li').length){
+			turn(0);	
+		} else {
+			turn(index+1);
+		}
+	},5000);
+});
+</script>
+</head>
+<body>
+<div class="warp">
+	<div class="warp_header">
+		<div class="warp_opacity"></div>
+		<div class="warp_menu">
+			<div class="warp_logo"><a href=""><img src="__PUBLIC__/img/warp_logo.png" /></a></div>
+			<div class="warp_right">
+				<div class="warp_nav">
+					<ul>
+						<li><a href="">橙脉APP</a></li>
+						<li class="on"><a href="">名片扫描仪</a></li>
+						<li><a href="">关于我们</a></li>
+						<li class="warp_hs"><a href="">商城（敬请期待）</a></li>
+					</ul>
+				</div>
+				<div class="warp_Language">
+					<span class="name_span"><img src="__PUBLIC__/img/warp_language_pic.png" /></span>
+					<span>
+						<i>中文</i>
+						<b>/</b>
+						<em>英文</em>
+					</span>
+				</div>
+				<div class="warp_login">
+					<ul>
+						<li><a href="">登录</a></li>
+						<li><a href="">注册</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="warp_banner">
+		<div class="warp_banner_c">
+			<ul>
+				<li style="display:block;">
+					<div class="warp_num1_pic">
+						<div class="warp_mask_cnum1"></div>
+						<div class="warp_num1_c">
+							<em><img src="__PUBLIC__/img/warp_namepic.png" /></em>
+							<span>创新科技 智造人脉</span>
+							<p>颠覆你对人脉的想象</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="warp_num2_pic">
+						<div class="warp_mask_c"></div>
+						<div class="warp_cont_c">
+							<span>你的人脉为你增值 </span>
+							<p>唤醒人脉背后的价值</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="warp_num3_pic">
+						<div class="warp_num3_mask"></div>
+						<div class="warp_num3_c">
+							<span>真实身份   真诚往来</span>
+							<p>找对人，才能做对事</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="warp_num4_pic">
+						<div class="warp_num4_mask"></div>
+						<div class="warp_num4_c">
+							<span>一面之缘  莫逆之始</span>
+							<p><i>个人信息生动呈现</i><em>相投志趣一目了然</em></p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<ol>
+			<li class="active hand"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+		<a class="prev hand" href="javascript:;"><img src="__PUBLIC__/img/warp_prev.png" /></a>
+		<a class="next hand" href="javascript:;"><img src="__PUBLIC__/img/warp_next.png" /></a>
+	</div>
+	<div class="warp_footer">
+		<div class="warp_footer_nav">
+			<ul>
+				<li>
+					<div>
+						<span><img src="__PUBLIC__/img/warp_APP_pic.jpg" /></span>
+						<em class="warp_em_mask"></em>
+						<i>橙脉APP</i>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span><img src="__PUBLIC__/img/warp_smy_pic.jpg" /></span>
+						<em class="warp_em_mask"></em>
+						<i>名片扫描仪</i>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span><img src="__PUBLIC__/img/warp_about_pic.jpg" /></span>
+						<em class="warp_em_mask"></em>
+						<i>关于我们</i>
+					</div>
+				</li>
+				<li>
+					<div>
+						<span><img src="__PUBLIC__/img/warp_Imora_pic.jpg" /></span>
+						<em class="warp_em_mask"></em>
+						<i>敬请期待</i>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="warp_footer_record"><p>Copyrigh @ 2016IMORA Inc. 保留所有权利京公安网安备11010500896 京ICP备10214630</p></div>
+	</div>
+</div>
+</body>
+</html>

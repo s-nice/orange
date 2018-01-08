@@ -1,0 +1,93 @@
+@CHARSET "UTF-8";
+/* CSS Document */
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,tr,td,img,div{margin:0;padding:0;border:0; float:none;}
+body{font-size:12px;font-family:'SourceHanSansCN-Normal','微软雅黑','Tahoma','黑体','宋体';}
+body,html{background:#d2d6de; overflow-x:hidden;}
+/*html,body{width:100%;}*/
+ul,ol{list-style-type:none;}em,i,cite{font-style:normal;}
+select,input{vertical-align:middle;}
+input{outline:none;}
+img,embed{vertical-align:top;border:none;}
+a{text-decoration:none;color:#000; outline: medium none; font-family:'Microsoft yahei';}
+a:hover{color:#000;text-decoration: none;}
+.font{}
+.left{ float:left}
+.right{ float:right;}
+.clear{ clear:both;}
+textarea{overflow:auto;resize:none;}
+.clear:after{clear:both;content:'';display:block}
+.clear{zoon:1;}
+.hand{cursor:pointer;}
+
+/**
+*
+* 圆形样式  
+*
+**/
+.yuanjiao_input{-webkit-border-radius:5px 5px; -moz-border-radius:5px 5px; -o-border-radius:5px 5px; -ms-border-radius:5px 5px; border-radius:5px 5px;}
+.yiying{-moz-box-shadow: 0 4px 10px rgba(0,0,0,.5),inset 0 10px 0 rgba(255,255,255,.45);
+-webkit-box-shadow: 0 4px 10px rgba(0,0,0,.5),inset 0 10px 0 rgba(255,255,255,.45);
+box-shadow: 0 4px 10px rgba(0,0,0,.5),inset 0 10px 0 rgba(255,255,255,.45);}
+
+.company_warp{ width:100%; height:100%; overflow:hidden;}
+.company_header{ min-width:1200px; width:100%; height:64px; border-bottom:1px solid #000; overflow:hidden; margin:0 auto;}
+.company_logo{ width:44px; height:44px; float:left;}
+.company_logo img{width:44px; height:44px; margin:10px 0 0 30px;}
+.company_mune{ width:auto; height:64px; float:right; overflow:hidden; margin-right:30px;}
+.company_mune ul{ margin:0; padding:0px;}
+.company_mune ul li{ margin-left:52px; float:left; color:#000; font: 12px/64px "Microsoft yahei","微软雅黑";}
+
+.company_content{ width:100%; max-height:480px; overflow:hidden; position:relative;}
+.company_banner{position:relative; width:100%; height:480px; overflow:hidden; background:#ff0000;}
+.company_tab{ background:#fff; height: 330px; left: 50%; margin-left: 90px; padding: 13px 14px 15px; position: absolute; text-align: left; top: 56px; width: 295px; z-index: 2;}
+.company_title{ width:100%; height:48px; overflow:hidden; color:#000; font: 20px/48px "Microsoft yahei","微软雅黑";}
+.company_mail{ width:100%; height:32px; margin-top:20px;}
+.company_mail span{ text-align:right; margin-right:20px; width:70px; float:left; color:#000; font: 14px/32px "Microsoft yahei","微软雅黑";}
+.company_mail input{ width:190px; float:left; height:30px; border:1px solid #7a7a7a;}
+.company_password{ width:100%; height:32px; margin-top:20px;}
+.company_password span{ text-align:right; margin-right:20px; width:70px; float:left; color:#000; font: 14px/32px "Microsoft yahei","微软雅黑";}
+.company_password input{ width:190px; float:left; height:30px; border:1px solid #7a7a7a;}
+.company_yz{position:relative; width:100%; height:32px; }
+.company_yz span{color: #999;font: 14px/32px "Microsoft yahei","微软雅黑";position: absolute;text-align: left;text-indent: 12px;width: 170px;z-index: 1;}
+.company_button{ width:100%; height:48px; overflow:hidden; margin-top:50px;}
+.company_login{ width:120px; height:38px; float:left; margin:0 21px 0 21px;}
+.company_login input{width:120px; height:38px; border:1px solid #7a7a7a;}
+.company_registered{ width:120px; height:38px; float:left;}
+.company_registered input{width:120px; height:38px; border:1px solid #7a7a7a;}
+.company_forget{ float:right; margin-right:10px; color:#000; font: 14px/32px "Microsoft yahei","微软雅黑";}
+.yanz_position{ position:relative; top:0px;}
+#imgc, #td{width:100%;border: 1px solid #d2d6de;border-radius:0;}
+#td, #td span{height:34px;}
+
+.company_footer{height: 65px; margin: 0 auto;}
+.footer_inner{color: #848585; height: 63px; margin: 0 auto; overflow: visible;width: 1000px; color:#000; text-align:center; font: 12px/63px "Microsoft yahei","微软雅黑";}
+
+/**
+*
+* 企业平台注册样式
+*
+**/
+.company_c{ width:100%; min-height:480px; overflow:hidden;}
+.company_left{ margin-right:2%; width:21.3%; height:auto;overflow:hidden; border-right:1px solid #7a7a7a; float: left;}
+.companyleft_top{ margin:27px 0 0 27px; width:82%; height:254px; border:1px solid #7a7a7a;}
+.companyleft_title{ text-align:center; margin-top:30px;}
+.companyleft_top input{display:block; margin:0 auto; margin-top:30px; width:80px; height:30px;}
+.companyleft_bot{width:82%; height:420px; margin:27px 0 0 27px; border:1px solid #7a7a7a;}
+.company_right{ width:75%; height:auto; overflow:hidden; float:left; border:1px solid #7a7a7a;}
+.company_num{ width:60%; height:80px; margin:0 auto; margin-top:30px;}
+.company_num ul{ margin:0px; padding:0px;}
+.company_num ul li{ width:55px; height:80px; float:left; margin-right:220px; text-align:center;}
+.company_num ul li:last-of-type{ margin-right:0px;}
+.company_num ul li span{display:block; width:50px; height:50px; color:#000; text-align:center; margin-bottom:10px; font: 14px/50px "Microsoft yahei","微软雅黑"; background:#fff; border:1px solid #7a7a7a; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; -ms-border-radius:50%; border-radius:50%;}
+.company_num ul li span.on{ background:#ccc;}
+.company_tab_c{width:80%; height:auto; overflow:hidden; margin:0 auto; margin-top:80px;}
+.company_tab_c>div{ display:none;}
+.company_tab_c>div:nth-of-type(1){ height:540px;}
+
+/*按钮不可点击样式*/
+.button_disabled {
+    background: #e1e1e1 none repeat scroll 0 0 !important;
+    border: 1px solid #b8b8b8 !important;
+    color: #b8b8b8 !important;
+	cursor:no-drop !important;
+}

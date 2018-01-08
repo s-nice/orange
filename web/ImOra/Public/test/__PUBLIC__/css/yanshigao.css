@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+/* CSS Document */
+body,ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,tr,td,img,div{margin:0;padding:0;border:0; float:none;}
+body{font-size:12px;font-family:'SourceHanSansCN-Normal','微软雅黑','Tahoma','黑体','宋体'; background:#181818;}
+body,html{background:#181818; overflow-x:hidden;}
+/*html,body{width:100%;}*/
+ul,ol{list-style-type:none;}em,i,cite{font-style:normal;}
+select,input{vertical-align:middle;}
+input{outline:none;}
+img,embed{vertical-align:top;border:none;}
+a{text-decoration:none;color:#666666; outline: medium none; font-family:'Microsoft yahei';}
+a:hover{color:#0075c2;text-decoration: none;}
+.font{}
+.left{ float:left}
+.right{ float:right;}
+.clear{ clear:both;}
+textarea{overflow:auto;resize:none;}
+.clear:after{clear:both;content:'';display:block}
+.clear{zoon:1;}
+.hand{cursor:pointer;}
+
+.ysg_warp{ height: 100%; width: 1280px; background:#111; margin: 0 auto; overflow:hidden;}
+.maxwarp{ margin: 0 auto; max-height: 1600px; margin-bottom:60px; max-width: 1200px; width: 1200px; overflow: hidden;}
+.warp_serach{ width:445px; height:50px; float:right; position:relative; margin-top:60px;}
+.warp_serach i{ position:absolute; left:15px; top:14px; width:17px; height:23px; z-index:4;}
+.box_input{ position:absolute; left:0px; top:0px; z-index:3;}
+.box_input .input_t{ width:400px; height:46px; background:none; padding-left:40px; border:1px solid #b0aeae; color:#8f8f8f; font: 18px/46px "Microsoft yahei","微软雅黑";}
+.box_input em{ display:block; width:2px; height:27px; position:absolute; right:60px; top:10px;}
+.box_input .button_t{position:absolute; width:24px; height:24px; right:15px; top:11px; border:none; background:url(../images/ysg_button_icon.jpg) no-repeat;}
+.warp_content{height:auto; max-width: 1198px; width: 1200px; margin-top:165px; overflow:hidden;border:1px solid #b0aeae;}
+.warp_list_bin{ width:1200px; height:50px; marin:0px; padding:0px;}
+.warp_list_bin div{ height:50px; float:left; width:160px; text-align:center; color:#868584; font: 18px/50px "Microsoft yahei","微软雅黑";}
+.warp_list_bin div.on{ background:url(../images/ysg_onbtn_icon.png) center bottom no-repeat; color:#fff;}
+.warp_list_bin i{ display:block; float:left; width:6px; height:24px; margin-top:13px;}
+.warp_list_bin span{width:600px; height:50px; float:right; color:#9a9a9a; font: 16px/50px "Microsoft yahei","微软雅黑";}
+.warp_list_bin span em{ flaot:left;}
+.warp_list_c{ width:1200px; height:1200px; overflow:hidden; background:#fff;}
+.warp_erdrm{ display:-none; width:1200px; height:auto; overflow:hidden;}
+.warp_card_list{ width:550px; height:210px; margin-right:100px; float:left; border-bottom:1px solid #eee;}
+.warp_card_pic{ width:255px; height:160px; float:left; margin-right:20px; margin-left:20px; margin-top:25px;}
+.warp_card_pic img{width:255px; height:160px;}
+.warp_card_text{ width:205px; height:160px; float:left; margin-top:25px;}
+.warp_card_text span{display:block; width:100%; overflow:hidden;}
+.warp_card_text span i{ display:block; float:left; margin-right:17px; color:#3e3c39; font: 20px/22px "Microsoft yahei","微软雅黑";}
+.warp_card_text span em{ display:block; float:left; color:#9a9a9a; margin-top:5px; font: 14px/14px "Microsoft yahei","微软雅黑";}
+.warp_card_text p{ margin-top:10px; color:#9a9a9a; font: 14px/24px "Microsoft yahei","微软雅黑";}
+
+.warp_tongs{ display:none; width:1200px; height:auto; overflow:hidden;}
+.warp_tongs_list{width:255px; height:160px; float:left; position:relative; margin:22px;}
+.warp_tongs_pic{width:255px; height:160px; position:absolute; left:0px; top:0px; z-index:2;}
+.warp_tongs_pic img{ width:255px; height:160px;}
+.warp_mask{display:none; width:255px; height:160px; position:absolute; left:0px; top:0px; z-index:3; background:#000; opacity: 0.7; filter:alpha(opacity:70);}
+.warp_tongs_text{display:none; width:255px; height:160px; float:left; margin-top:25px; position:absolute; left:0px; top:0px; z-index:4;}
+.warp_tongs_text span{display:block; width:100%; overflow:hidden;}
+.warp_tongs_text span i{ display:block; float:left; margin-right:17px; color:#3e3c39; font: 20px/22px "Microsoft yahei","微软雅黑";}
+.warp_tongs_text span em{ display:block; float:left; color:#9a9a9a; margin-top:5px; font: 14px/14px "Microsoft yahei","微软雅黑";}
+.warp_tongs_text p{ text-indent:28px; margin-top:10px; color:#9a9a9a; font: 14px/24px "Microsoft yahei","微软雅黑";}
+.warp_tongs_list:hover .warp_mask{display:block;}
+.warp_tongs_list:hover .warp_tongs_text{display:block;}
+
+.warp_tonghang{ display:none; width:1200px; height:auto; overflow:hidden;}
+
+/**
+*
+* 翻页效果样式
+*
+**/
+.page{ width:auto; height:30px; float:right;}
+/*.page a.first,.page a.prev,.page a.next,.page a.end{ font: 14px/28px "微软雅黑"; color:#444; float:left; margin-right:15px;}
+.page a.end{ margin-right:0px;}
+.page a.next{ margin-left:15px;}
+.page a.num {display:block; text-align:center; width:28px; height:28px; float:left; font: 14px/28px "微软雅黑"; color:#444;}
+.page a.num:hover{ background:#666; color:#fff;}
+.page .current{ background:#666; color:#fff;display:block; text-align:center; width:28px; height:28px; float:left; font: 14px/28px "微软雅黑";}*/
+.page div{ width:auto; height:28px; flaot:right;}
+.page div span,.page div a,.page div form{ float:left; margin-right:10px;  font: 14px/28px "微软雅黑"; color:#333;}
+.page div span,.page div a{ margin-top:2px;}
+.page div form{ margin-right:0px;}
+.page div input.jumppage{ width:26px; height:26px; border:1px solid #b9b9b9; background:none;}
+.page div input{ margin-right:0px; width:34px; height:28px; font: 14px/28px "微软雅黑"; color:#333; border:none; background:none;}

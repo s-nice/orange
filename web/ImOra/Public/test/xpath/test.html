@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+	<span>111</span>
+	<span>222</span>
+	</div>
+</body>
+<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/js/jsExtend/browser.js"></script>
+<script type="text/javascript">
+$('*').on('click', function(evt){
+	evt.stopPropagation();
+	evt.preventDefault();
+	
+	$('*').css('border', 'none');
+	$(this).css('border', '1px solid black');
+	
+	var arr=[];
+	locate($(this), arr);
+	arr.reverse();
+	var path='/';
+	for(var i=0;i<arr.length;i++){
+		if (i%2==0){
+			path+=arr[i];
+		} else {
+			path+='['+arr[i]+']/';
+		}
+	}
+	
+	path=path.substring(0, path.length-1);
+	var xml=loadXMLDoc("http://www.imora.com/test/xpath/source.xml");
+	if (window.ActiveXObject){
+		var nodes=xml.selectNodes(path);
+		for (i=0;i<nodes.length;i++){
+			alert(nodes[i].childNodes[0].nodeValue);
+		}
+	} else {
+		// code for Mozilla, Firefox, Opera, etc.
+		var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE,null);
+	
+		var result=nodes.iterateNext();
+		while(result){
+			alert(result.childNodes[0].nodeValue);
+			result=nodes.iterateNext();
+		}
+	}
+});
+
+function loadXMLDoc(dname){
+	if (window.XMLHttpRequest){
+		xhttp=new XMLHttpRequest();
+	} else {
+		xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xhttp.open("GET",dname,false);
+	xhttp.send("");
+	return xhttp.responseXML;
+}
+
+
+function locate($obj, arr){
+	if ($obj.parent().length==0){
+		return;
+	}
+	//IE9从0开始，其他从1开始
+	var offset=browser.type=='IE'?0:1;
+	
+	var tag=$obj[0].localName;
+	var $siblings=$obj.siblings(tag);
+	if ($siblings.length>0){
+		//找到$obj是第几个
+		$obj.parent().find(tag).each(function(num){
+			if ($obj[0][$.expando]!=$(this)[0][$.expando]){
+				return;
+			}
+			$obj.data('num', num);
+			return false;
+		});
+		$obj.data('num')!=undefined && arr.push(parseInt($obj.data('num'))+offset);
+	} else {
+		arr.push(offset);
+	}
+	arr.push(tag);
+	locate($obj.parent(), arr);
+}
+</script>
+</html>

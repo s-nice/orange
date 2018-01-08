@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+.video_classname{ width:1200px; height:673px; position:relative;}
+.video_player{width:1200px; height:673px; position:absolute; left:0px; top:0px;opacity:1;}
+.video_classname_bg{width:1200px; height:637px; background:url(__PUBLIC__/images/k1.png) no-repeat; position:absolute; left:0px; top:18px;}
+.video_classname_bgtwo{width:1200px; height:637px; background:url(__PUBLIC__/images/k2.png) no-repeat; position:absolute; left:0px; top:18px;  z-index:2;}
+</style>
+<body>
+<input id='red' type='button' value='red'><input id='blue' type='button' value='blue'>
+<div class="video_classname">
+	<!-- <video class="video_player" src="__PUBLIC__/images/demon.mp4" autoplay loop></video> -->
+	<video class="video_player" src="__PUBLIC__/images/fff/10.mp4" autoplay loop></video>
+	<div type='red' class="video_classname_bg"></div>
+	<div type='blue' class="video_classname_bgtwo"></div>
+</div>
+</body>
+<script type="text/javascript" src="/js/jquery/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('input').on('click',function(){
+		var type=$(this).attr('id');
+		$('.video_classname div').animate({opacity:0});
+		$('.video_classname div[type="'+type+'"]').animate({opacity:1});
+	})
+});
+</script>
+</html>

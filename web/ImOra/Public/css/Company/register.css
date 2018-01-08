@@ -1,0 +1,191 @@
+@CHARSET "UTF-8";
+.company_num{ width:485px; overflow:hidden; margin:0 auto;}        
+.company_num .col_center{ text-align:center; width:58px; height:85px; float:left;}
+.company_num li{ list-type:none;}
+.company_num li.fist{ margin-right:156px;}
+.company_num li.second{ margin-right:155px;}
+
+.col_center span{ display:block; width:58px; height:58px; background:#ccc; text-align:center; font: 28px/58px "微软雅黑"; color:#fff;}
+.col_center i{ display:block; width:60px; height:20px; margin-top:10px; text-align:center; font: 14px/20px "微软雅黑"; color:#656764;}
+.col_center span.on{ background:#ffb399; color:#666;}
+hr{ border-top:1px solid #787878;}
+.company_tab_cont{padding-bottom: 50px; width:46%; height:auto; overflow:hidden; margin:0 auto; margin-top:120px;}
+.company_tab_cont div{ text-align:center; font: 14px/20px "微软雅黑"; color:#333;}
+.company_tab_cont div:nth-child(1){ font: bold 22px/22px "微软雅黑"; color:#333;}
+.company_tab_cont div:nth-child(2){ margin-top:30px;}
+.company_tab_cont div:nth-child(3){ margin-top:30px;}
+.company_tab_cont div a{ margin:0 auto; margin-top:30px; display:block; width:120px; height:30px; background:#505050; font: 14px/30px "微软雅黑"; color:#fff; text-align:center;border-radius:3px;}
+
+.register_body{ width:430px; height:auto; overflow:hidden; margin:0 auto;}
+.register-group{ width:430px; height:66px; overflow:hidden;}
+.register-group span{display:block; margin-right:20px; width:65px; height:34px; float:left; color:#333; font: 14px/34px "微软雅黑";}
+.register-group span em{ color:#fd2121;}
+.register-right{ float:left; height:34px; width:345px;position:relative;}
+.register-right input{ width:345px; height:32px; border:1px solid #bababa; background:#eceff4;text-indent:10px;}
+.register-ts{ color:#fb9c7c; font: 12px/12px "微软雅黑"; margin:10px 0 0 85px;}
+
+
+.register-mail{ width:430px; height:34px; overflow:hidden; margin-bottom:20px;}
+.register-mail span{display:block; margin-right:20px; width:65px; height:34px; float:left; color:#333; font: 14px/34px "微软雅黑";}
+.register-mail span em{ color:#fd2121;}
+.register-right select{ width:345px; height:34px; border:1px solid #bababa; background:#eceff4;}
+.register-right span.select2-selection{width:345px;height:33px;background:none;}
+.register-right span.select2-selection__rendered{width:300px;}
+.register-pub{ width:430px; height:34px; margin-bottom:20px;}
+.register-pub span{display:block;width:65px; height:34px; float:left; color:#333; font: 14px/34px "微软雅黑";}
+.register-pub span em{ color:#eceff4;}
+.register span em{ color:#eceff4;}
+.register-register{ color:#656668; font: 12px/12px "微软雅黑"; margin:10px 0 0 85px;}
+.register_btn{width:430px; height:34px; overflow:hidden; margin-bottom:20px;}
+.register_btn button{ margin-left:85px; width:122px; height:34px; background:#505050; border:none; text-align:center; color:#fff; font: 14px/34px "微软雅黑";border-radius:3px;}
+.company_xieyi{ width:430px; height:34px; overflow:hidden; padding-left: 85px;}
+.company_xieyi i {background-image: url("../../images/companycard/company_zhuce.jpg"); background-position: 0 0; background-repeat: no-repeat; display: block; float: left; height: 20px; margin-right: 20px; width: 20px;}
+.company_xieyi i.active { background-image: url("../../images/companycard/company_zhuce.jpg"); background-position: 0 -20px; background-repeat: no-repeat;display: block; height: 20px; width: 20px;}
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #444 !important;
+}
+.skin-blue .main-header .navbar {
+    background-color: #333 !important;
+}
+.skin-blue .main-header .logo {
+    background-color: #333 !important;
+}
+.company_xieyi span{ color:#0270d1;}
+
+.boxinput_c{ width:100%; min-height:30px; overflow:hidden; position:relative;}
+.boxinput_c span{ display:block; float:left; width:15%; height:30px; color:#333; font: 16px/30px "微软雅黑";}
+.boxinput_c span em{ color: #fd2121; display: block;float: left;font-size: 16px; line-height: 30px; margin-right: 10px; margin-top: 4px;}
+.boxinput_c input{width:54%; height:30px; background:#eceff4; border:1px solid #bababc; color:#333; font: 16px/30px "微软雅黑";text-indent:10px;}
+.boxinput_c input.floatleft{float:left; width: 46.9%;}
+.boxinput_c i{ display:block; margin-left:15%; margin-top:8px; color:#fba17f; font: 16px/16px "微软雅黑";}
+.boxinput_c button{ height: 32px; margin-top: -1px;}
+.boxinput_c img{ position:absolute; right: 32%; top:7px;}
+.company_x{ width:100%; min-height:30px; overflow:hidden; position:relative;}
+.company_x span{ display:block; float:left; width:15%; height:30px; color:#333; font: 16px/30px "微软雅黑";}
+.company_x span em{ color: #eceff4; display: block;float: left;font-size: 16px; line-height: 30px; margin-right: 10px; margin-top: 4px;}
+.company_x input{width:54%; height:30px; background:#eceff4; border:1px solid #bababc; color:#333; font: 16px/30px "微软雅黑";}
+.company_x input.floatleft{float:left; width: 46.9%;}
+.company_x i{ display:block; margin-left:15%; margin-top:8px; color:#fba17f; font: 16px/16px "微软雅黑";}
+.company_x select{width:54%; height:30px; background:#eceff4; border:1px solid #bababc;}
+
+.submit{ width:120px; height:30px; margin-left:15%; background:#505050; color:#fff; font: 16px/30px "微软雅黑"; text-align:center; border:none; -webkit-border-radius:2px 2px; -moz-border-radius:2px 2px; -o-border-radius:2px 2px; -ms-border-radius:2px 2px; border-radius:2px 2px;}
+.company_hd{ margin-left:15%; margin-top:20px;}
+.inputchecked{ float:left;}
+
+/**
+*
+* 认证页面样式
+*
+**/
+.company_certification_c{ width:70%; height:auto; overflow:hidden; margin:0 auto;}
+.company_certification_c h2{ color:#333; font: bold 20px/40px "Microsoft yahei","微软雅黑";}
+.company_bin{ width:100%; height:60px; overflow:hidden; margin-top:20px;}
+.company_bin button{ margin:20px 20px 20px 0;border:none; width:120px; height:30px; background:#ccc; text-align:center; color:#333; font: 14px/30px "Microsoft yahei","微软雅黑"}
+.company_bin button.active{background:#505050; color:#fff;}
+.js_uploadImg_single { margin-top:10px;  width: 300px; border: 1px solid #ccc;height: 170px; line-height:170px; font-family: "Arial Negreta", "Arial"; font-size: 72px; font-style: normal; font-weight: 700; text-align: center; cursor: pointer; background-color: rgba(242, 242, 242, 1); position: relative;background-size:100% 100%!important;}
+.uploadImgWrap {float: left; display: inline-block; width: 50%;float:left; margin-bottom: 30px;}
+.uploadImgWrap span{display:block; color:#333; font: 16px/40px "Microsoft yahei","微软雅黑";}
+.uploadImgWrap p span{ font: 70px/160px "Microsoft yahei","微软雅黑";}
+.uploadImgWrap p img{max-width:300px;height:170px;position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;z-index:22;}
+.uploadImgWrap p span.remove_img{display:none; position: absolute; top: 0; right: 0; width:20px; height:20px; background:#333;color:#fff; font: 16px/16px "Microsoft yahei","微软雅黑"; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; -ms-border-radius:50%; border-radius:50%;z-index:23;}
+.uploadImgWrap p span.remove_img:hover{background:#eb2222;}
+
+.pic_sc{ width:100%; height:auto; overflow:hidden; margin-bottom:20px;}
+.company_tab_c em.em_col{ color:#999; font: 14px/22px "微软雅黑"; display:block;}
+.company_form{ margin-top:20px;}
+.company_city{ width:100%; min-height:30px; overflow:hidden; position:relative;}
+.city_list{width:54%;float:left;margin-bottom:10px;}
+.city_list_left{margin-left:15%;}
+.company_city span.select2-selection,.company_city span.selection{width:100%!important;background:none;}
+.company_city span.select2-selection__rendered{width:100%;}
+ span input.select2-search__field{display:none;}
+.company_city span{ display:block; float:left; width:15%; height:30px; color:#333; font: 16px/30px "微软雅黑";}
+.company_city span em{ color: #fd2121; display: block;float: left;font-size: 16px; line-height: 30px; margin-right: 10px; margin-top: 4px;}
+.company_city input{width:54%; height:30px; background:#eceff4; border:1px solid #bababc; color:#333; font: 16px/30px "微软雅黑";}
+.company_city input.floatleft{float:left; width: 46.9%;}
+.company_city i{ display:block; margin-left:15%; margin-top:8px; color:#fba17f; font: 16px/16px "微软雅黑";}
+.company_city select{width:17.7%; height:30px; background:#eceff4; border:1px solid #bababc;}
+.company_city input.address_i{ width:54%; height:30px; margin-left: 15%; margin-top:20px;text-indent:10px;}
+.company_form input.submit_i{ margin-top:20px; margin-left:15%; width:120px; height:30px; color:#333; font: 14px/29px "微软雅黑"; background:#505050;border:none;color:#fff; text-align:center;border-radius:3px;}
+
+
+/**
+*
+* 忘记密码页面样式
+*
+**/
+.resetpwd_title{ width:40%; height:auto; overflow:hidden; margin: 0 auto;}
+.title_box{text-align: center; width:50%; height:108px; overflow:hidden; float:left;}
+.title_box span{display:inline-block; width:58px; height:58px; text-align:center; background:#ccc; color:#fff; font: 24px/58px "微软雅黑";}
+.title_box i{ display:block; height:20px; color:#333; font: 16px/20px "微软雅黑"; margin-top:10px;}
+.title_box span.on{background:#ffb399; color:#333;}
+.company_content{width:40%; height: auto; margin: 0 auto; width: 40%;}
+.boxinput_mail{margin-top: 30px; width:100%; min-height:30px; overflow:hidden; position:relative;}
+.boxinput_mail span{ display:block; float:left; width:23%; height:30px; color:#333; font: 16px/30px "微软雅黑";}
+.boxinput_mail span em{ color: #fd2121;font-size: 16px; line-height: 30px; margin-right: 10px; margin-top: 4px;}
+.boxinput_mail input{width:70%; height:30px; background:#eceff4; border:1px solid #bababc; color:#333; font: 16px/30px "微软雅黑";}
+.boxinput_mail input.floatleft{float:left; width: 46.9%;}
+.company_wjmm{margin:0 auto;margin-top: 30px; width:360px; min-height:30px; position:relative;margin-left:5%;}
+.company_wjmm span{ display:block; float:left; width:23%; height:30px; color:#333; font: 16px/30px "微软雅黑";}
+.company_wjmm span em{ color: #fd2121; display: block;float: left;font-size: 16px; line-height: 30px; margin-right: 10px; margin-top: 4px;}
+.company_wjmm input{width:54%; height:30px; background:#eceff4; border:1px solid #bababc; color:#333; font: 16px/30px "微软雅黑";}
+.company_wjmm input.floatleft{float:left; width: 46.9%;}
+.company_wjmm i{ display:block; margin-left:15%; margin-top:8px; color:#fba17f; font: 16px/16px "微软雅黑";}
+.company_wjmm select{width:54%; height:30px; background:#eceff4; border:1px solid #bababc;}
+.company_wjmm #td{ left:27%!important;}
+.submit_input{float: left;background: #505050; margin-top:20px; border:none; color: #fff; font: 16px/30px "微软雅黑"; height: 30px; margin-left: 23%; text-align: center; width: 120px;}
+
+.find_paw{ width:50%; margin: 0 auto; margin-top:60px; height:auto; overflow:hidden; text-align:center; color: #333; font: bold 22px/30px "微软雅黑";}
+.find_ts{ width:100%; margin: 0 auto; margin-top:10px; height:auto; overflow:hidden; text-align:center; color: #333; font: 16px/30px "微软雅黑";}
+
+
+.button_bgcolor{ background:#505050;margin-right: 10px;outline:none;border:none;width:60px;height:30px;border-radius:3px;font-family:"微软雅黑";color:#fff;}
+.button_bgcolor:hover{background:#505050; border-color: #505050;}
+.col_pad{ padding-right:5px !important;}
+.register_hd{ position:relative;}
+.col_button{ height: 48px; margin-top: -1px; padding-right: 10px; width: 14.667%;}
+.form_span span{-webkit-border-radius:5px 5px; -moz-border-radius:5px 5px; -o-border-radius:5px 5px; -ms-border-radius:5px 5px; border-radius:5px 5px; font-size:14px; display:block; overflow:hidden; float:left; margin-top: -5px; height:35px; border:1px solid #ccc; line-height: 33px; padding:0 5px;}
+.form_span span i,.form_span span em{ display:block; float:left;}
+.form_span span em{font-size:16px;}
+.form_span span:last-of-type{ margin-right:0px;}
+
+/*按钮不可点击样式*/
+.button_disabled {
+    background: #e1e1e1 none repeat scroll 0 0 !important;
+    border: 1px solid #b8b8b8 !important;
+    color: #b8b8b8 !important;
+	cursor:no-drop !important;
+}
+
+
+/**
+*
+* 邮箱激活新设密码页面样式
+*
+**/
+.setpwd_warp{ width:100%; min-height:836px; overflow:hidden; background:#fff; padding-bottom:20px;}
+.setpwd_content{ width:424px; height:345px; margin:150px auto;}
+.setpwd_text{ width:424px; height:30px; color:#333; font: 14px/30px "微软雅黑";}
+.login_from_user{ width:360px; height:30px; margin:0 auto; margin-top:20px;margin-left:0%;}
+.login_from_user span{width:100px; height:30px; float:left; color:#333; font: 14px/30px "微软雅黑"; margin-right: 20px;
+    text-align: right;}
+.login_from_user span i{color:#ff0000;}
+.login_from_user input{ width:218px; height:30px; border:1px solid #aaa;text-indent:10px;font-size:12px;}
+.login_from_password{ width:360px; height:30px; margin: 20px 0 0 0%;}
+.login_from_password span{ display:block; width:100px; height:30px; float:left; color:#333; font: 14px/30px "微软雅黑"; margin-right: 20px;
+    text-align: right;}
+.login_from_password span i{color:#ff0000;}
+.login_from_password input{ width:218px; height:28px; border:1px solid #aaa;text-indent:10px;}
+.login_from_ts{ width:360px; height:auto; overflow:hidden; margin:0 auto; margin-top:3px; margin-left:0%;}
+.login_from_ts span{ display:block; width:100px; height:30px; float:left; margin-right: 20px;
+    text-align: right;}
+.login_from_ts p{ width:218px; color:#ff6600; font: 12px/18px "微软雅黑"; float:left;}
+.login_from_bin{ width:120px; height:30px; margin:20px 0 0 152px;}
+.login_from_bin input{ background:#505050; width:120px; height:30px; color:#fff; border:none; font: 14px/30px "微软雅黑";}
+
+.login_from_onbin{ width:280px; height:30px; margin:20px 0 0 120px;}
+.login_from_onbin input{ margin-left:0 !important; background:#505050; float:left; width:120px; height:30px; color:#fff; border:none; font: 14px/30px "微软雅黑";}
+.login_from_onbin .submit_input{float: left;background: #505050; margin-top:20px; border:none; color: #fff; font: 14px/30px "微软雅黑"; height: 30px; margin-left: 10%; text-align: center; width: 120px;border-radius:3px;}
+/*文本框获取焦点样式*/
+.form_focus:focus{box-shadow:none;border:1px solid #3c8dbc;}
+

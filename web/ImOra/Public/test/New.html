@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<style>
+#banner { position:relative;}
+.banner-box { position:relative; height:100%; margin:0 auto; overflow:hidden}
+.banner-show { position:absolute; width:100%; min-height:160px; left:0}
+.banner-show li { position:relative; float:left;}
+.banner-show img { width:100%; height:100%;}
+
+.banner-tab { width:100%; height:26px; background:rgba(0,0,0,0.5); left:0; bottom:0; position:absolute}
+.banner-tab p { position:absolute; height:13px; line-height:13px; font-size:0.8125rem; top:6px; left:12px; color:#fff}
+.banner-tab ul { position:absolute; height:7px; top:10px; right:5px;}
+.banner-tab li { position:relative; float:left; width:7px; height:7px; background:rgba(255,255,255,0.7); border-radius:3px; margin-right:5px; cursor:pointer}
+.banner-tab .active { background:#007edf}
+
+</style>
+<body>
+<div id="banner">
+    <div class="banner-box" id="banner-box">
+        <ul class="banner-show">
+            <li data-t="1111"><a href=""><img src="__PUBLIC__/images/Application_videocont.jpg"></a></li>
+            <li data-t="2222"><a href=""><img src="__PUBLIC__/images/Application_videoimg1.jpg"></a></li>
+            <li data-t="3333"><a href=""><img src="__PUBLIC__/images/Application_videoimg2.jpg"></a></li>
+            <li data-t="4444"><a href=""><img src="__PUBLIC__/images/Application_videoimg3.jpg"></a></li>
+            <li data-t="5555"><a href=""><img src="__PUBLIC__/images/Application_videoimg4.jpg"></a></li>
+        </ul>
+        <div class="banner-tab"><p>1111</p><ul><li class="active"></li><li></li><li></li><li></li><li></li></ul></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.9.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    var iNow = 0, index = 1, nStartX = 0;
+    var oBanner = document.getElementById('banner-box');
+    bannerShow();
+    $(window).resize(function(){
+        bannerShow();
+    });
+
+    oBanner.addEventListener('touchstart', function(event) {
+        event.preventDefault(); // 通知浏览器不要执行与事件关联的默认动作(阻止默认)
+        nStartX = event.targetTouches[0].pageX ; //targetTouches[0] 这个表示当前位于 屏幕上的手指列表 取第一个
+    }, false);
+    
+    oBanner.addEventListener('touchend', function(event) {
+        event.preventDefault(); // 通知浏览器不要执行与事件关联的默认动作(阻止默认)
+        var mw = $('.banner-show li').width(); // 获取可视区域宽度
+        var _l = mw + $('.banner-show').position().left%mw, _w = mw/2, _m = $('.banner-show li').length - 1;
+        var ml = $('.banner-show').position().left; //这里要重新获取left值
+        if(_l <= _w){ //中点判断
+            ml = ml - _l
+        }else{
+            ml = ml + (mw - _l)
+        }
+        if(ml >= 0){
+            ml = 0;
+        }else if (ml <= -mw * _m){
+            ml = -mw * _m;
+        }
+        $('.banner-show').animate({'left': ml}, 200);
+        var _now = parseInt(-ml/mw);
+        $('.banner-tab li').eq(_now).addClass('active').siblings('li').removeClass('active');
+        $('.banner-tab p').html($('.banner-show li').eq(_now).attr('data-t'));
+    }, false);
+    
+    oBanner.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+        var touch = event.targetTouches[0];
+        var _l = $('.banner-show').position().left + touch.pageX - nStartX;
+        nStartX = touch.pageX;
+        $('.banner-show').css('left', _l);
+    }, false);
+});
+
+//自动切换
+function tabBanner(n){
+    $('.banner-show').animate({'left': -n * $(window).width()});
+    $('.banner-tab li').eq(n).addClass('active').siblings('li').removeClass('active');
+    $('.banner-tab p').html($('.banner-tab li').eq(n).attr('data-title'));
+}
+
+//自适应
+function bannerShow(){
+    var _w = $(window).width();
+    var _h = _w * 0.5
+    $('.banner-box').height(_h);
+    $('.banner-show').width(_w * 5);
+    $('.banner-show li').width(_w);
+};
+</script>
+</html>

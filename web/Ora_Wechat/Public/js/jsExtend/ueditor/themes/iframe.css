@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+/*可以在这里添加你自己的css*/
+body{background: #111;margin:0px 0px 0px 8px;}
+.view{background: #111;max-height: 430px;/*overflow-x: hidden;overflow-y: auto;*/width: 655px;color:#ccc;}
+.view img{max-width: 630px;}
+.view img.video_img{width:100px;height:100px;}
+.view p{color:#ccc!important;line-height:150%;}
+.view p a{color:#ccc;cursor:pointer;}
+/*orange会员卡里面用到的*/
+.imora_selected{border:1px solid black !important}
