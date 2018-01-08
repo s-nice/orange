@@ -1,5 +1,0 @@
-@CHARSET "UTF-8";
-/*可以在这里添加你自己的css*/
-body{background: #ccc;}
-.view{background: #ccc;max-height: 280px;overflow-x: hidden;overflow-y: auto;width: 698px;}
-.view img{max-width: 668px;}
